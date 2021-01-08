@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Craftzy</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../themes/Craftzy.min.css" />
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="../CSS.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+
+<body>
+    <div id="signupcustomer" data-role="page" data-position="fixed">
+        <!-- Header -->
+        <div data-role="header">
+            <table>
+                <tr>
+                    <td><a href="#page1"><img src="../images/logo.jpg"> </a></td>
+                    <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
+                                src="../icons/icon-QRAR.png" width="42" height="42" style="float:right"> </a></td>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+        </div>
+        <form action="action_page.php" method="post">
+            <div class="imgcontainer" style="text-align: center;">
+                <img src="img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="form-group">
+                <label for="uname" style="float: left;"><b>Username</b></label>
+                <span style="float:right;">
+                    <input type="text" placeholder="Enter User Name" name="username" required>
+                </span>
+            </div>
+            <br><br><br><br>
+            <div class="form-group">
+                <label for="psw" style="float: left;"><b>Password</b></label>
+                <span style="float:right;">
+                    <input type="password" placeholder="Enter Password" name="password" required>
+                </span>
+            </div>
+            <br><br><br><br>
+            <div>
+                <br><span><input type="checkbox" checked="checked" name="remember"></span><span> Remember me
+                </span><span class="psw"><a href="#" style="color: #AB821E;">Forgot password?</a></span>
+            </div>
+            <div class="container">
+                <br><button type="submit">Login</button>
+            </div>
+            <div style="text-align: center;">
+                <br><label for="uname"><b>Or Connect with</b></label><br>
+                <span><img src="../icons/smi1.png" alt="Apple Id"></span>
+                <span><img src="../icons/smi2.png" alt="Facebook"></span>
+                <span><img src="../icons/smi3.png" alt="Google"></span>
+            </div>
+            <div style="text-align: center;">
+                <br><label for="uname"><b>Not a member?<a href="#" style="color: #AB821E;"> Sign up </a></b></label><br>
+            </div>
+        </form>
+        <!-- Navigation -->
+        <div data-role="footer" data-position="fixed">
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="#page1" data-icon="icons-home" class="ui-state-persist" data-theme="a">Home</a></li>
+                    <li><a href="#" data-icon="icons-category" data-theme="a">Category</a></li>
+                    <li><a href="#" data-icon="icons-cart" data-theme="a">Cart</a></li>
+                    <li><a href="#" data-icon="icons-game" data-theme="a">Game</a></li>
+                    <li><a href="#" data-icon="icons-profile" data-theme="a">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</body>
+
+</html>
