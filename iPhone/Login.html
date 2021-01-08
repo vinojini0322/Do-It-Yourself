@@ -1,8 +1,108 @@
-<!DOCTYPE html>
-<html>
+<?php
+  ob_start();
+  session_start();
+?>
 
-<head>
+<?
+  // error_reporting(E_ALL);
+  // ini_set("display_errors", 1);
+?>
+
+<html lang = "en">
+ 
+  <head>
     <title>Craftzy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../themes/Craftzy.min.css" />
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="../CSS.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  </head>
+
+  <body>
+     
+    <div style="text-align: center;"><a href="#page1"><img src="../images/logo.jpg"></a></div>
+     <div class = "container form-signin">
+       
+        <?php
+           $msg = '';
+           
+           if (isset($_POST['login']) && !empty) {
+
+              if ($_POST['username'] == 'vino' &&
+                 $_POST['password'] == '1234') {
+                 $_SESSION['valid'] = true;
+                 $_SESSION['timeout'] = time();
+               
+                 
+                 echo 'You have entered valid use name and password';
+
+              }else {
+                 $msg = 'Wrong username or password';
+              }
+           }
+        ?>
+     <!-- </div>
+     
+     
+        <form class = "form-signin" role = "form"
+           action = "home.html"
+           
+           <input type = "text" class = "form-control"
+              name = "username" placeholder = "username"
+              required autofocus></br>
+           <input type = "password" class = "form-control"
+              name = "password" placeholder = "password" required>
+           <button class = "btn btn-lg btn-primary btn-block" type = "submit"
+              name = "login">Login</button>
+        </form>
+       
+     </div>
+     
+
+ -->
+
+
+
+     <div class="container">
+
+        <form class="form-signing" role="form" action="Home.html"
+        <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
+
+
+            <div class="container">
+                <label for="username"><b>Username</b></label>
+                <input type="text" class="form-control" name="username" placeholder="User Name" required autofocus></br>
+                <label for="password"><b>Password</b></label>
+                <input type="password" class="form-control" name="password" placeholder="Password" required><br>
+            </div>
+            <div style="align-content: space-between;">
+                <br><span><input type="checkbox" checked="checked" name="remember">Remember me</span><span
+                    class="psw"><a href="#" style="color: #AB821E;">Forgot password?</a></span><br>
+            </div>
+            <div><button class="btn btn-lg btn-primary btn-block" type="submit" name="login" id="submit">Login</button>
+            </div>
+            <div style="text-align: center;">
+                <br><label for="uname"><b>Or Connect with</b></label><br>
+                <span><img src="../icons/smi1.png" alt="Apple Id"></span>
+                <span><img src="../icons/smi2.png" alt="Facebook"></span>
+                <span><img src="../icons/smi3.png" alt="Google"></span>
+            </div>
+            <div style="text-align: center;">
+                <br><label for="uname"><b>Not a member?<a href="#" style="color: #AB821E;"> Sign up </a></b></label><br>
+            </div>
+        </form>
+    </div>
+     
+  </body>
+</html>
+
+
+<!-- <head>
+    
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../themes/Craftzy.min.css" />
@@ -12,65 +112,65 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+
 </head>
 
 <body>
-    <div id="login" data-role="page" data-position="fixed">
-        <!-- Header -->
-        <div data-role="header">
-            <table>
-                <tr>
-                    <td><a href="#page1"><img src="../images/logo.jpg"> </a></td>
-                    <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
-                                src="../icons/icon-QRAR.png" width="42" height="42" style="float:right"> </a></td>
-                </tr>
-                <tr>
-                </tr>
-            </table>
-        </div>
-        <form action="action_page.php" method="post">
-            <div class="imgcontainer" style="text-align: center;">
-                <img src="img_avatar2.png" alt="Avatar" class="avatar">
-            </div>
+
+    
+    <div class="container form-signing">
+
+        <?php
+            $msg = '';
+            
+            if (isset($_POST['login']) && !empty($_POST['username']) 
+               && !empty($_POST['password'])) {
+				
+               if ($_POST['username'] == 'vino' && 
+                  $_POST['password'] == '1234') {
+                  $_SESSION['valid'] = true;
+                  $_SESSION['timeout'] = time();
+                  $_SESSION['username'] = 'vino';
+                  
+                  echo 'You have entered valid user name and password';
+                  include 'home.html';
+               }else {
+                  $msg = 'Wrong username or password';
+               }
+            }
+         ?>
+    </div>
+
+    <div class="container">
+
+        <form class="form-signing" role="form" action="Home.html" method="post">
+            <h4 class="form-signin-heading">
+                <?php echo $msg; ?>
+            </h4>
 
             <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" required>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" required>
+                <label for="username"><b>Username</b></label>
+                <input type="text" class="form-control" name="username" placeholder="User Name" required autofocus></br>
+                <label for="password"><b>Password</b></label>
+                <input type="password" class="form-control" name="password" placeholder="Password" required><br>
             </div>
-            <div>
-                <br><span><input type="checkbox" checked="checked" name="remember"></span><span> Remember me
-                </span><span class="psw"><a href="#" style="color: #AB821E;">Forgot password?</a></span>
+            <div style="align-content: space-between;">
+                <br><span><input type="checkbox" checked="checked" name="remember">Remember me</span><span
+                    class="psw"><a href="#" style="color: #AB821E;">Forgot password?</a></span><br>
             </div>
-            <div class="container">
-                <span><button type="submit">Login</button></span>
-                <span><button type="submit">Cancel</button></span>
+            <div><button class="btn btn-lg btn-primary btn-block" type="submit" name="login" id="submit">Login</button>
             </div>
             <div style="text-align: center;">
                 <br><label for="uname"><b>Or Connect with</b></label><br>
-                <span><img src="../icons/smi1.png" alt="Apple ID"></span>
-                <span><img src="../icons/smi2.png" alt="Face Book"></span>
+                <span><img src="../icons/smi1.png" alt="Apple Id"></span>
+                <span><img src="../icons/smi2.png" alt="Facebook"></span>
                 <span><img src="../icons/smi3.png" alt="Google"></span>
             </div>
             <div style="text-align: center;">
                 <br><label for="uname"><b>Not a member?<a href="#" style="color: #AB821E;"> Sign up </a></b></label><br>
             </div>
         </form>
-        <!-- Navigation -->
-        <div data-role="footer" data-position="fixed">
-            <nav data-role="navbar">
-                <ul>
-                    <li><a href="#page1" data-icon="icons-home" class="ui-state-persist" data-theme="a">Home</a></li>
-                    <li><a href="#" data-icon="icons-category" data-theme="a">Category</a></li>
-                    <li><a href="#" data-icon="icons-cart" data-theme="a">Cart</a></li>
-                    <li><a href="#" data-icon="icons-game" data-theme="a">Game</a></li>
-                    <li><a href="#" data-icon="icons-profile" data-theme="a">Profile</a></li>
-                </ul>
-            </nav>
-        </div>
     </div>
 </body>
 
-</html>
+</html> -->
