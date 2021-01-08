@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				
 	function get_data() { 
 		$name = $_POST['name']; 
+		$
 		$file_name='POICommentData'. '.json'; 
 $current_date = date("M d, Y");
 		if(file_exists("$file_name")) { 
@@ -19,6 +20,7 @@ $current_date = date("M d, Y");
 				//new DateTime($content['date']),
 				'Comment' => $_POST['comment'], 
 				'ReplyComment' => '',
+				'Stars'=>$_POST['e5'],
 							); 
 			$array_data[]=$extra;  
 			return json_encode($array_data); 
@@ -31,6 +33,7 @@ $current_date = date("M d, Y");
 				//new DateTime($content['date']),
 				'Comment' => $_POST['comment'], 
 				'ReplyComment' => '',
+				'Stars'=>$_POST['e5'],
 			); 
 			return json_encode($datae); 
 		} 
