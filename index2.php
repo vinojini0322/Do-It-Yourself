@@ -112,7 +112,7 @@ form {
 
 
 <?php foreach ($users as $user) { ?>
-<?= $user->Name; ?> <?= $user->Date; ?> <br />
+<?= $user->Name; ?> <?= $user->Date; ?> <?= $user->stars; ?> <br />
 
 <?= $user->Comment; ?>
 <div id="display">
