@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Confirm Order</title>
+    <link rel="stylesheet" href="../CSS.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../themes/Craftzy.min.css" />
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
+
+    <!-- <script type="text/javascript">
+        $.getJSON("../Database/cartItemsList.json", function (items) {
+            $('#itemsList').empty();
+
+            $.each(items, function (i, item) {
+                $('#itemsList').append(addElement(item));
+            });
+        });
+    </script> -->
+</head>
+
+
+<body class="ui-mobile-viewport ui-overlay-a">
+    <div id="ConfirmOrder" data-role="page" data-position="fixed">
+        <!-- Header -->
+        <div data-role="header">
+            <table>
+                <tr>
+                    <td><a href="#page1"><img src="../images/logo1.png"> </a></td>
+                    <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
+                                src="../icons/icon-QRAR.png" width="42" height="42" style="margin-left:250px"> </a></td>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+        </div>
+
+
+        <div role="orderConfirmation" class="ui-content">
+            <div>
+                <h2 style="font-family:Roboto Slab; text-align:center">
+                    Order Confirmation
+                </h2>
+            </div>
+
+            <div class="ui-body-a">
+                <table id="itemsList">
+                </table>
+
+            </div>
+
+            <div class="emptySpace" style="padding-top: 20px">
+            </div>
+
+            <div class="ui-body">
+                <h3 style="font-family:Inter">
+                    Order Summary
+                </h3>
+                <div class="ui-grid-a">
+                    <table class="orderSummary">
+                        <tr>
+                            <td>
+                                    <div class="ui-block-a-label1" style="color: black"><label for="textinput">Voucher
+                                        code</label></div>
+                            </td>
+                               <td> <div class="ui-block-b"><input type="text" name="textinput" id="textinput"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="ui-block-a-label2" style="color: black"><label for="textinput">Total</label>
+                                </div>
+                            </td>
+                            <td>
+                                    <div class="ui-block-b"><input type="text" name="textinput" id="textinput"></div>
+                            </td>
+                        </tr>
+                    </table>
+                    <button onclick="window.location='./PaymentGateway.html'">Confirm Order</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Navigation -->
+        <div data-role="footer" data-position="fixed">
+            <nav data-role="navbar">
+                <ul>
+                    <li><a target href="Home.html" data-icon="icons-home" class="ui-state-persist"
+                            data-theme="a">Home</a> </li>   
+                    <li><a target href="Categories.html" data-icon="icons-category" data-theme="a">Category</a></li>
+                    <li><a target href="MyCart.html" data-icon="icons-cart" data-theme="a">Cart</a></li>
+                    <li><a target href="Game.html" data-icon="icons-game" data-theme="a">Game</a></li>
+                    <li><a target href="MyProfile_Customer.html" data-icon="icons-profile" data-theme="a">Profile</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+</body>
+
+<script>
+        function addElement(item) {
+            return '<tr>' +
+                '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;"></td>' +
+                '<td colspan="3"> </td>' +
+                '<td>' + item.name + '</td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td colspan="3" style="padding-left:60px"></td>' +
+                '<td>LKR ' + item.price + '</td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td colspan="3"></td>' +
+                '<td>Qty ' + item.quantity + '</td>' +
+                '</tr>'
+        }
+    </script>
+
+    <script>
+        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+        $.each(shoppedItems, function (i, item) {
+                $('#itemsList').append(addElement(item));
+            });
+    </script>
+
+</html>
