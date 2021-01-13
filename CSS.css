@@ -60,6 +60,22 @@
 
 /* Confirm Order */
 
+/* table {
+    border-collapse: collapse;
+  }
+  
+  table tr {
+    border-bottom: 1px solid rgb(235, 220, 220);
+  }
+  
+  table tr:last-child {
+    border: 0;
+  } */
+
+/* table tr:last-child { 
+    border-bottom: none; 
+} */
+
 .ui-body-a .ui-block-a {
     height: auto;
 }

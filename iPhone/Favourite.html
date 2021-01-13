@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>favourites Page</title>
+    <link rel="stylesheet" href="../CSS.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../themes/Craftzy.min.css" />
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
+
+</head>
+
+<!-- Header -->
+
+<body class="ui-mobile-viewport ui-overlay-a">
+    <div data-role="page" id="Favourites" data-position="fixed">
+        <div data-role="header">
+            <table>
+                <tr>
+                    <td><a href="#page1"><img src="../images/logo1.png"> </a></td>
+                    <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
+                                src="../icons/icon-QRAR.png" width="42" height="42" style="margin-left:250px"> </a></td>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+        </div>
+
+
+        <div role="orderConfirmation" class="ui-content" data-icon="arrow-l">
+            <!-- <button data-icon="arrow-l"></button> -->
+            <h2 style="font-family:Roboto Slab; text-align:center">
+                Favourites List
+            </h2>
+            <input type="search" name="password" id="search" value="" placeholder="search favourites">
+
+        </div>
+        <div class="ui-body-a">
+            <div class="ui-checkbox">
+                    <input type="checkbox" name="checkbox-enhanced" id="checkbox-enhanced" data-enhanced="true">
+            </div>
+            <table id="itemsList">
+            </table>
+
+        </div>
+ 
+        <fieldset class="ui-grid-a">
+                <div class="ui-block-a"><input type="submit" value="Share via e-mail" data-theme="a"></div>
+                <div class="ui-block-b"><input type="reset" value="Delete" data-theme="b"></div>
+        </fieldset>
+        <!-- Navigation -->
+        <div data-role="footer" data-position="fixed">
+            <nav data-role="navbar">
+                <ul>
+                    <li><a target href="Home.html" data-icon="icons-home" class="ui-state-persist"
+                            data-theme="a">Home</a> </li>
+                    <li><a target href="Categories.html" data-icon="icons-category" data-theme="a">Category</a></li>
+                    <li><a target href="MyCart.html" data-icon="icons-cart" data-theme="a">Cart</a></li>
+                    <li><a target href="Game.html" data-icon="icons-game" data-theme="a">Game</a></li>
+                    <li><a target href="MyProfile_Customer.html" data-icon="icons-profile" data-theme="a">Profile</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</body>
+<script>
+    function addElement(item) {
+        return '<tr>' +
+            '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
+            '</td>' +
+            '<td colspan="3"> </td>' +
+            '<td>' + item.name + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3" style="padding-left:60px"></td>' +
+            '<td>' + item.price + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3"></td>' +
+            '</tr>'
+    }
+</script>
+
+<!-- <script type="text/javascript">
+    function populateItemList() {
+        $.getJSON("../Database/cartItemsList.json", function (items) {
+
+            $('#itemsList').empty();
+
+            $.each(items, function (i, item) {
+                $('#itemsList').append(addElement(item));
+            });
+        });
+        calculateTotal();
+    }
+    </script> -->
+
+<script>
+    function populateItemList() {
+        $('#itemsList').empty();
+        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+        $.each(shoppedItems, function (i, item) {
+            $('#itemsList').append(addElement(item));
+        });
+    }
+</script>
+
+<script>
+    populateItemList();
+    calculateTotal();
+</script>
+
+
+</html>

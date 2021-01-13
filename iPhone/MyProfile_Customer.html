@@ -11,10 +11,9 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="../CSS.css">
     <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
-    <script src="https://checkout.stripe.com/checkout.js"></script>
 
 
-    <script>
+    <!-- <script>
         window.onload = function () {
             setTimeout(function () {
                 var resizeEvent = window.document.createEvent('UIEvents');
@@ -22,7 +21,8 @@
                 window.dispatchEvent(resizeEvent);
             }, 3000);
         };  
-    </script>
+    </script> -->
+
 </head>
 
 <body>
@@ -44,31 +44,62 @@
             </div>
 
             <div role="orderConfirmation" class="ui-content">
-                <h1 style="font-family:Roboto Slab; text-align:center">
+                <h2 style="font-family:Roboto Slab; text-align:center">
                     My Profile
-                </h1>
-                <div >
+                </h2>
+                <!-- <div>
                     <table>
                         <tr>
-                            <td><img src="../images/myProfile.jpeg"></td>
-                           <td colspan="3"></td>
+                            <td><img src="../images/profilePicture.jpeg"></td>
+                            <td colspan="3"></td>
                             <td colspan="3"></td>
                             <td colspan="5" style="text-align:center">Anne Fox</td>
                         </tr>
                         <tr></tr>
                         <tr></tr>
                         <tr>
-                            <td><label id="textInput" for="text-basic" style="outline-style:solid; width:150px; text-align:center">Favourites List</label></td>
+                            <td><label id="textInput" for="text-basic"
+                                    style="outline-style:solid; width:150px; text-align:center">Favourites List</label>
+                            </td>
                             <td colspan="3"></td>
                             <td colspan="3"></td>
-                           
-                            <td><label id="textInput" for="text-basic" style="outline-style:solid; width:150px; text-align:center">Order History</label></td>
+
+                            <td><label id="textInput" for="text-basic"
+                                    style="outline-style:solid; width:150px; text-align:center">Order History</label>
+                            </td>
                         </tr>
 
 
-                    </table>
+                    </table> -->
+                <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-a" style="height:60px; width:100px">Favourites List</div>
+                    </div>
+                        <div class="ui-block-c">
+                        <div class="ui-bar ui-bar-a" style="height:60px; width:100px">Order History</div>
+                    </div>
                 </div>
+
+                <form>
+                        <input type="button" data-icon="carat-r"value="Ediit Profile">
+                    <input type="button" data-icon="carat-r" value="Message">
+                </form>
             </div>
+            <!-- Navigation -->
+        <div data-role="footer" data-position="fixed">
+                <nav data-role="navbar">
+                    <ul>
+                        <li><a target href="Home.html" data-icon="icons-home" class="ui-state-persist"
+                                data-theme="a">Home</a> </li>   
+                        <li><a target href="Categories.html" data-icon="icons-category" data-theme="a">Category</a></li>
+                        <li><a target href="MyCart.html" data-icon="icons-cart" data-theme="a">Cart</a></li>
+                        <li><a target href="Game.html" data-icon="icons-game" data-theme="a">Game</a></li>
+                        <li><a target href="MyProfile_Customer.html" data-icon="icons-profile" data-theme="a">Profile</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </body>
 
 </html>

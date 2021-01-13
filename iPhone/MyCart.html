@@ -12,16 +12,64 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
 
+    <script>
+    // this to be done at the button click to be added to the cart
+    var data = [
+        {
+            "id": 1,
+            "picUrl": "../images/poi1.png",
+            "name": "Tool Kit",
+            "price": "5000.00",
+            "quantity": 1
+        },
+        {
+            "id": 2,
+            "picUrl": "../images/poi2.png",
+            "name": "Scented Candles",
+            "price": "500.00",
+            "quantity": 3
+        },
+        {
+            "id": 3,
+            "name": "Yellow Drill",
+            "picUrl": "../images/poi3.png",
+            "price": "4000.00",
+            "quantity": 1
+        }
+    ];
+    localStorage.setItem('shoppedItems', JSON.stringify(data));
+    </script>
 
     <script>
-        window.onload = function () {
-            setTimeout(function () {
-                var resizeEvent = window.document.createEvent('UIEvents');
-                resizeEvent.initUIEvent('resize', true, false, window, 0);
-                window.dispatchEvent(resizeEvent);
-            }, 3000);
-        };  
+    function addQty(itemId) {
+        // add qty to the db
+        // get and populate the updated list
+        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+        $.each(shoppedItems, function (i, shoppedItem) {
+            if (itemId == shoppedItem.id) {
+                shoppedItem.quantity = shoppedItem.quantity + 1;
+            }
+        });
+        localStorage.setItem('shoppedItems', JSON.stringify(shoppedItems));
+        populateItemList();
+        calculateTotal();
+
+    }
+    function reduceQty(itemId) {
+        // reduce qty from the db
+        // get and populate the updated list
+        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+        $.each(shoppedItems, function (i, shoppedItem) {
+            if (itemId == shoppedItem.id && shoppedItem.quantity != 0) {
+                shoppedItem.quantity = shoppedItem.quantity - 1;
+            }
+        });
+        localStorage.setItem('shoppedItems', JSON.stringify(shoppedItems));
+        populateItemList();
+        calculateTotal();
+    }
     </script>
+
 </head>
 
 <body class="ui-mobile-viewport ui-overlay-a">
@@ -42,13 +90,13 @@
 
         <div role="orderConfirmation" class="ui-content">
             <div>
-                <h1 style="font-family:Roboto Slab; text-align:center">
-                    Order Confirmation
-                </h1>
+                <h2 style="font-family:Roboto Slab; text-align:center">
+                    My Cart
+                </h2>
             </div>
             <div class="ui-body-a">
-                <table>
-                    <tr>
+                <table id="itemsList">
+                    <!-- <tr>
                         <td rowspan="3"><img src="../images/poi1.png" style="padding-left: 25px; padding-top: 10px;">
                         </td>
                         <td colspan="3"> </td>
@@ -68,7 +116,7 @@
                     <tr>
                         <td class=" ui-btn ui-corner-all ui-btn-inline ui-icon-plus ui-btn-icon-notext ui-mini"></td>
                         <td class=" ui-btn ui-corner-all ui-btn-inline ui-icon-minus ui-btn-icon-notext ui-mini"></td>
-                    </tr>
+                    </tr> -->
                 </table>
                 <hr />
             </div>
@@ -90,12 +138,8 @@
                             </td>
                         </tr>
                     </table>
-                    <button href="ShippingAddress.html" data-rel="popup" style="font-family:Baloo Thambi">
-                        Checkout Cart
-                    </button>
-                    <button href="ShippingAddress.html" data-rel="popup" style="font-family:Baloo Thambi">
-                        Continue Shopping
-                    </button>
+                    <button onclick="window.location='./ConfirmOrder.html'">Checkout Cart</button>
+                    <button onclick="window.location='./ShippingAddress.html'">Continue Shopping</button>
                 </div>
 
             </div>
@@ -119,5 +163,85 @@
         </div>
 
 </body>
+
+<!-- <script>
+function calculateTotal(itemList) {
+    var total = 0;
+        $.getJSON("../Database/cartItemsList.json", function (items) {
+
+            $.each(items, function (i, item) {
+                total = total + (item.price * item.quantity);
+            });
+            document.getElementById("textinput").value = 'LKR ' + total;
+        }); 
+    }
+</script> -->
+
+<script>
+    function calculateTotal(itemList) {
+    var total = 0;
+    var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+        $.each(shoppedItems, function (i, item) {
+            total = total + (item.price * item.quantity);
+        });
+        document.getElementById("textinput").value = 'LKR ' + total;
+    }
+</script>
+
+<script>
+        function addElement(item) {
+            return '<tr>' +
+            '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
+            '</td>' +
+            '<td colspan="3"> </td>' +
+            '<td>' + item.name + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3" style="padding-left:60px"></td>' +
+            '<td>' + item.price + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3"></td>' +
+            '<td>' + item.quantity + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td>' +
+            '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-plus ui-btn-icon-notext ui-mini" onclick="addQty('+item.id+')">Confirm Order</button>' +
+            '</td>' +
+            '<td>' +
+            '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-minus ui-btn-icon-notext ui-mini" onclick="reduceQty('+item.id+')">Confirm Order</button>' +
+            '</td>' +
+            '</tr>';
+        }
+    </script>
+
+    <!-- <script type="text/javascript">
+    function populateItemList() {
+        $.getJSON("../Database/cartItemsList.json", function (items) {
+
+            $('#itemsList').empty();
+
+            $.each(items, function (i, item) {
+                $('#itemsList').append(addElement(item));
+            });
+        });
+        calculateTotal();
+    }
+    </script> -->
+
+    <script>
+        function populateItemList() {
+            $('#itemsList').empty();
+            var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+            $.each(shoppedItems, function (i, item) {
+                    $('#itemsList').append(addElement(item));
+            });
+        }
+    </script>
+
+    <script>
+        populateItemList();
+        calculateTotal();
+    </script>
 
 </html>

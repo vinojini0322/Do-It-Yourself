@@ -12,17 +12,17 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
 
+    <!-- <script type="text/javascript">
+        $.getJSON("../Database/cartItemsList.json", function (items) {
+            $('#itemsList').empty();
 
-    <script>
-        window.onload = function () {
-            setTimeout(function () {
-                var resizeEvent = window.document.createEvent('UIEvents');
-                resizeEvent.initUIEvent('resize', true, false, window, 0);
-                window.dispatchEvent(resizeEvent);
-            }, 3000);
-        };  
-    </script>
+            $.each(items, function (i, item) {
+                $('#itemsList').append(addElement(item));
+            });
+        });
+    </script> -->
 </head>
+
 
 <body class="ui-mobile-viewport ui-overlay-a">
     <div id="ConfirmOrder" data-role="page" data-position="fixed">
@@ -42,34 +42,20 @@
 
         <div role="orderConfirmation" class="ui-content">
             <div>
-                <h1 style="font-family:Roboto Slab; text-align:center">
+                <h2 style="font-family:Roboto Slab; text-align:center">
                     Order Confirmation
-                </h1>
+                </h2>
             </div>
+
             <div class="ui-body-a">
-                <table>
-                    <tr>
-                        <td rowspan="3"><img src="../images/poi1.png" style="padding-left: 25px; padding-top: 10px;"></td>
-                        <td colspan="3"> </td>
-                        <td>name</td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="3" style="padding-left:60px"></td>
-                        <td>price</td>
-                    </tr>
-
-                    <tr>
-                            <td colspan="3"></td>
-                            <td>Qty</td>
-                    </tr>
-
+                <table id="itemsList">
                 </table>
-                <hr />
-            </div>
-            <div class="emptySpace" style="padding-top: 20px">
 
             </div>
+
+            <div class="emptySpace" style="padding-top: 20px">
+            </div>
+
             <div class="ui-body">
                 <h3 style="font-family:Inter">
                     Order Summary
@@ -94,10 +80,7 @@
                             </td>
                         </tr>
                     </table>
-                    <button href="ShippingAddress.html" data-rel="popup"
-                        style="font-family:Baloo Thambi">
-                        Confirm Order
-                    </button>
+                    <button onclick="window.location='./PaymentGateway.html'">Confirm Order</button>
                 </div>
 
             </div>
@@ -109,10 +92,9 @@
             <nav data-role="navbar">
                 <ul>
                     <li><a target href="Home.html" data-icon="icons-home" class="ui-state-persist"
-                            data-theme="a">Home</a>
-                    </li>
+                            data-theme="a">Home</a> </li>   
                     <li><a target href="Categories.html" data-icon="icons-category" data-theme="a">Category</a></li>
-                    <li><a target href="Cart.html" data-icon="icons-cart" data-theme="a">Cart</a></li>
+                    <li><a target href="MyCart.html" data-icon="icons-cart" data-theme="a">Cart</a></li>
                     <li><a target href="Game.html" data-icon="icons-game" data-theme="a">Game</a></li>
                     <li><a target href="MyProfile_Customer.html" data-icon="icons-profile" data-theme="a">Profile</a>
                     </li>
@@ -121,5 +103,30 @@
         </div>
 
 </body>
+
+<script>
+        function addElement(item) {
+            return '<tr>' +
+                '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;"></td>' +
+                '<td colspan="3"> </td>' +
+                '<td>' + item.name + '</td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td colspan="3" style="padding-left:60px"></td>' +
+                '<td>LKR ' + item.price + '</td>' +
+                '</tr>' +
+                '<tr>' +
+                '<td colspan="3"></td>' +
+                '<td>Qty ' + item.quantity + '</td>' +
+                '</tr>'
+        }
+    </script>
+
+    <script>
+        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+        $.each(shoppedItems, function (i, item) {
+                $('#itemsList').append(addElement(item));
+            });
+    </script>
 
 </html>
