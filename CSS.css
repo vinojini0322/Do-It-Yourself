@@ -350,6 +350,13 @@ li {
 /* $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');});
 $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');});
 
+<<<<<<< Updated upstream
 #images{
 hight: 100px;
 } */
+=======
+
+p{
+color:black;
+}
+>>>>>>> Stashed changes
