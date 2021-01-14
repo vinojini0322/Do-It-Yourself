@@ -12,6 +12,31 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
 
+    <script>
+        // this to be done at the button click to be added to the fav list
+        var favourites = [
+            {
+                "id": 1,
+                "picUrl": "../images/poi1.png",
+                "name": "Tool Kit",
+                "price": "5000.00",
+            },
+            {
+                "id": 2,
+                "name": "Yellow Drill",
+                "picUrl": "../images/poi3.png",
+                "price": "4000.00"
+            },
+            {
+                "id": 3,
+                "picUrl": "../images/poi2.png",
+                "name": "Scented Candles",
+                "price": "500.00"
+            }
+        ];
+        localStorage.setItem('favouritesList', JSON.stringify(favourites));
+    </script>
+
 </head>
 
 <!-- Header -->
@@ -36,21 +61,17 @@
             <h2 style="font-family:Roboto Slab; text-align:center">
                 Favourites List
             </h2>
-            <input type="search" name="password" id="search" value="" placeholder="search favourites">
-
-        </div>
-        <div class="ui-body-a">
-            <div class="ui-checkbox">
-                    <input type="checkbox" name="checkbox-enhanced" id="checkbox-enhanced" data-enhanced="true">
-            </div>
-            <table id="itemsList">
+            <form class="ui-filterable">
+                    <input id="filterBasic-input" data-type="search" placeholder="search favourites">
+            </form>
+            <table id="favList" data-filter="true" data-input="#filterBasic-input">
             </table>
 
         </div>
  
         <fieldset class="ui-grid-a">
                 <div class="ui-block-a"><input type="submit" value="Share via e-mail" data-theme="a"></div>
-                <div class="ui-block-b"><input type="reset" value="Delete" data-theme="b"></div>
+                <div class="ui-block-b"><input type="reset" value="Delete" data-theme="b" onclick="removeSelectedItemsFromFavs()"></div>
         </fieldset>
         <!-- Navigation -->
         <div data-role="footer" data-position="fixed">
@@ -70,14 +91,35 @@
     </div>
 </body>
 <script>
+
+function removeSelectedItemsFromFavs() {
+    var newFavItems = [];
+    var favItems = JSON.parse(localStorage.getItem('favouritesList'));
+    $.each(favItems, function (i, item) {
+        if (!document.getElementById(item.id).checked) {
+            newFavItems.push(item);
+        }
+    });
+    localStorage.setItem('favouritesList', JSON.stringify(newFavItems));
+    populateItemList();
+}
+
+</script>
+
+<script>
     function addElement(item) {
         return '<tr>' +
+            '<td>' +
+            '<input type="checkbox" name=' + item.id + ' id=' + item.id + ' data-enhanced="true">' +
+            '</td>' +
             '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
             '</td>' +
             '<td colspan="3"> </td>' +
             '<td>' + item.name + '</td>' +
             '</tr>' +
             '<tr>' +
+            '<td>' +
+            '</td>' +
             '<td colspan="3" style="padding-left:60px"></td>' +
             '<td>' + item.price + '</td>' +
             '</tr>' +
@@ -87,33 +129,18 @@
     }
 </script>
 
-<!-- <script type="text/javascript">
-    function populateItemList() {
-        $.getJSON("../Database/cartItemsList.json", function (items) {
-
-            $('#itemsList').empty();
-
-            $.each(items, function (i, item) {
-                $('#itemsList').append(addElement(item));
-            });
-        });
-        calculateTotal();
-    }
-    </script> -->
-
 <script>
     function populateItemList() {
-        $('#itemsList').empty();
-        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
-        $.each(shoppedItems, function (i, item) {
-            $('#itemsList').append(addElement(item));
+        $('#favList').empty();
+        var favItems = JSON.parse(localStorage.getItem('favouritesList'));
+        $.each(favItems, function (i, item) {
+            $('#favList').append(addElement(item));
         });
     }
 </script>
 
 <script>
     populateItemList();
-    calculateTotal();
 </script>
 
 
