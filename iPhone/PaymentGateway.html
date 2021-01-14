@@ -5,148 +5,174 @@
     <title>Payment Gateway</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../themes/Craftzy.min.css" />
-    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+    <link rel="stylesheet" href=".http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
     <script src="https://checkout.stripe.com/checkout.js"></script>
-
-
-    <script>
-        window.onload = function () {
-            setTimeout(function () {
-                var resizeEvent = window.document.createEvent('UIEvents');
-                resizeEvent.initUIEvent('resize', true, false, window, 0);
-                window.dispatchEvent(resizeEvent);
-            }, 3000);
-        };  
-    </script>
 </head>
 
 <body>
-    <div data-role="page" id="CardDetails" data-position="fixed">
 
-        <!-- Header -->
-        <div data-role="header">
-            <table>
-                <tr>
-                    <td><a href="#CardDetails"><img src="../images/logo1.png"> </a></td>
-                    <!-- <input type="search" name="search-2" id="search-2" value="" /> -->
-                    <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
-                                src="../icons/icon-QRAR.png" width="42" height="42" style="position: right"> </a></td>
 
-                </tr>
-                <tr>
-                </tr>
+    <!-- Header -->
+    <div data-role="header" id="CardDetails">
+        <table>
+            <tr>
+                <td><a href="#CardDetails"><img src="../images/logo1.png"> </a></td>
+                <!-- <input type="search" name="search-2" id="search-2" value="" /> -->
+                <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
+                            src="../icons/icon-QRAR.png" width="42" height="42" style="position: right"> </a></td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+    </div>
+    <!-- <div style="margin-left: 20%">
+    <table data-role="table" id="movie-table" data-mode="reflow" class="ui-responsive">
+              <thead>
+                <tr>
+                  <th data-priority="1">Rank</th>
+                  <th data-priority="persist">Movie Title</th>
+                  <th data-priority="2">Year</th>
+                  <th data-priority="3"><abbr title="Rotten Tomato Rating">Rating</abbr></th>
+                  <th data-priority="4">Reviews</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>1</th>
+                  <td><a href="http://en.wikipedia.org/wiki/Citizen_Kane" data-rel="external">Citizen Kane</a></td>
+                  <td>1941</td>
+                  <td>100%</td>
+                  <td>74</td>
+                </tr>
+                
+              </tbody>
             </table>
+           </div> -->
+   <form id="frmBooking" name="bookingForm" action="_self">
+        <div class="ui-grid-a" style="margin-top: 8%; padding-top: 12px">
+            <label for="text-basic" class="ui-block-a" style="text-align: center">District</label>
+            <select name="select-native-2" id="select-native-2" data-mini="true" class="ui-block-b">
+                <option value="1">Ampara</option>
+                <option value="2">Anuradhapura</option>
+                <option value="3">Badulla</option>
+                <option value="4">Batticaloa</option>
+                <option value="5">Colombo</option>
+                <option value="6">Galle</option>
+                <option value="7">Gampaha</option>
+                <option value="8">Hambantota</option>
+                <option value="9">Jaffna</option>
+                <option value="10">Kalutara</option>
+                <option value="11">Kandy</option>
+                <option value="12">Kegalle</option>
+                <option value="13">Kilinochchi</option>
+                <option value="14">Kurunegala</option>
+                <option value="15">Mannar</option>
+                <option value="16">Matale</option>
+                <option value="17">Matara</option>
+                <option value="18">Monaragala</option>
+                <option value="19">Mullaitivu</option>
+                <option value="20">Nuwara Eliya</option>
+                <option value="21">Polonnaruwa</option>
+                <option value="22">Puttalam</option>
+                <option value="23">Ratnapura</option>
+                <option value="24">Trincomalee</option>
+                <option value="25">Vavuniya</option>
+            </select>
         </div>
 
-            <form id="frmBooking" name="bookingForm" action="_self">
-
-            <div class="ui-grid-a">
-                <div class="ui-block-a">
-                        <label for="text-basic">District</label>
-                        <select name="select-native-2" id="select-native-2" data-mini="true">
-                                        <option value="1">Ampara</option>
-                                        <option value="2">Anuradhapura</option>
-                                        <option value="3">Badulla</option>
-                                        <option value="4">Batticaloa</option>
-                                <option value="5">Colombo</option>
-                                        <option value="6">Galle</option>
-                                        <option value="7">Gampaha</option>
-                                        <option value="8">Hambantota</option>
-                                <option value="9">Jaffna</option>
-                                        <option value="10">Kalutara</option>
-                                        <option value="11">Kandy</option>
-                                        <option value="12">Kegalle</option>
-                                <option value="13">Kilinochchi</option>
-                                        <option value="14">Kurunegala</option>
-                                        <option value="15">Mannar</option>
-                                        <option value="16">Matale</option>
-                                <option value="17">Matara</option>
-                                        <option value="18">Monaragala</option>
-                                        <option value="19">Mullaitivu</option>
-                                        <option value="20">Nuwara Eliya</option>
-                                <option value="21">Polonnaruwa</option>
-                                        <option value="22">Puttalam</option>
-                                        <option value="23">Ratnapura</option>
-                                        <option value="24">Trincomalee</option>
-                                <option value="25">Vavuniya</option>     
-                            </select>
-                </div>
-
-                <div class="ui-block-a">
-                        
-                </div>
-
+        <div class="ui-grid-a" style="margin-right: 10%">
+            <div class="ui-block-a" style="margin-top: 13px">
+                <label for="text-basic" style="text-align: center">City</label>
             </div>
+            <div class="ui-block-b">
+                <input type="text" name="text-basic" id="text-basic" value="">
+            </div>
+        </div>
+        <div class="ui-grid-a" style="margin-right: 10%">
+            <div class="ui-block-a" style="margin-top: 13px">
+                <label for="text-basic" style="text-align: center">Street Name</label>
+            </div>
+            <div class="ui-block-b">
+                <input type="text" name="text-basic" id="text-basic" value="">
+            </div>
+        </div>
+        <div class="ui-grid-a" style="margin-right: 10%">
+            <div class="ui-block-a" style="margin-top: 13px">
+                <label for="text-basic" style="text-align: center">House Number</label>
+            </div>
+            <div class="ui-block-b">
+                <input type="text" name="text-basic" id="text-basic" value="">
+            </div>
+        </div>
+        <div class="ui-grid-a" style="margin-right: 10%">
+            <div class="ui-block-a" style="margin-top: 13px">
+                <label for="text-basic" style="text-align: center">Postal Code</label>
+            </div>
+            <div class="ui-block-b">
+                <input type="text" name="text-basic" id="text-basic" value="">
+            </div>
+        </div>
+    </form>
+    <div style="padding-left: 30%; margin-top: 10%">
+    <button class="ui-btn ui-corner-all" style="width: 60%">Continue</button>
+</div>
+    <script>
+        jQuery(function ($) {
+            var $form = $('#frmBooking');
+            var handler = StripeCheckout.configure({
+                key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+                token: function (token) {
+                    // Use the token to create the charge with a server-side script.
+                    // You can access the token ID with `token.id`
 
-            <label for="text-basic">City</label>
-                <input type="text" name="text-basic" id="text-basic" value="">
-            <label for="text-basic">Street Name</label>
-                <input type="text" name="text-basic" id="text-basic" value="">
-            <label for="text-basic">House Number</label>
-                <input type="text" name="text-basic" id="text-basic" value="">
-            <label for="text-basic">Postal Code</label>
-                <input type="text" name="text-basic" id="text-basic" value="">
-            <button id="customButton" data-rel="popup" style="font-family:Baloo Thambi">Proceed Payment</button>
-        </form>
+                    //This will be printed when the transaction is successful. To charge, server side scripting is required.
+                    if (token.id) {
+                        $("#thankyouPayment").html("Thank you, your payment was successful!");
 
-        <script>
-            jQuery(function ($) {
-                var $form = $('#frmBooking');
-                var handler = StripeCheckout.configure({
-                    key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
-                    token: function (token) {
-                        // Use the token to create the charge with a server-side script.
-                        // You can access the token ID with `token.id`
+                        //You can also use the following code to re-submit the form content to another file for further processing.
+                        //Don't forget to add action to your form
+                        //$form.get(0).submit();
 
-                        //This will be printed when the transaction is successful. To charge, server side scripting is required.
-                        if (token.id) {
-                            $("#thankyouPayment").html("Thank you, your payment was successful!");
-
-                            //You can also use the following code to re-submit the form content to another file for further processing.
-                            //Don't forget to add action to your form
-                            //$form.get(0).submit();
-
-                            //Or save form data locally, using local storage.
-                        }
+                        //Or save form data locally, using local storage.
                     }
-                });
-
-
-                $('#customButton').on('click', function (e) {
-                    // Code Section B  Open Checkout with further options
-                    handler.open({
-                        name: 'Crad Details',
-                        currency: 'LKR',
-                        description: $('#item_name').val(),
-                        amount: $('#total_value').val() * 100
-                    });
-                    e.preventDefault();
-                });
-
-                // Code Section C  Close Checkout on page navigation
-                $(window).on('popstate', function () {
-                    handler.close();
-                });
+                }
             });
-        </script>
-    </div>
+
+
+            $('#customButton').on('click', function (e) {
+                // Code Section B  Open Checkout with further options
+                handler.open({
+                    name: 'Crad Details',
+                    currency: 'LKR',
+                    description: $('#item_name').val(),
+                    amount: $('#total_value').val() * 100
+                });
+                e.preventDefault();
+            });
+
+            // Code Section C  Close Checkout on page navigation
+            $(window).on('popstate', function () {
+                handler.close();
+            });
+        });
+    </script>
+
 
     <!-- Navigation bar -->
     <!-- <div data-role="footer" data-position="fixed">
-        <nav data-role="navbar">
-            <ul>
-                <li><a href="Home.html" data-icon="icons-home" class="ui-state-persist" data-theme="a">Home</a></li>
-                <li><a href="Categories.html" data-icon="icons-category" data-theme="a">Category</a></li>
-                <li><a href="MyCart.html" data-icon="icons-cart" data-theme="a">Cart</a></li>
-                <li><a href="Game.html" data-icon="icons-game" data-theme="a">Game</a></li>
-                <li><a href="MyProfile_Customer.html" data-icon="icons-profile" data-theme="a">Profile</a></li>
-            </ul>
-        </nav>
-    </div> -->
+    <nav data-role="navbar">
+        <ul>
+            <li><a href="Home.html" data-icon="icons-home" class="ui-state-persist" data-theme="a">Home</a></li>
+            <li><a href="Categories.html" data-icon="icons-category" data-theme="a">Category</a></li>
+            <li><a href="MyCart.html" data-icon="icons-cart" data-theme="a">Cart</a></li>
+            <li><a href="Game.html" data-icon="icons-game" data-theme="a">Game</a></li>
+            <li><a href="MyProfile_Customer.html" data-icon="icons-profile" data-theme="a">Profile</a></li>
+        </ul>
+    </nav>
+</div> -->
 </body>
 
 </html>
