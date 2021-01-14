@@ -1,6 +1,6 @@
 body {
     font-family:"Open Sans", Helvetica, Arial, sans-serif;
-    color:#555;
+    color:rgb(255, 255, 255);
     max-width:680px;
     margin:0 auto;
     padding:0 20px;
@@ -100,8 +100,7 @@ body {
   .success-box {
     margin:5px 0;
     padding:10px 10px;
-    border:1px solid #eee;
-    background:#f9f9f9;
+    background:#c5bdbd;
   }
   
   .success-box img {
@@ -113,24 +112,24 @@ body {
   .success-box > div {
     vertical-align:top;
     display:inline-block;
-    color:#888;
+    color:#AB821E;
   }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: black;
+  color: rgb(167, 164, 164);
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: black;
+  color: rgb(185, 184, 184);
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-  color: black;
+  color: rgb(187, 187, 187);
 }
 
 input {
-  background: white !important;
+  background: rgb(255, 255, 255) !important;
 }
 
   /* Rating Star Widgets Style */
@@ -149,7 +148,7 @@ input {
   /* Idle State of the stars */
   .rating-stars ul > li.star > i.fa {
     font-size:2.5em; /* Change the size of the stars */
-    color:rgb(184, 183, 183); /* Color on idle state */
+    color:rgb(165, 159, 159); /* Color on idle state */
   }
   
   /* Hover state of the stars */
