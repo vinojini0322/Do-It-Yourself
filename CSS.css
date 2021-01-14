@@ -180,7 +180,9 @@ body {
 * {
     -ms-overflow-style: none;
 }
-
+h3{
+ text-align: center;
+}
 ol,
 li {
     list-style: none;
@@ -246,7 +248,7 @@ li {
         animation-duration: 4s;
         animation-iteration-count: infinite;
     }
-    .carousel__slide:last-child .carousel__snapper {
+    .carousel_slide:last-child .carousel_snapper {
         animation-name: tostart, snap;
     }
 }
@@ -336,12 +338,13 @@ li {
 }
 
 .box {
-    margin-right: auto;
-    margin-left: 10px;
+   margin-right: auto; */
+    /* margin-left: 10px; */
     background-color: #ffff;
-    color: #ab821e !important;
-    border: 14px solid;
-    padding: 18px;
-    padding-top: 36px;
-    box-shadow: 17px 12px #88888866;
+    /* color: #ab821e !important; */
+    border: 2px solid;
+    padding: 14px;
+    padding-top: 0px;
+    /* box-shadow: 17px 12px #88888866;
 }
+$ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');});
