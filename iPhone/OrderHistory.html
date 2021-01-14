@@ -13,7 +13,7 @@
     <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
 </head>
 
-<body lass="ui-mobile-viewport ui-overlay-a">
+<body class="ui-mobile-viewport ui-overlay-a">
     <div data-role="page" id="Favourites" data-position="fixed">
         <div data-role="header">
             <table>
@@ -29,21 +29,20 @@
         <div role="orderConfirmation" class="ui-content">
             <div>
                 <h2 style="font-family:Roboto Slab; text-align:center">
-                    My Cart
+                    Order History
                 </h2>
             </div>
             <div>
                 <form class="ui-filterable">
-                    <input id="filterBasic-input" data-type="search">
+                        <input id="filterBasic-input" data-type="search" placeholder="search favourites">
                 </form>
-                <ul data-role="listview" data-filter="true" data-input="#filterBasic-input">
-                    <li>Acura</li>
-                    <li>Audi</li>
-                    <li>BMW</li>
-                    <li>Cadillac</li>
-                    <li>Ferrari</li>
-                </ul>
+                <table id="favList" data-filter="true" data-input="#filterBasic-input">
+                </table>
             </div>
+            <!-- <div class="ui-body-a">
+                <table id="itemsList">
+                </table>
+            </div> -->
         </div>
         <!-- Navigation -->
         <div data-role="footer" data-position="fixed">
@@ -63,5 +62,37 @@
 
     </div>
 </body>
+<script>
+    function addElement(item) {
+        return '<tr>' +
+            '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
+            '</td>' +
+            '<td colspan="3"> </td>' +
+            '<td>' + item.name + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3" style="padding-left:60px"></td>' +
+            '<td>LKR ' + item.price + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3"></td>' +
+            '<td>Qty ' + item.quantity + '</td>' +
+            '</tr>'        
+    }
+</script>
+<script>
+    function populateItemList() {
+        $('#favList').empty();
+        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+        $.each(shoppedItems, function (i, item) {
+            $('#favList').append(addElement(item));
+        });
+    }
+</script>
+
+<script>
+    populateItemList();
+</script>
+
 
 </html>
