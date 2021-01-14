@@ -248,7 +248,7 @@ li {
         animation-duration: 4s;
         animation-iteration-count: infinite;
     }
-    .carousel__slide:last-child .carousel__snapper {
+    .carousel_slide:last-child .carousel_snapper {
         animation-name: tostart, snap;
     }
 }
@@ -338,17 +338,18 @@ li {
 }
 
 .box {
-   margin-right: auto; */
+   margin-right: auto; 
     /* margin-left: 10px; */
     background-color: #ffff;
     /* color: #ab821e !important; */
     border: 2px solid;
     padding: 14px;
     padding-top: 0px;
-    /* box-shadow: 17px 12px #88888866;
+    /* box-shadow: 17px 12px #88888866;*/
 }
+/* $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');});
 $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');});
 
 #images{
 hight: 100px;
-}
+} */

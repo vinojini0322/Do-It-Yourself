@@ -2,105 +2,140 @@
 <html>
 
 <head>
-    <title>Craftzy</title>
-
-
-
+    <title>View Item</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../themes/Craftzy.min.css" />
-    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="../themes/Craftzy.min.css">
+    <link rel="stylesheet" href=".http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" href="../CSS.css">
-    <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
-    <script>
-        window.onload = function () {
-            setTimeout(function () {
-                var resizeEvent = window.document.createEvent('UIEvents');
-                resizeEvent.initUIEvent('resize', true, false, window, 0);
-                window.dispatchEvent(resizeEvent);
-            }, 3000);
-        };	
-    </script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
 </head>
 
-<body>
-    <!-- This is page 1-->
-    <div id="page1" data-role="page" data-position="fixed">
+<body class="ui-mobile-viewport ui-overlay-a">
+    <div data-role="page" class="ui-page ui-page-theme-a ui-page-active" style="min-height: 736px;">
+
+
         <!-- Header -->
-        <div data-role="header">
+        <div data-role="header" id="CardDetails" role="banner" class="ui-header ui-bar-inherit">
             <table>
-                <tr>
-                    <td><a href="#page1"><img src="../images/logo.jpg"> </a></td>
-                    <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
-                                src="../icons/icon-QRAR.png" width="42" height="42" style="float:right"> </a></td>
-                </tr>
-                <tr>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td><a href="#CardDetails" class="ui-link"><img src="../images/logo1.png"> </a></td>
+                        <!-- <input type="search" name="search-2" id="search-2" value="" /> -->
+                        <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html" class="ui-link"> <img
+                                    src="../icons/icon-QRAR.png" width="42" height="42" style="position: right"> </a>
+                        </td>
+                    </tr>
+                    <tr>
+                    </tr>
+                </tbody>
             </table>
         </div>
-        <!-- <link rel="import" href="/UI:UX/uiux/iPhone/ChromeEliments.html"> -->
-        <!-- Header -->
-        
 
-        <div>
-          
-            <div>
-               
-                    <div>
-                        <h3>BEST SELLER</h3>
-                        <hr>
-                        <div class="ui-body ui-body-a ui-corner-all" style="padding-top:10px; padding-bottom:15px;">
-						<table cellpadding = "10px">
-							   <tr> 
-							   <td>
-                            <div class="ui-body ui-body-a ui-corner-all"
-                                style="padding-top:10px; padding-bottom:10px; background-color: white; width: 150px;height: 190px; border-color:white">
-                                <a href="ViewItem.html"><img src="../images/carouselImage1.jpeg" width="120px" height="100px" /></a>
-								
-								<p style="text-align: center; font-family:inter; font-size:16px " >Glue gun<p>
-								<p style="text-align: center; font-family:inter; font-size:12px " >LKR 300.00<p>
-                            </div>
-							  </td>
-				
-							   <td>
-                            <div class="ui-body ui-body-a ui-corner-all"
-                                style="padding-top:10px; padding-bottom:10px; background-color: white; width: 150px;height: 190px; border-color:white">
-                                <a href="ViewItem.html"><img src="../images/carouselImage1.jpeg" width="120px" height="100px" /></a>
-								
-								<p style="text-align: center; font-family:inter; font-size:16px " >Glue gun<p>
-								<p style="text-align: center; font-family:inter; font-size:12px " >LKR 300.00<p>
-                            </div>
-							  </td>
-							
-						
-						</table>	
-                        </div>
-                        <!-- Navigation -->
-                        <div data-role="footer" data-position="fixed">
-                            <nav data-role="navbar">
-                                <ul>
-                                    <li><a href="#page1" data-icon="icons-home" class="ui-state-persist"
-                                            data-theme="a">Home</a></li>
-                                    <li><a href="#" data-icon="icons-category" data-theme="a">Category</a></li>
-                                    <li><a href="#" data-icon="icons-cart" data-theme="a">Cart</a></li>
-                                    <li><a href="#" data-icon="icons-game" data-theme="a">Game</a></li>
-                                    <li><a href="#" data-icon="icons-profile" data-theme="a">Profile</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- This is page 1-->
-                    </div>
+
+
+        <h2 style="text-align: center; font-family: Roboto Slab">
+            View Item
+        </h2>
+        <div style="margin-left: 5%; margin-right: 5%">
+            <div class="ui-grid-a" style="border-style:solid">
+                <div class="ui-block-a" style="width: 20%">
+                    <div style="height:80px; margin-top: 120%"><img src="../images/poi4.png"
+                            style="height: 125%"></div>
+                </div>
+                <div class="ui-block-b" style="width: 65%; margin-left: 15%; background-color: rgb(209, 201, 201)">
+                    <p style="font-family: serif">
+                        <h4 style="margin-left: 20%">Harris Paint Brush</h4>
+                        From the finest natural bristles
+                        and high performance synthetic filaments to carefully shaped handles that are comfortable to
+                        hold.
+                        All of these details work together to create industry-leading brushes that make every decorating
+                        task more enjoyable.
+                    </p>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div>
+            <div class="ui-grid-b">
+                <div class="ui-block-a">
+                    <div style="height:60px">
+                        <P style="text-align: center; padding-top: 12px">Price: </P>
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div style="height:60px">
+                        <form>
+                            <div class="ui-field-contain"><label for="select-native-2">
+                                    <p style="text-align: center">Qty:</p>
+                                </label>
+                            </div>
+                            <!--    <select name="select-native-2" id="select-native-2" data-mini="true">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                <option value="5">5</option>     
+                            </select> -->
+
+                        </form>
+                    </div>
+                </div>
+                <div class="ui-block-c">
+                    <div style="height:60px; margin-top: 22%"><img src="../icons/star.png"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="height: 20px">
+        </div>
+
+        <div class="ui-grid-a" style="margin-left: 10%">
+            <div class="ui-block-a">
+                <div style="height:60px"><button data-rel="popup" class="ui-btn ui-corner-all" data-transition="pop">Buy
+                        now</button></div>
+            </div>
+            <div class="ui-block-b" style="margin-top: -15%; margin-left: 54%">
+                <div style="height:60px"><a href="#buyNow">Add new comment</a> </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div>
+            <h3 style="text-align: center"> Seller Details</h3>
+            <div class="ui-grid-a"><img src="../images/sellerDetails.png" style="margin-left:15%">
+
+        <hr/>
+        <div style="height: 20px">
+        </div>
+        <div>
+            <h3 style="text-align: center"> Location of the item</h3>
+        </div>
+
+
+        <!-- Navigation -->
+        <div data-role="footer" data-position="fixed" role="contentinfo"
+            class="ui-footer ui-bar-inherit ui-footer-fixed slideup">
+            <nav data-role="navbar" class="ui-navbar" role="navigation">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a"><a target="" href="Home.html" data-icon="icons-home"
+                            class="ui-state-persist ui-link ui-btn ui-btn-a ui-icon-icons-home ui-btn-icon-top ui-btn-active"
+                            data-theme="a">Home</a></li>
+                    <li class="ui-block-b"><a target="" href="Categories.html" data-icon="icons-category" data-theme="a"
+                            class="ui-link ui-btn ui-btn-a ui-icon-icons-category ui-btn-icon-top">Category</a></li>
+                    <li class="ui-block-c"><a target="" href="Cart.html" data-icon="icons-cart" data-theme="a"
+                            class="ui-link ui-btn ui-btn-a ui-icon-icons-cart ui-btn-icon-top">Cart</a></li>
+                    <li class="ui-block-d"><a target="" href="Game.html" data-icon="icons-game" data-theme="a"
+                            class="ui-link ui-btn ui-btn-a ui-icon-icons-game ui-btn-icon-top">Game</a></li>
+                    <li class="ui-block-e"><a target="" href="MyProfile_Customer.html" data-icon="icons-profile"
+                            data-theme="a"
+                            class="ui-link ui-btn ui-btn-a ui-icon-icons-profile ui-btn-icon-top">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
 </body>
 
 </html>
