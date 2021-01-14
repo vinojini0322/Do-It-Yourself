@@ -2,7 +2,7 @@
 <body>
 <?php 
 
-	
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
 				
 	function get_data() { 
@@ -20,7 +20,7 @@ $current_date = date("M d, Y");
 				//new DateTime($content['date']),
 				'Comment' => $_POST['comment'], 
 				'ReplyComment' => '',
-				'Stars'=>$_POST['e5'],
+				'Stars'=>$_POST['rate'],
 							); 
 			$array_data[]=$extra;  
 			return json_encode($array_data); 
@@ -33,7 +33,7 @@ $current_date = date("M d, Y");
 				//new DateTime($content['date']),
 				'Comment' => $_POST['comment'], 
 				'ReplyComment' => '',
-				'Stars'=>$_POST['e5'],
+				'Stars'=>$_POST['rate'],
 			); 
 			return json_encode($datae); 
 		} 

@@ -2,6 +2,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../FeedBack.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../themes/Craftzy.min.css" />
@@ -18,12 +19,12 @@
     <a href="#popupLogin" data-rel="popup" data-position-to="window" 
         class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a"
         data-transition="pop">Give Feedback</a>
-    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all" style="left: 50%; transform: translateX(-50%);">
 
-        <form method="post" action="http://localhost/uiux/gfg.php">
-            <div style="padding:40px 50px;">
+        <form method="post" style="width: 320px;" action="http://localhost/UIUX CW/Do-It-Yourself/gfg.php">
+            <div style="padding:10px 20px;">
 
-                <header class='header text-center'>
+                <header style="padding: 0; font-size: 13px" class='header text-center'>
                     <h2>Give FeedBack </h2>
                 </header>
                 <h2>Rating</h2>
@@ -59,11 +60,12 @@
                 <label for="un" class="ui-hidden-accessible">Name:</label>
                 <input type="text" name="name" id="name" value="" placeholder="username" data-theme="a">
 
-                 <label for="pw" class="ui-hidden-accessible">Comment:</label>
-                 <input type="text" name="comment" id="comment" value="" placeholder="comment" data-theme="a">
+                <label for="pw" class="ui-hidden-accessible">Comment:</label>
+                <input type="text" name="comment" id="comment" value="" placeholder="comment" data-theme="a">
 
-                            <button type="submit"
-                    class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check"
+                <input style="display: none;" type="text" name="rate" id="rate" value="" hidden>
+                <button type="submit"
+                    class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-left ui-icon-check"
                     onclick="on_submit()">Submit</button>
             </div>
         </form>
@@ -119,7 +121,7 @@
                     msg = "Thanks! You rated this " + ratingValue + " stars.";
                 }
                 responseMessage(msg);
-
+                $('#rate').val(ratingValue);
             });
 
 
