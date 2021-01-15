@@ -15,16 +15,26 @@
 
 <body class="ui-mobile-viewport ui-overlay-a">
     <div data-role="page" id="Favourites" data-position="fixed">
-        <div data-role="header">
-            <table>
-                <tr>
-                    <td><a href="#page1"><img src="../images/logo1.png"> </a></td>
-                    <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
-                                src="../icons/icon-QRAR.png" width="42" height="42" style="margin-left:250px"> </a></td>
-                </tr>
-                <tr>
-                </tr>
-            </table>
+        <!-- Header -->
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+
+            <div class="ui-grid-b">
+                <div class="ui-block-a" style="width: 15%;">
+                    <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
+                </div>
+
+                <div class="ui-block-b" style="width:73%; margin: auto; color:red;">
+                    <div class="ui-bar ui-bar-a" style="color:red;">
+
+                        <form class="ui-filterable" style="color:red;">
+                            <input type="search" name="search" id="search-basic" value="" />
+                    </div>
+                </div>
+
+                <div class="ui-block-c" style="width: 10%;  position: relative;"><a target="_self" href="Offers.html"
+                        class="ui-link"> <img src="../icons/icon-QRAR.png" width="42" height="42"
+                            style="padding-top:20%;"> </a></div>
+            </div>
         </div>
         <div role="orderConfirmation" class="ui-content">
             <div>
@@ -34,15 +44,12 @@
             </div>
             <div>
                 <form class="ui-filterable">
-                        <input id="filterBasic-input" data-type="search" placeholder="search favourites">
+                    <input id="filterBasic-input" data-type="search" placeholder="search favourites">
                 </form>
                 <table id="favList" data-filter="true" data-input="#filterBasic-input">
                 </table>
             </div>
-            <!-- <div class="ui-body-a">
-                <table id="itemsList">
-                </table>
-            </div> -->
+
         </div>
         <!-- Navigation -->
         <div data-role="footer" data-position="fixed">
@@ -59,7 +66,47 @@
                 </ul>
             </nav>
         </div>
-
+<!-- 
+              <tbody>
+                    <tr>
+                          <th><img src=""></th>       
+                        </tr colspan="4">
+                    <tr>
+                          <th>name</th>       
+                        </tr>
+                    <tr>
+                          <th>price</th>       
+                        </tr>
+                    <tr>
+                          <th>Qty</th>      
+                        </tr>
+                    
+                    <tr>
+                          <th>8</th>
+                          <td><a href="http://en.wikipedia.org/wiki/The_Wizard_of_Oz_(1939_film)"
+                            data-rel="external">The Wizard of Oz</a></td>
+                          <td>1939</td>
+                          <td>90%</td>
+                          <td>72</td>
+                        </tr>
+                    <tr>
+                          <th>9</th>
+                          <td><a href="http://en.wikipedia.org/wiki/Singin%27_in_the_Rain" data-rel="external">Singin'
+                            in the Rain</a></td>
+                          <td>1952</td>
+                          <td>89%</td>
+                          <td>85</td>
+                        </tr>
+                    <tr>
+                          <th>10</th>
+                          <td class="title"><a href="http://en.wikipedia.org/wiki/Inception"
+                            data-rel="external">Inception</a></td>
+                          <td>2010</td>
+                          <td>84%</td>
+                          <td>78</td>
+                        </tr>
+                  </tbody>
+        </table> -->
     </div>
 </body>
 <script>
@@ -77,7 +124,7 @@
             '<tr>' +
             '<td colspan="3"></td>' +
             '<td>Qty ' + item.quantity + '</td>' +
-            '</tr>'        
+            '</tr>'
     }
 </script>
 <script>

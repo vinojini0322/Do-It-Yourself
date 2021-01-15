@@ -10,8 +10,8 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="../CSS.css">
-   
-    
+
+
 
 </head>
 
@@ -20,80 +20,93 @@
     <body class="ui-mobile-viewport ui-overlay-a">
         <div id="ConfirmOrder" data-role="page" data-position="fixed">
             <!-- Header -->
-            <div data-role="header">
-                <table>
-                    <tr>
-                        <td><a href="#page1"><img src="../images/logo1.png"> </a></td>
-                        <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
-                                    src="../icons/icon-QRAR.png" width="42" height="42" style="margin-left:250px"> </a>
-                        </td>
-                    </tr>
-                    <tr>
-                    </tr>
-                </table>
+            <!-- Header -->
+            <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+
+                <div class="ui-grid-b">
+                    <div class="ui-block-a" style="width: 15%;">
+                        <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
+                    </div>
+
+                    <div class="ui-block-b" style="width:73%; margin: auto; color:red;">
+                        <div class="ui-bar ui-bar-a" style="color:red;">
+
+                            <form class="ui-filterable" style="color:red;">
+                                <input type="search" name="search" id="search-basic" value="" />
+                        </div>
+                    </div>
+
+                    <div class="ui-block-c" style="width: 10%; position: relative;"><a target="_self" href="Offers.html"
+                            class="ui-link"> <img src="../icons/icon-QRAR.png" width="42" height="42"
+                                style="padding-top:20%;"> </a></div>
+                </div>
             </div>
 
             <div role="orderConfirmation" class="ui-content">
                 <h2 style="font-family:Roboto Slab; text-align:center">
-                    My Profile
+                    MY PROFILE
                 </h2>
-                <!-- <div>
-                    <table>
-                        <tr>
-                            <td><img src="../images/profilePicture.jpeg"></td>
-                            <td colspan="3"></td>
-                            <td colspan="3"></td>
-                            <td colspan="5" style="text-align:center">Anne Fox</td>
-                        </tr>
-                        <tr></tr>
-                        <tr></tr>
-                        <tr>
-                            <td><label id="textInput" for="text-basic"
-                                    style="outline-style:solid; width:150px; text-align:center">Favourites List</label>
-                            </td>
-                            <td colspan="3"></td>
-                            <td colspan="3"></td>
 
-                            <td><label id="textInput" for="text-basic"
-                                    style="outline-style:solid; width:150px; text-align:center">Order History</label>
-                            </td>
-                        </tr>
-
-
-                    </table> -->
-                    
-                <div class="ui-grid-a">
-                        <div class="ui-block-a">
-                        <div class="ui-bar ui-bar-a" style="height:60px; width:100px">
-                                <button onclick="window.location='./Favourite.html'">Favourites List</button>
+                <div style="text-align-last: center; position:relative">
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <div><img src="../images/profilePic.jpeg" style="height: 117px;"></div>
                         </div>
-                    </div>
-                        <div class="ui-block-c">
-                        <div class="ui-bar ui-bar-a" style="height:60px; width:100px">
-                                <button onclick="window.location='./OrderHistory.html'">Order History</button>
+                        <div class="ui-block-b">
+                            <div style="position: relative; margin-top: 20%; font-size: 
+                    larger; color: black; border-style: solid; text-align: center; width: 66%; border-color: #ab822d">
+                                David Peters</div>
                         </div>
                     </div>
                 </div>
 
-                <form>
-                        <input type="button" data-icon="carat-r"value="Ediit Profile">
-                    <input type="button" data-icon="carat-r" value="Message">
-                </form>
+                <div style="margin-left: 7%; position:relative">
+                    <div class="ui-grid-a" style="text-align: -webkit-center">
+                        <div class="ui-block-a">
+                            <div>
+                                <button onclick="window.location='./Favourite.html'">Favourite List</button>
+                            </div>
+                        </div>
+                        <div class="ui-block-b">
+                            <div>
+                                <button onclick="window.location='./OrderHistory.html'">Order History</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="ui-grid-a" style="text-align: -webkit-center">
+                        <div><input type="button" data-icon="carat-r" value="Edit Profile"></div>
+                        <div><input type="button" data-icon="carat-r" value="Message"></div>
+                    </div>
+                </div>
+                <div style="height: 20px">
+                </div>
+                <button class="ui-btn ui-corner-all"
+                    style="background-color: #9c9191; color: black; width: 40%; margin: auto">Signout</button>
+
+
+                <!-- Navigation -->
+                <div data-role="footer" data-position="fixed">
+                    <nav data-role="navbar">
+                        <ul>
+                            <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home"
+                                    data-theme="a" data-transition="slide">Home</a></li>
+                            <li class="ui-block-b"><a target="_self" href="Categories.html" data-icon="icons-category"
+                                    data-theme="a" data-transition="slide">Category</a>
+                            </li>
+                            <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart"
+                                    data-theme="a" data-transition="slide">Cart</a></li>
+                            <li class="ui-block-d"><a target="_self" href="Game.html" data-icon="icons-game"
+                                    data-theme="a" data-transition="slide">Game</a></li>
+                            <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html"
+                                    data-icon="icons-profile" data-theme="a" data-transition="slide"
+                                    class="ui-btn-active">Profile</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <!-- Navigation -->
-        <div data-role="footer" data-position="fixed">
-                <nav data-role="navbar">
-                    <ul>
-                        <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home" data-theme="a" data-transition="slide">Home</a></li>
-                 <li class="ui-block-b"><a target="_self" href="Categories.html"  data-icon="icons-category" data-theme="a" data-transition="slide">Category</a></li>
-                 <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart" data-theme="a" data-transition="slide" >Cart</a></li>
-				 <li class="ui-block-d"><a target="_self" href="Game.html" data-icon="icons-game" data-theme="a" data-transition="slide">Game</a></li>
-                 <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html" data-icon="icons-profile" data-theme="a" data-transition="slide" class="ui-btn-active">Profile</a></li>
-				
-                    </ul>
-                </nav>
-            </div>
-        </div>
     </body>
 
 </html>

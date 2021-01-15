@@ -90,7 +90,6 @@
 .ui-btn.ui-corner-all {
    /* margin-left: 58px;*/
     margin-top: 25px;
-    max-width: 180px;
 }
 
 .ui-grid-a .orderSummary .ui-block-a-label1 {
@@ -394,3 +393,5 @@ $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');}); **/
     margin: 0;
     padding: 0;
    }
+
+}
