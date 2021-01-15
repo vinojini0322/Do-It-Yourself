@@ -394,4 +394,32 @@ $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');}); **/
     padding: 0;
    }
 
-}
+   div.hr-or {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ce9c23;
+    text-align: center;
+    height: 0px;
+    line-height: 0px;
+  }
+  
+  div.hr-or:before {
+    content: 'OR';
+    background-color:#ce9c23;
+  }
+  
+  div.hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ce9c23;
+    text-align: center;
+    height: 0px;
+    line-height: 0px;
+  }
+  
+  .hr-title {
+    background-color: rgb(85, 17, 34);
+  }
+  
