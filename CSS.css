@@ -393,3 +393,5 @@ $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');}); **/
     margin: 0;
     padding: 0;
    }
+
+}
