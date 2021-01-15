@@ -39,40 +39,51 @@
 
 </head>
 
-<!-- Header -->
-
 <body class="ui-mobile-viewport ui-overlay-a">
     <div data-role="page" id="Favourites" data-position="fixed">
-        <div data-role="header">
-            <table>
-                <tr>
-                    <td><a href="#page1"><img src="../images/logo1.png"> </a></td>
-                    <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
-                                src="../icons/icon-QRAR.png" width="42" height="42" style="margin-left:250px"> </a></td>
-                </tr>
-                <tr>
-                </tr>
-            </table>
+
+        <!-- Header -->
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+
+            <div class="ui-grid-b">
+                <div class="ui-block-a" style="width: 15%;">
+                    <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
+                </div>
+
+                <div class="ui-block-b" style="width:73%; margin: auto; color:red;">
+                    <div class="ui-bar ui-bar-a" style="color:red;">
+
+                        <form class="ui-filterable" style="color:red;">
+                            <input type="search" name="search" id="search-basic" value="" />
+                    </div>
+                </div>
+
+                <div class="ui-block-c" style="width: 10%;  position: relative;"><a target="_self" href="Offers.html"
+                        class="ui-link"> <img src="../icons/icon-QRAR.png" width="42" height="42"
+                            style="padding-top:20%;"> </a></div>
+            </div>
         </div>
 
 
         <div role="orderConfirmation" class="ui-content" data-icon="arrow-l">
-            <!-- <button data-icon="arrow-l"></button> -->
             <h2 style="font-family:Roboto Slab; text-align:center">
                 Favourites List
             </h2>
             <form class="ui-filterable">
-                    <input id="filterBasic-input" data-type="search" placeholder="search favourites">
+                <input id="filterBasic-input" data-type="search" placeholder="search favourites">
             </form>
             <table id="favList" data-filter="true" data-input="#filterBasic-input">
             </table>
 
         </div>
- 
+
         <fieldset class="ui-grid-a">
                 <div class="ui-block-a"><input type="submit" value="Share via e-mail" data-theme="a"></div>
-                <div class="ui-block-b"><input type="reset" value="Delete" data-theme="b" onclick="removeSelectedItemsFromFavs()"></div>
+                <div class="ui-block-b"><input type="reset" value="Delete" data-theme="b"
+                    onclick="removeSelectedItemsFromFavs()"></div>
         </fieldset>
+        <div style="height:10px">
+        </div>
         <!-- Navigation -->
         <div data-role="footer" data-position="fixed">
             <nav data-role="navbar">
@@ -92,17 +103,17 @@
 </body>
 <script>
 
-function removeSelectedItemsFromFavs() {
-    var newFavItems = [];
-    var favItems = JSON.parse(localStorage.getItem('favouritesList'));
-    $.each(favItems, function (i, item) {
-        if (!document.getElementById(item.id).checked) {
-            newFavItems.push(item);
-        }
-    });
-    localStorage.setItem('favouritesList', JSON.stringify(newFavItems));
-    populateItemList();
-}
+    function removeSelectedItemsFromFavs() {
+        var newFavItems = [];
+        var favItems = JSON.parse(localStorage.getItem('favouritesList'));
+        $.each(favItems, function (i, item) {
+            if (!document.getElementById(item.id).checked) {
+                newFavItems.push(item);
+            }
+        });
+        localStorage.setItem('favouritesList', JSON.stringify(newFavItems));
+        populateItemList();
+    }
 
 </script>
 
