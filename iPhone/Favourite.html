@@ -11,31 +11,7 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
-
-    <script>
-        // this to be done at the button click to be added to the fav list
-        var favourites = [
-            {
-                "id": 1,
-                "picUrl": "../images/poi1.png",
-                "name": "Tool Kit",
-                "price": "5000.00",
-            },
-            {
-                "id": 2,
-                "name": "Yellow Drill",
-                "picUrl": "../images/poi3.png",
-                "price": "4000.00"
-            },
-            {
-                "id": 3,
-                "picUrl": "../images/poi2.png",
-                "name": "Scented Candles",
-                "price": "500.00"
-            }
-        ];
-        localStorage.setItem('favouritesList', JSON.stringify(favourites));
-    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
 </head>
 
@@ -78,12 +54,13 @@
         </div>
 
         <fieldset class="ui-grid-a">
-                <div class="ui-block-a"><input type="submit" value="Share via e-mail" data-theme="a"></div>
+                <div class="ui-block-a"><input type="submit" value="Share via e-mail" data-theme="a" onclick="sendEmail()"></div>
                 <div class="ui-block-b"><input type="reset" value="Delete" data-theme="b"
                     onclick="removeSelectedItemsFromFavs()"></div>
         </fieldset>
         <div style="height:10px">
         </div>
+        
         <!-- Navigation -->
         <div data-role="footer" data-position="fixed">
             <nav data-role="navbar">
@@ -101,6 +78,48 @@
 
     </div>
 </body>
+
+<script>
+    function  getEmailContnt() {
+        var favItems = JSON.parse(localStorage.getItem('favouritesList'));
+        var result = '<!DOCTYPE html><html><head></head><body>Your Favourite List From Craftzy';
+        $.each(favItems, function (i, item) {
+        result = result + '<tr>' +
+            '<td> </td>' +
+            '<td>Item: ' + item.name + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td>' +
+            '</td>' +
+            '<td"></td>' +
+            '<td>LKR ' + item.price + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3"></td>' +
+            '</tr>';
+        });
+        result = result + '</body></html>';
+        return result;
+    }
+</script>
+
+<script>
+        function sendEmail() {
+        var emailBody = getEmailContnt();
+          Email.send({
+            Host: "smtp.gmail.com",
+            Username : "craftzyinfo@gmail.com",
+            Password : "craftzyIIT",
+            To : 'shaini.nanayakkara@gmail.com',
+            From : "craftzyinfo@gmail.com",
+            Subject : "CRAFTZY - Favourites List",
+            Body : emailBody,
+          }).then(
+            message => alert("mail sent successfully")
+        );
+        }
+      </script>
+
 <script>
 
     function removeSelectedItemsFromFavs() {
@@ -132,7 +151,7 @@
             '<td>' +
             '</td>' +
             '<td colspan="3" style="padding-left:60px"></td>' +
-            '<td>' + item.price + '</td>' +
+            '<td>LKR ' + item.price + '</td>' +
             '</tr>' +
             '<tr>' +
             '<td colspan="3"></td>' +

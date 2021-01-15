@@ -11,43 +11,33 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
-
-    <!-- <script type="text/javascript">
-        $.getJSON("../Database/cartItemsList.json", function (items) {
-            $('#itemsList').empty();
-
-            $.each(items, function (i, item) {
-                $('#itemsList').append(addElement(item));
-            });
-        });
-    </script> -->
 </head>
 
 
 <body class="ui-mobile-viewport ui-overlay-a">
     <div id="ConfirmOrder" data-role="page" data-position="fixed">
-         
+
         <!-- Header -->
         <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
 
-                <div class="ui-grid-b">
-                    <div class="ui-block-a" style="width: 15%;">
-                        <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
-                    </div>
-    
-                    <div class="ui-block-b" style="width:73%; margin: auto; color:red;">
-                        <div class="ui-bar ui-bar-a" style="color:red;">
-    
-                            <form class="ui-filterable" style="color:red;">
-                                <input type="search" name="search" id="search-basic" value="" />
-                        </div>
-                    </div>
-    
-                    <div class="ui-block-c" style="width: 10%;  position: relative;"><a target="_self" href="Offers.html"
-                            class="ui-link"> <img src="../icons/icon-QRAR.png" width="42" height="42"
-                                style="padding-top:20%;"> </a></div>
+            <div class="ui-grid-b">
+                <div class="ui-block-a" style="width: 15%;">
+                    <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
                 </div>
+
+                <div class="ui-block-b" style="width:73%; margin: auto; color:red;">
+                    <div class="ui-bar ui-bar-a" style="color:red;">
+
+                        <form class="ui-filterable" style="color:red;">
+                            <input type="search" name="search" id="search-basic" value="" />
+                    </div>
+                </div>
+
+                <div class="ui-block-c" style="width: 10%;  position: relative;"><a target="_self" href="Offers.html"
+                        class="ui-link"> <img src="../icons/icon-QRAR.png" width="42" height="42"
+                            style="padding-top:20%;"> </a></div>
             </div>
+        </div>
 
 
         <div role="orderConfirmation" class="ui-content">
@@ -74,10 +64,12 @@
                     <table class="orderSummary">
                         <tr>
                             <td>
-                                    <div class="ui-block-a-label1" style="color: black"><label for="voucherInput">Voucher
+                                    <div class="ui-block-a-label1" style="color: black"><label
+                                        for="voucherInput">Voucher
                                         code</label></div>
                             </td>
-                               <td> <div class="ui-block-b"><input type="text" name="voucherInput" id="voucherInput"></div>
+                               <td> <div class="ui-block-b"><input type="text" name="voucherInput" id="voucherInput">
+                                </div>
                             </td>
                         </tr>
                         <tr>
@@ -86,7 +78,8 @@
                                 </div>
                             </td>
                             <td>
-                                    <div class="ui-block-b"><input type="text" name="textinput" id="textinput" style="text-align: -webkit-center"></div>
+                                    <div class="ui-block-b"><input type="text" name="textinput" id="textinput"
+                                        style="text-align: -webkit-center"></div>
                             </td>
                         </tr>
                     </table>
@@ -102,7 +95,7 @@
             <nav data-role="navbar">
                 <ul>
                     <li><a target href="Home.html" data-icon="icons-home" class="ui-state-persist"
-                            data-theme="a">Home</a> </li>   
+                            data-theme="a">Home</a> </li>
                     <li><a target href="Categories.html" data-icon="icons-category" data-theme="a">Category</a></li>
                     <li><a target href="MyCart.html" data-icon="icons-cart" data-theme="a">Cart</a></li>
                     <li><a target href="Game.html" data-icon="icons-game" data-theme="a">Game</a></li>
@@ -115,40 +108,76 @@
 </body>
 
 <script>
-        function addElement(item) {
-            return '<tr>' +
-                '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;"></td>' +
-                '<td colspan="3"> </td>' +
-                '<td>' + item.name + '</td>' +
-                '</tr>' +
-                '<tr>' +
-                '<td colspan="3" style="padding-left:60px"></td>' +
-                '<td>LKR ' + item.price + '</td>' +
-                '</tr>' +
-                '<tr>' +
-                '<td colspan="3"></td>' +
-                '<td>Qty ' + item.quantity + '</td>' +
-                '</tr>'
-        }
-    </script>
+    function addElement(item) {
+        return '<tr>' +
+            '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;"></td>' +
+            '<td colspan="3"> </td>' +
+            '<td>' + item.name + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3" style="padding-left:60px"></td>' +
+            '<td>LKR ' + item.price + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="3"></td>' +
+            '<td>Qty ' + item.quantity + '</td>' +
+            '</tr>'
 
-<script>
-        function calculateTotal() {
-        var total = 0;
-        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
-            $.each(shoppedItems, function (i, item) {
-                total = total + (item.price * item.quantity);
-            });
-            document.getElementById("textinput").value = 'LKR ' + total;
-        }
+            '<tr>' +
+            '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
+            '</td>' +
+            '<td colspan="4" style="text-align: -webkit-center; padding-top: 10%">' + item.name + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="4" style="text-align: center"> LKR ' + item.price + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td colspan="1"></td>' +
+            '<td style="text-align: -webkit-center">' +
+            '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-plus ui-btn-icon-notext ui-mini" onclick="addQty(' + item.id + ')">Confirm Order</button>' +
+            '</td>' +
+            '<td style="padding-top: 5%">' + item.quantity + '</td>' +
+            '<td>' +
+            '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-minus ui-btn-icon-notext ui-mini" onclick="reduceQty(' + item.id + ')">Confirm Order</button>' +
+            '</td>' +
+            '</tr>' +
+            '<tr>' +          
+            '</tr>';
+
+            // '<tr>' +
+            // '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;"></td>' +
+            // '<td colspan="3"> </td>' +
+            // '<td>' + item.name + '</td>' +
+            // '</tr>' +
+            // '<tr>' +
+            // '<td colspan="3" style="padding-left:60px"></td>' +
+            // '<td>LKR ' + item.price + '</td>' +
+            // '</tr>' +
+            // '<tr>' +
+            // '<td colspan="3"></td>' +
+            // '<td>Qty ' + item.quantity + '</td>' +
+            // '</tr>'
+           
+    }
 </script>
 
-    <script>
+<script>
+    function calculateTotal() {
+        var total = 0;
         var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
         $.each(shoppedItems, function (i, item) {
-                $('#itemsList').append(addElement(item));
-            });
-        calculateTotal()
-    </script>
+            total = total + (item.price * item.quantity);
+        });
+        document.getElementById("textinput").value = 'LKR ' + total;
+    }
+</script>
+
+<script>
+    var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+    $.each(shoppedItems, function (i, item) {
+        $('#itemsList').append(addElement(item));
+    });
+    calculateTotal()
+</script>
 
 </html>

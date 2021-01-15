@@ -16,65 +16,79 @@
         var products = [
             {
                 "id": 1,
-                "picUrl": "../images/pot.jpg",
+                "picUrlSmall": "../images/pot.jpg",
+                "picUrl": "../images/pot-11.png",
                 "name": "Clay pot",
                 "short_discription": "Mini garden hard clay pot",
-                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold. All of these details work together to create industry-leading brushes that make every decorating task more enjoyable.",
-                "price": "LKR 400",
+                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold.",
+                "price": "400",
+                "quantity": 1,
                 "isSelected": false
             },
             {
                 "id": 2,
-                "picUrl": "../images/pots.jpg",
-                "name": "mini garden hard clay pot",
+                "picUrlSmall": "../images/pots.jpg",
+                "picUrl": "../images/pots-resized.jpeg",
+                "name": "Mini garden hard clay pot",
                 "short_discription": "Handmade soft clay pot set",
-                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold. All of these details work together to create industry-leading brushes that make every decorating task more enjoyable.",
-                "price": "LKR 2000",
+                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold.",
+                "price": "2000",
+                "quantity": 1,
                 "isSelected": false
             },
             {
                 "id": 3,
-                "picUrl": "../images/sglue.jpg",
+                "picUrlSmall": "../images/sglue.jpg",
+                "picUrl": "../images/glue-resized.jpeg",
                 "name": "Glue Bottle",
                 "short_discription": "200ml A22 paper glue bottle",
-                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold. All of these details work together to create industry-leading brushes that make every decorating task more enjoyable.",
-                "price": "LKR 300",
+                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold.",
+                "price": "300",
+                "quantity": 1,
                 "isSelected": false
             },
             {
                 "id": 4,
+                "picUrlSmall": "../images/poi4.png",
                 "picUrl": "../images/poi4.png",
                 "name": "Harrish Brush",
                 "short_discription": "hight quality 12A paint brush",
-                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold. All of these details work together to create industry-leading brushes that make every decorating task more enjoyable.",
-                "price": "LKR 1000",
+                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold.",
+                "price": "1000",
+                "quantity": 1,
                 "isSelected": false
             },
             {
                 "id": 5,
-                "picUrl": "../images/baloon.jpg",
+                "picUrlSmall": "../images/baloon.jpg",
+                "picUrl": "../images/baloon_resize.png",
                 "name": "Baloon",
                 "short_discription": "soft baloon",
-                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold. All of these details work together to create industry-leading brushes that make every decorating task more enjoyable.",
-                "price": "LKR 10",
+                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold.",
+                "price": "10",
+                "quantity": 1,
                 "isSelected": false
             },
             {
                 "id": 6,
-                "picUrl": "../images/string.jpg",
+                "picUrlSmall": "../images/string.jpg",
+                "picUrl": "../images/pic_6_large.jpeg",
                 "name": "String Ball",
                 "short_discription": "B4 soft string ball",
-                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold. All of these details work together to create industry-leading brushes that make every decorating task more enjoyable.",
-                "price": "LKR 200",
+                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold.",
+                "price": "200",
+                "quantity": 1,
                 "isSelected": false
             },
             {
                 "id": 7,
-                "picUrl": "../images/DUCT-TAPE.jpg",
+                "picUrlSmall": "../images/DUCT-TAPE.jpg",
+                "picUrl":"../images/ductTape.jpeg",
                 "name": "Duct Tape",
                 "short_discription": "sticky grey duct tape",
-                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold. All of these details work together to create industry-leading brushes that make every decorating task more enjoyable.",
-                "price": "LKR 100",
+                "long_discription": "From the finest natural bristles and high performance synthetic filaments to carefully shaped handles that are comfortable to hold.",
+                "price": "100",
+                "quantity": 1,
                 "isSelected": false
             },
         ];
@@ -272,12 +286,7 @@
             }
         });
         localStorage.setItem('products', JSON.stringify(products));
-        // window.location='./ViewItem.html'
-
-        var products = JSON.parse(localStorage.getItem('products'));
-        $.each(products, function (i, item) {
-            console.log(`${item.name} ${item.isSelected}`);
-        });
+        window.location='./ViewItem.html'
     }
 
 </script>
