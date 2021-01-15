@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				
 	function get_data() { 
 		$name = $_POST['name']; 
-		$
 		$file_name='POICommentData'. '.json'; 
 $current_date = date("M d, Y");
 		if(file_exists("$file_name")) { 
@@ -48,7 +47,7 @@ $current_date = date("M d, Y");
 	
     echo "<script>
 alert('Your comment has been added. Thank you for your feedback');
-window.location.href='index2.php';
+window.location.href='iphone/ReviewRating.php';
 </script>";
 	
 

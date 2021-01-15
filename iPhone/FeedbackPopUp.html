@@ -17,55 +17,55 @@
 
 <body>
 
-    <a href="#popupLogin" data-rel="popup" data-position-to="window" 
+    <a href="#popupLogin" data-rel="popup" data-position-to="window"
         class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a"
         data-transition="pop">Give Feedback</a>
-    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all" style="left: 50%; transform: translateX(-50%);">
+    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all"
+        style="left: 50%; transform: translateX(-50%);">
 
-        <form method="post" style="width: 320px;" action="http://localhost/UIUX CW/Do-It-Yourself/gfg.php">
-            <div style="padding:10px 20px;">
+        <form method="post" style="width: 320px;" action="http://localhost/UIUXCW/Do-It-Yourself/gfg.php">
+            <div style=" padding:10px 20px;">
 
                 <header style="padding: 0; font-size: 13px" class='header text-center'>
                     <h2>Give FeedBack </h2>
-                
-                <h3>Rate Us Here </h3>
-                <!-- Rating Stars Box -->
-                <div class='rating-stars text-center'>
-                    <ul id='stars'>
-                        <li class='star' title='Poor' data-value='1'>
-                            <i class='fa fa-star fa-fw'></i>
-                        </li>
-                        <li class='star' title='Fair' data-value='2'>
-                            <i class='fa fa-star fa-fw'></i>
-                        </li>
-                        <li class='star' title='Good' data-value='3'>
-                            <i class='fa fa-star fa-fw'></i>
-                        </li>
-                        <li class='star' title='Excellent' data-value='4'>
-                            <i class='fa fa-star fa-fw'></i>
-                        </li>
-                        <li class='star' title='WOW!!!' data-value='5'>
-                            <i class='fa fa-star fa-fw'></i>
-                        </li>
-                    </ul>
-                </div>
 
-                <div class='success-box'>
-                    <div class='clearfix'></div>
-                    <div class='text-message'></div>
-                    <div class='clearfix'></div>
-                </div>
-                <h3>Add Comment </h3>
-                <label for="un" class="ui-hidden-accessible">Name:</label>
-                <input type="text" name="name" id="name" value="" placeholder="name" data-theme="a">
+                    <h3>Rate Us Here </h3>
+                    <!-- Rating Stars Box -->
+                    <div class='rating-stars text-center'>
+                        <ul id='stars'>
+                            <li class='star' title='Poor' data-value='1'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Fair' data-value='2'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Good' data-value='3'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Excellent' data-value='4'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='WOW!!!' data-value='5'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                        </ul>
+                    </div>
 
-                <label for="pw" class="ui-hidden-accessible">Comment:</label>
-                <input type="text" name="comment" id="comment" value="" placeholder="comment" data-theme="a">
+                    <div class='success-box'>
+                        <div class='clearfix'></div>
+                        <div class='text-message'></div>
+                        <div class='clearfix'></div>
+                    </div>
+                    <h3>Add Comment </h3>
+                    <label for="un" class="ui-hidden-accessible">Name:</label>
+                    <input type="text" name="name" id="name" value="" placeholder="name" data-theme="a">
 
-                <input style="display: none;" type="text" name="rate" id="rate" value="" hidden>
-                <button type="submit"
-                    class="ui-btn ui-corner-all ui-shadow ui-btn-a  "
-                    onclick="on_submit()">Submit</button>
+                    <label for="pw" class="ui-hidden-accessible">Comment:</label>
+                    <input type="text" name="comment" id="comment" value="" placeholder="comment" data-theme="a">
+
+                    <input style="display: none;" type="text" name="rate" id="rate" value="" hidden>
+                    <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-a  "
+                        onclick="on_submit()">Submit</button>
             </div>
         </form>
     </div>
