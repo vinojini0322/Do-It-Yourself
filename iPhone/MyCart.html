@@ -13,61 +13,61 @@
     <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
 
     <script>
-    // this to be done at the button click to be added to the cart
-    var data = [
-        {
-            "id": 1,
-            "picUrl": "../images/poi1.png",
-            "name": "Tool Kit",
-            "price": "5000.00",
-            "quantity": 1
-        },
-        {
-            "id": 2,
-            "picUrl": "../images/poi2.png",
-            "name": "Scented Candles",
-            "price": "500.00",
-            "quantity": 3
-        },
-        {
-            "id": 3,
-            "name": "Yellow Drill",
-            "picUrl": "../images/poi3.png",
-            "price": "4000.00",
-            "quantity": 1
-        }
-    ];
-    localStorage.setItem('shoppedItems', JSON.stringify(data));
+        // this to be done at the button click to be added to the cart
+        var data = [
+            {
+                "id": 1,
+                "picUrl": "../images/poi1.png",
+                "name": "Tool Kit",
+                "price": "5000.00",
+                "quantity": 1
+            },
+            {
+                "id": 2,
+                "picUrl": "../images/poi2.png",
+                "name": "Scented Candles",
+                "price": "500.00",
+                "quantity": 3
+            },
+            {
+                "id": 3,
+                "name": "Yellow Drill",
+                "picUrl": "../images/poi3.png",
+                "price": "4000.00",
+                "quantity": 1
+            }
+        ];
+        localStorage.setItem('shoppedItems', JSON.stringify(data));
     </script>
 
     <script>
-    function addQty(itemId) {
-        // add qty to the db
-        // get and populate the updated list
-        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
-        $.each(shoppedItems, function (i, shoppedItem) {
-            if (itemId == shoppedItem.id) {
-                shoppedItem.quantity = shoppedItem.quantity + 1;
-            }
-        });
-        localStorage.setItem('shoppedItems', JSON.stringify(shoppedItems));
-        populateItemList();
-        calculateTotal();
+        function addQty(itemId) {
+            // add qty to the db
+            // get and populate the updated list
+            var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+            $.each(shoppedItems, function (i, shoppedItem) {
+                if (itemId == shoppedItem.id) {
+                    shoppedItem.quantity = shoppedItem.quantity + 1;
+                }
+            });
+            localStorage.setItem('shoppedItems', JSON.stringify(shoppedItems));
+            populateItemList();
+            calculateTotal();
 
-    }
-    function reduceQty(itemId) {
-        // reduce qty from the db
-        // get and populate the updated list
-        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
-        $.each(shoppedItems, function (i, shoppedItem) {
-            if (itemId == shoppedItem.id && shoppedItem.quantity != 0) {
-                shoppedItem.quantity = shoppedItem.quantity - 1;
-            }
-        });
-        localStorage.setItem('shoppedItems', JSON.stringify(shoppedItems));
-        populateItemList();
-        calculateTotal();
-    }
+        }
+        function reduceQty(itemId) {
+            // reduce qty from the db
+            // get and populate the updated list
+            var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+            $.each(shoppedItems, function (i, shoppedItem) {
+                if (itemId == shoppedItem.id && shoppedItem.quantity != 0) {
+                    shoppedItem.quantity = shoppedItem.quantity - 1;
+                }
+            });
+            localStorage.setItem('shoppedItems', JSON.stringify(shoppedItems));
+            populateItemList();
+            calculateTotal();
+        }
     </script>
 
 </head>
@@ -75,16 +75,25 @@
 <body class="ui-mobile-viewport ui-overlay-a">
     <div id="ConfirmOrder" data-role="page" data-position="fixed">
         <!-- Header -->
-        <div data-role="header">
-            <table>
-                <tr>
-                    <td><a href="#page1"><img src="../images/logo1.png"> </a></td>
-                    <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
-                                src="../icons/icon-QRAR.png" width="42" height="42" style="margin-left:250px"> </a></td>
-                </tr>
-                <tr>
-                </tr>
-            </table>
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+
+            <div class="ui-grid-b">
+                <div class="ui-block-a" style="width: 15%;">
+                    <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
+                </div>
+
+                <div class="ui-block-b" style="width:73%; margin: auto; color:red;">
+                    <div class="ui-bar ui-bar-a" style="color:red;">
+
+                        <form class="ui-filterable" style="color:red;">
+                            <input type="search" name="search" id="search-basic" value="" />
+                    </div>
+                </div>
+
+                <div class="ui-block-c" style="width: 10%;  position: relative;"><a target="_self" href="Offers.html"
+                        class="ui-link"> <img src="../icons/icon-QRAR.png" width="42" height="42"
+                            style="padding-top:20%;"> </a></div>
+            </div>
         </div>
 
 
@@ -121,11 +130,10 @@
                 <hr />
             </div>
             <div class="emptySpace" style="padding-top: 20px">
-
             </div>
             <div class="ui-body">
                 </hr>
-                <div class="ui-grid-a">
+                <div class="ui-grid-a" style="text-align: -webkit-center">
                     <table class="total">
 
                         <tr>
@@ -134,10 +142,12 @@
                                 </div>
                             </td>
                             <td>
-                                    <div class="ui-block-b"><input type="text" name="textinput" id="textinput"></div>
+                                    <div class="ui-block-b" text-align: -webkit-center;><input type="text"
+                                        name="textinput" id="textinput" style="text-align: -webkit-center"></div>
                             </td>
                         </tr>
                     </table>
+
                     <button onclick="window.location='./ConfirmOrder.html'">Checkout Cart</button>
                     <button onclick="window.location='./ShippingAddress.html'">Continue Shopping</button>
                 </div>
@@ -150,12 +160,17 @@
         <div data-role="footer" data-position="fixed">
             <nav data-role="navbar">
                 <ul>
-                   <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home" data-theme="a" data-transition="slide">Home</a></li>
-                 <li class="ui-block-b"><a target="_self" href="Categories.html"  data-icon="icons-category" data-theme="a" data-transition="slide">Category</a></li>
-                 <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart" data-theme="a" data-transition="slide" class="ui-btn-active">Cart</a></li>
-				 <li class="ui-block-d"><a target="_self" href="Game.html" data-icon="icons-game" data-theme="a" data-transition="slide">Game</a></li>
-                 <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html" data-icon="icons-profile" data-theme="a" data-transition="slide">Profile</a></li>
-				
+                    <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home" data-theme="a"
+                            data-transition="slide">Home</a></li>
+                    <li class="ui-block-b"><a target="_self" href="Categories.html" data-icon="icons-category"
+                            data-theme="a" data-transition="slide">Category</a></li>
+                    <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart" data-theme="a"
+                            data-transition="slide" class="ui-btn-active">Cart</a></li>
+                    <li class="ui-block-d"><a target="_self" href="Game.html" data-icon="icons-game" data-theme="a"
+                            data-transition="slide">Game</a></li>
+                    <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html" data-icon="icons-profile"
+                            data-theme="a" data-transition="slide">Profile</a></li>
+
                     </li>
                 </ul>
             </nav>
@@ -177,9 +192,9 @@ function calculateTotal(itemList) {
 </script> -->
 
 <script>
-    function calculateTotal(itemList) {
-    var total = 0;
-    var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+    function calculateTotal() {
+        var total = 0;
+        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
         $.each(shoppedItems, function (i, item) {
             total = total + (item.price * item.quantity);
         });
@@ -188,8 +203,8 @@ function calculateTotal(itemList) {
 </script>
 
 <script>
-        function addElement(item) {
-            return '<tr>' +
+    function addElement(item) {
+        return '<tr>' +
             '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
             '</td>' +
             '<td colspan="3"> </td>' +
@@ -205,16 +220,16 @@ function calculateTotal(itemList) {
             '</tr>' +
             '<tr>' +
             '<td>' +
-            '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-plus ui-btn-icon-notext ui-mini" onclick="addQty('+item.id+')">Confirm Order</button>' +
+            '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-plus ui-btn-icon-notext ui-mini" onclick="addQty(' + item.id + ')">Confirm Order</button>' +
             '</td>' +
             '<td>' +
-            '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-minus ui-btn-icon-notext ui-mini" onclick="reduceQty('+item.id+')">Confirm Order</button>' +
+            '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-minus ui-btn-icon-notext ui-mini" onclick="reduceQty(' + item.id + ')">Confirm Order</button>' +
             '</td>' +
             '</tr>';
-        }
-    </script>
+    }
+</script>
 
-    <!-- <script type="text/javascript">
+<!-- <script type="text/javascript">
     function populateItemList() {
         $.getJSON("../Database/cartItemsList.json", function (items) {
 
@@ -228,19 +243,19 @@ function calculateTotal(itemList) {
     }
     </script> -->
 
-    <script>
-        function populateItemList() {
-            $('#itemsList').empty();
-            var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
-            $.each(shoppedItems, function (i, item) {
-                    $('#itemsList').append(addElement(item));
-            });
-        }
-    </script>
+<script>
+    function populateItemList() {
+        $('#itemsList').empty();
+        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
+        $.each(shoppedItems, function (i, item) {
+            $('#itemsList').append(addElement(item));
+        });
+    }
+</script>
 
-    <script>
-        populateItemList();
-        calculateTotal();
-    </script>
+<script>
+    populateItemList();
+    calculateTotal();
+</script>
 
 </html>
