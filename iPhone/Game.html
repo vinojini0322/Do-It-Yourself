@@ -1,20 +1,20 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
     <link rel="stylesheet" href="../FeedBack.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <div id="chart"></div>
     <div id="question">
-        <h1></h1>
+        <h1 style="text-align: center;"></h1>
     </div>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
+    
 
-</head>
 
-<body>
+
+
     <style>
         html,
         body {
@@ -42,38 +42,13 @@
             }
         }
 
-        /* #circle {
-  position: absolute;
-  top: calc(7% - 20px);
-  left: calc(7% - 20px);
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow:
-    0 0 60px 30px #fff,
-    0 0 100px 60px #f0f,
-    0 0 140px 90px #0ff;
-} */
         text {
             font-family: Helvetica, Arial, sans-serif;
-            font-size: 11px;
+            font-size: 40px;
             pointer-events: none;
         }
 
         #chart {
-            /* top: calc(7% - 20px); 
-            left: calc(7% - 100px);
-            /* width: 500px;
-            height: 500px;
-            top: 50%;
-            left: 50%;
-            border-radius: 50%;
-            background-color: #fff;
-            box-shadow:
-                0 0 60px 30px #fff,
-                0 0 100px 60px #f0f,
-                0 0 140px 90px #0ff; */
             width: 300px;
 
             height: 300px;
@@ -93,10 +68,11 @@
             left: 0;
         }
 
-        label{
+        label {
             color: maroon;
             font-size: 700px;
         }
+
         #question {
             color: #000000;
             top: 50%;
@@ -104,9 +80,10 @@
             font-size: 700px;
         }
 
-       
+
         #question h1 {
             font-size: 70px;
+            animation: color-change 1s infinite;
             font-weight: bold;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             padding: 0;
@@ -114,7 +91,25 @@
             -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
         }
+
+        @keyframes color-change {
+            0% {
+                color: #000000;
+            }
+
+            50% {
+                color: goldenrod;
+            }
+
+            100% {
+                color: rgb(16, 13, 19);
+            }
+        }
     </style>
+</head>
+
+<body>
+    
 
     <script>
 
@@ -126,9 +121,8 @@
             oldrotation = 0,
             picked = 100000,
             oldpick = [],
-            color = d3.scale.category20();//category20c()
-        //randomNumbers = getRandomNumbers();
-        //http://osric.com/bingo-card-generator/?title=HTML+and+CSS+BINGO!&words=padding%2Cfont-family%2Ccolor%2Cfont-weight%2Cfont-size%2Cbackground-color%2Cnesting%2Cbottom%2Csans-serif%2Cperiod%2Cpound+sign%2C%EF%B9%A4body%EF%B9%A5%2C%EF%B9%A4ul%EF%B9%A5%2C%EF%B9%A4h1%EF%B9%A5%2Cmargin%2C%3C++%3E%2C{+}%2C%EF%B9%A4p%EF%B9%A5%2C%EF%B9%A4!DOCTYPE+html%EF%B9%A5%2C%EF%B9%A4head%EF%B9%A5%2Ccolon%2C%EF%B9%A4style%EF%B9%A5%2C.html%2CHTML%2CCSS%2CJavaScript%2Cborder&freespace=true&freespaceValue=Web+Design+Master&freespaceRandom=false&width=5&height=5&number=35#results
+            color = d3.scale.category20();
+
         var data = [
             { "label": "10", "value": 1, "question": "10" },
             { "label": "20", "value": 2, "question": "20" },
@@ -207,12 +201,15 @@
                 .attrTween("transform", rotTween)
                 .each("end", function () {
                     //mark question as seen
-                    d3.select(".slice:nth-child(" + (picked + 1) + ") path")
-                    // .attr("fill", "#111");
+                    // d3.select(".slice:nth-child(" + (picked + 1) + ") path")
+                    // // .attr("fill", "#111");
 
                     //populate question
                     d3.select("#question h1")
-                        .text(data[picked].question);
+                        .text('You have gained ' + data[picked].question + ' points');
+                    setTimeout(function () {
+                        $('#question h1').fadeOut('fast');
+                    }, 1000);
                     oldrotation = rotation;
 
                     /* Get the result value from object "data" */
@@ -264,10 +261,9 @@
             }
             return array;
         }
-
     </script>
-    <div id="circle"></div>
-
+    <button type="button">Save points</button>
+   <button type="button">Purchase</button>
 </body>
 
 </html>
