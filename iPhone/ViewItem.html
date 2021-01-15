@@ -82,19 +82,13 @@
         View Item
     </h2>
     <div style="margin-left: 5%; margin-right: 5%">
-        <div class="ui-grid-a" style="border-style:solid; color: black">
-            <div class="ui-block-a" style="width: 20%">
-                <div style="margin-top: 10%"><img src="../images/poi4.png"></div>
+        <div class="ui-grid-a" style="border-style:solid; color: black; position: relative">
+            <div class="ui-block-a" style="width: 20%" id="selectedItemImage">
+                
             </div>
             <div class="ui-block-b"
-                style="width: 65%; margin-left: 15%; background-color: rgb(209, 201, 201); text-align: center">
-                <p style="font-family: serif">
-                    <h4>Harris Paint Brush</h4>
-                    From the finest natural bristles
-                    and high performance synthetic filaments to carefully shaped handles that are comfortable to
-                    hold.
-                    All of these details work together to create industry-leading brushes that make every decorating
-                    task more enjoyable.
+                style="width: 65%; position: absolute; height: -webkit-fill-available; right: 0; background-color: rgb(209, 201, 201); text-align: center">
+                <p style="font-family: serif" id="selectedItemDesc">
                 </p>
             </div>
         </div>
@@ -103,30 +97,18 @@
     <div>
         <div class="ui-grid-b">
             <div class="ui-block-a">
-                <div style="height:60px">
-                    <P style="text-align: center; padding-top: 12px">Price: </P>
+                <div style="height:60px" id="selectedItemPrice">
                 </div>
             </div>
             <div class="ui-block-b">
-                <div style="height:60px">
-                    <form>
-                        <div class="ui-field-contain"><label for="select-native-2">
-                                <p style="text-align: center">Qty:</p>
-                            </label>
-                        </div>
-                        <!--    <select name="select-native-2" id="select-native-2" data-mini="true">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                <option value="5">5</option>     
-                            </select> -->
-
-                    </form>
+                <div style="height:60px" id="selectedItemQty">
                 </div>
             </div>
             <div class="ui-block-c">
-                <div style="height:60px; margin-top: 22%"><img src="../icons/star.png"></div>
+                <div style="height:60px">
+                    <p></p>
+                    <img style="padding-top: 12px" src="../icons/star.png">
+                </div>
             </div>
         </div>
 
@@ -134,18 +116,30 @@
 
     <div class="ui-grid-a" style="margin-left: 10%">
         <div class="ui-block-a">
-            <div style="height:60px"><button data-rel="popup" class="ui-btn ui-corner-all" data-transition="pop">Buy
+            <div style="height:60px">
+                <button onclick="addToCart()" data-rel="popup" class="ui-btn ui-corner-all" data-transition="pop">Buy
                     now</button></div>
         </div>
         <div class="ui-block-b" style="margin-top: -15%; margin-left: 54%">
-            <div style="height:60px"><a href="#buyNow">Add new comment</a> </div>
+                <table>
+                        <tr>
+                            <td style="text-align: -webkit-center">
+                                <img onclick="window.location='./MyCart.html'" src="../icons/icon-cart.png" style="width: 34%;
+                                margin-left: 83%">
+                            </td>
+                            <td style="text-align: -webkit-center">
+                                <img onclick="addToFvas()" src="../icons/favouritesIcon.png" style="width: 30%;">
+                            </td>
+                
+                        </tr>
+                    </table>
         </div>
     </div>
 
     <hr />
     <div>
-        <div id="container" style="white-space:nowrap; padding-bottom: 5%;">
-            <h3 style="display:inline; white-space:nowrap;"> Rating and Reviews </h3>
+        <div id="container" style="white-space:nowrap; padding-bottom:1%;">
+            <h3 style="display:inline; white-space:nowrap; margin-left: 23%;"> Rating and Reviews </h3>
             
             <div id="image" style="display:inline; float: right;">
                 <img src="../images/arrow.png" width="30px" height="30px"/>
@@ -154,13 +148,42 @@
     </div>
     <hr />
     <div>
-        <h3 style="text-align: left"> Seller Details</h3>
-        <div class="ui-grid-a"><img src="../images/sellerDetails.png" style="margin-left:15%">
+        <h3 style="text-align: left; margin-left: 23%;"> Seller Details</h3>
+        <div class="ui-grid-a"><img src="../images/sellerDetails.png" style="margin-left: 20%">
+            <div style="height: 20px">
+            </div>
+
+
+            <!-- Navigation -->
+            <div data-role="footer" data-position="fixed" role="contentinfo"
+                class="ui-footer ui-bar-inherit ui-footer-fixed slideup">
+                <nav data-role="navbar" class="ui-navbar" role="navigation">
+                    <ul class="ui-grid-d">
+                        <li class="ui-block-a"><a target="" href="Home.html" data-icon="icons-home"
+                                class="ui-state-persist ui-link ui-btn ui-btn-a ui-icon-icons-home ui-btn-icon-top ui-btn-active"
+                                data-theme="a">Home</a></li>
+                        <li class="ui-block-b"><a target="" href="Categories.html" data-icon="icons-category"
+                                data-theme="a"
+                                class="ui-link ui-btn ui-btn-a ui-icon-icons-category ui-btn-icon-top">Category</a>
+                        </li>
+                        <li class="ui-block-c"><a target="" href="MyCart.html" data-icon="icons-cart" data-theme="a"
+                                class="ui-link ui-btn ui-btn-a ui-icon-icons-cart ui-btn-icon-top">Cart</a>
+                        </li>
+                        <li class="ui-block-d"><a target="" href="Game.html" data-icon="icons-game" data-theme="a"
+                                class="ui-link ui-btn ui-btn-a ui-icon-icons-game ui-btn-icon-top">Game</a>
+                        </li>
+                        <li class="ui-block-e"><a target="" href="MyProfile_Customer.html" data-icon="icons-profile"
+                                data-theme="a"
+                                class="ui-link ui-btn ui-btn-a ui-icon-icons-profile ui-btn-icon-top">Profile</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
     <hr />
     <div style="height: 5px">
     </div>
     <div style="padding-left:8px; padding-right:8px;">
-        <h3 style="text-align: left"> Location of the Item</h3>
+        <h3> Location of the Item</h3>
             
                 <div id="map"></div>
                 <br>
@@ -191,5 +214,97 @@
         </nav>
     </div>
 </body>
+
+<script>
+    function addToFvas() {
+        var favItems = JSON.parse(localStorage.getItem('favouritesList'));
+        var products = JSON.parse(localStorage.getItem('products'));
+        var selectedItem;
+        var itemAlreadyExisting = false;
+        $.each(products, function (i, item) {
+            if (item.isSelected) {
+                selectedItem = item;
+            }
+        });
+        favItems = favItems == null ? [] : favItems;
+        $.each(favItems, function (i, favItem) {
+            if (selectedItem.id == favItem.id) {
+                itemAlreadyExisting = true;
+            }
+            });
+        if (!itemAlreadyExisting) {
+            favItems[favItems.length] = selectedItem;
+        }
+        localStorage.setItem('favouritesList', JSON.stringify(favItems));
+    }
+</script>
+
+<script>
+    function addSelectedItemImage(imageURL) {
+    return  '<div style="margin-top: 10%"><img src='+ imageURL +'></div>';
+    }
+
+</script>
+
+<script>
+    function addSelectedItemDesc(name, desc) {
+    return '<h4>'+ name +'</h4>' + desc;   
+    }
+
+</script>
+
+<script>
+    function addSelectedItemPrice(price) {
+    return '<P style="text-align: center; padding-top: 12px">Price: ' + price +'</P>';   
+    }
+</script>
+
+<script>
+    function addSelectedItemQty(qty) {
+    return '<p style="text-align: center; padding-top: 12px">Qty: ' + qty + '</p>'
+    }
+</script>
+
+<script>
+    function addToCart() {
+        var products = JSON.parse(localStorage.getItem('products'));
+        var selectedItem;
+        var itemAlreadyExisting = false;
+        $.each(products, function (i, item) {
+            if (item.isSelected) {
+                selectedItem = item;
+            }
+        });
+        var data = JSON.parse(localStorage.getItem('shoppedItems'));
+        data = data == null ? [] : data;
+            $.each(data, function (i, shoppedItem) {
+            if (selectedItem.id == shoppedItem.id) {
+                itemAlreadyExisting = true;
+                shoppedItem.quantity = shoppedItem.quantity + 1;
+            }
+            });
+        if (!itemAlreadyExisting) {
+            data[data.length] = selectedItem;
+        }
+        localStorage.setItem('shoppedItems', JSON.stringify(data));
+        window.location='./MyCart.html';
+    }
+</script>
+
+<script>
+    var products = JSON.parse(localStorage.getItem('products'));
+    var selectedItem;
+    $.each(products, function (i, item) {
+        if (item.isSelected) {
+            selectedItem = item;
+        }
+    });
+    $('#selectedItemImage').append(addSelectedItemImage(selectedItem.picUrl));
+    $('#selectedItemDesc').append(addSelectedItemDesc(selectedItem.name, selectedItem.long_discription));
+    $('#selectedItemPrice').append(addSelectedItemPrice(selectedItem.price));
+    $('#selectedItemQty').append(addSelectedItemQty(selectedItem.quantity));
+</script>
+
+
 
 </html>
