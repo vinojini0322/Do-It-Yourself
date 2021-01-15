@@ -13,43 +13,42 @@
     <script src="https://checkout.stripe.com/checkout.js"></script>
     <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb674Ho9gzEswF4ugEYkvNLlRtXVu_bAc&callback=initMap"
-      defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb674Ho9gzEswF4ugEYkvNLlRtXVu_bAc&callback=initMap"
+        defer></script>
 
-      <script>
-		function initMap() {
+    <script>
+        function initMap() {
             var location = { lat: 6.8978, lng: 79.8565 };
-		  const map = new google.maps.Map(document.getElementById("map"), {
-			zoom: 14,
-			center: location,
-		  });
-		  setMarkers(map);
-		}
-	
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 14,
+                center: location,
+            });
+            setMarkers(map);
+        }
 
-		function setMarkers(map) {
-		  const image = {
-			src: "images/UoW.png",
-			size: new google.maps.Size(20, 32),
-			origin: new google.maps.Point(0, 0),
-			anchor: new google.maps.Point(0, 32),
-		  };
-		  const shape = {
-			coords: [1, 1, 1, 20, 18, 20, 18, 1],
-			type: "poly",
-		  };
 
-			new google.maps.Marker({
-			  position: { lat: 6.8978, lng: 79.8565 },
-			  map,
-			  icon: image,
-			  shape: shape,
-			  title: 'DIYStore'
-			  
-			});
-		  }
-		
+        function setMarkers(map) {
+            const image = {
+                src: "images/UoW.png",
+                size: new google.maps.Size(20, 32),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(0, 32),
+            };
+            const shape = {
+                coords: [1, 1, 1, 20, 18, 20, 18, 1],
+                type: "poly",
+            };
+
+            new google.maps.Marker({
+                position: { lat: 6.8978, lng: 79.8565 },
+                map,
+                icon: image,
+                shape: shape,
+                title: 'DIYStore'
+
+            });
+        }
+
 
     </script>
 </head>
@@ -78,118 +77,122 @@
         </div>
     </div>
     <div style="padding-left:8px; padding-right:8px;">
-    <h2 style="text-align: center; font-family: Roboto Slab">
-        VIEW ITEM
-    </h2>
-    <div style="margin-left: 5%; margin-right: 5%">
-        <div class="ui-grid-a" style="border-style:solid; color: black; position: relative">
-            <div class="ui-block-a" style="width: 20%" id="selectedItemImage">
-                
-            </div>
-            <div class="ui-block-b"
-                style="width: 65%; position: absolute; height: -webkit-fill-available; right: 0; background-color: rgb(209, 201, 201); text-align: center">
-                <p style="font-family: serif" id="selectedItemDesc">
-                </p>
+        <h2 style="text-align: center; font-family: Roboto Slab">
+            VIEW ITEM
+        </h2>
+        <div style="margin-left: 5%; margin-right: 5%">
+            <div class="ui-grid-a" style="border-style:solid; color: black; position: relative">
+                <div class="ui-block-a" style="width: 20%" id="selectedItemImage">
+
+                </div>
+                <div class="ui-block-b"
+                    style="width: 65%; position: absolute; height: -webkit-fill-available; right: 0; background-color: rgb(209, 201, 201); text-align: center">
+                    <p style="font-family: serif" id="selectedItemDesc">
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div>
-        <div class="ui-grid-b">
+        <div>
+            <div class="ui-grid-b">
+                <div class="ui-block-a">
+                    <div style="height:60px" id="selectedItemPrice">
+                    </div>
+                </div>
+                <div class="ui-block-b">
+                    <div style="height:60px" id="selectedItemQty">
+                    </div>
+                </div>
+                <div class="ui-block-c">
+                    <div style="height:60px">
+                        <p></p>
+                        <img style="padding-top: 12px" src="../icons/star.png">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ui-grid-a" style="margin-left: 10%">
             <div class="ui-block-a">
-                <div style="height:60px" id="selectedItemPrice">
-                </div>
-            </div>
-            <div class="ui-block-b">
-                <div style="height:60px" id="selectedItemQty">
-                </div>
-            </div>
-            <div class="ui-block-c">
                 <div style="height:60px">
-                    <p></p>
-                    <img style="padding-top: 12px" src="../icons/star.png">
+                    <button onclick="addToCart()" data-rel="popup" class="ui-btn ui-corner-all"
+                        data-transition="pop">Buy
+                        now</button>
+                </div>
+            </div>
+            <div class="ui-block-b" style="margin-top: -15%; margin-left: 54%">
+                <table>
+                    <tr>
+                        <td style="text-align: -webkit-center">
+                            <img onclick="window.location='./MyCart.html'" src="../icons/icon-cart.png" style="width: 34%;
+                                margin-left: 83%">
+                        </td>
+                        <td style="text-align: -webkit-center">
+                            <img onclick="addToFvas()" src="../icons/favouritesIcon.png" style="width: 30%;">
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <hr />
+        <div>
+            <div id="container" style="white-space:nowrap; padding-bottom:1%;">
+                <h3 style="display:inline; white-space:nowrap;"> Rating and Reviews </h3>
+
+                <div id="image" style="display:inline; float: right;">
+                    <a target="_self" href="http://localhost/UIUXCW/Do-It-Yourself/iphone/ReviewRating.php"
+                        class="ui-link"><img src="../images/arrow.png" width="30px" height="30px"></a>
+
                 </div>
             </div>
         </div>
+        <hr />
+        <div>
+            <h3 style="text-align: left; margin-left: 23%;"> Seller Details</h3>
+            <div class="ui-grid-a"><img src="../images/sellerDetails.png" style="margin-left: 20%">
+                <div style="height: 20px">
+                </div>
 
-    </div>
 
-    <div class="ui-grid-a" style="margin-left: 10%">
-        <div class="ui-block-a">
-            <div style="height:60px">
-                <button onclick="addToCart()" data-rel="popup" class="ui-btn ui-corner-all" data-transition="pop">Buy
-                    now</button></div>
-        </div>
-        <div class="ui-block-b" style="margin-top: -15%; margin-left: 54%">
-                <table>
-                        <tr>
-                            <td style="text-align: -webkit-center">
-                                <img onclick="window.location='./MyCart.html'" src="../icons/icon-cart.png" style="width: 34%;
-                                margin-left: 83%">
-                            </td>
-                            <td style="text-align: -webkit-center">
-                                <img onclick="addToFvas()" src="../icons/favouritesIcon.png" style="width: 30%;">
-                            </td>
-                
-                        </tr>
-                    </table>
-        </div>
-    </div>
+                <!-- Navigation -->
+                <div data-role="footer" data-position="fixed" role="contentinfo"
+                    class="ui-footer ui-bar-inherit ui-footer-fixed slideup">
+                    <nav data-role="navbar" class="ui-navbar" role="navigation">
+                        <ul class="ui-grid-d">
+                            <li class="ui-block-a"><a target="" href="Home.html" data-icon="icons-home"
+                                    class="ui-state-persist ui-link ui-btn ui-btn-a ui-icon-icons-home ui-btn-icon-top ui-btn-active"
+                                    data-theme="a">Home</a></li>
+                            <li class="ui-block-b"><a target="" href="Categories.html" data-icon="icons-category"
+                                    data-theme="a"
+                                    class="ui-link ui-btn ui-btn-a ui-icon-icons-category ui-btn-icon-top">Category</a>
+                            </li>
+                            <li class="ui-block-c"><a target="" href="MyCart.html" data-icon="icons-cart" data-theme="a"
+                                    class="ui-link ui-btn ui-btn-a ui-icon-icons-cart ui-btn-icon-top">Cart</a>
+                            </li>
+                            <li class="ui-block-d"><a target="" href="Game.html" data-icon="icons-game" data-theme="a"
+                                    class="ui-link ui-btn ui-btn-a ui-icon-icons-game ui-btn-icon-top">Game</a>
+                            </li>
+                            <li class="ui-block-e"><a target="" href="MyProfile_Customer.html" data-icon="icons-profile"
+                                    data-theme="a"
+                                    class="ui-link ui-btn ui-btn-a ui-icon-icons-profile ui-btn-icon-top">Profile</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <hr />
+                <div style="height: 5px">
+                </div>
+                <div style="padding-left:8px; padding-right:8px;">
+                    <h3> Location of the Item</h3>
 
-    <hr />
-    <div>
-        <div id="container" style="white-space:nowrap; padding-bottom:1%;">
-            <h3 style="display:inline; white-space:nowrap; margin-left: 23%;"> Rating and Reviews </h3>
-            
-            <div id="image" style="display:inline; float: right;">
-                <img src="../images/arrow.png" width="30px" height="30px"/>
+                    <div id="map"></div>
+                    <br>
+                </div>
+
             </div>
-        </div>
-    </div>
-    <hr />
-    <div>
-        <h3 style="text-align: left; margin-left: 23%;"> Seller Details</h3>
-        <div class="ui-grid-a"><img src="../images/sellerDetails.png" style="margin-left: 20%">
-            <div style="height: 20px">
-            </div>
-
-
-            <!-- Navigation -->
-            <div data-role="footer" data-position="fixed" role="contentinfo"
-                class="ui-footer ui-bar-inherit ui-footer-fixed slideup">
-                <nav data-role="navbar" class="ui-navbar" role="navigation">
-                    <ul class="ui-grid-d">
-                        <li class="ui-block-a"><a target="" href="Home.html" data-icon="icons-home"
-                                class="ui-state-persist ui-link ui-btn ui-btn-a ui-icon-icons-home ui-btn-icon-top ui-btn-active"
-                                data-theme="a">Home</a></li>
-                        <li class="ui-block-b"><a target="" href="Categories.html" data-icon="icons-category"
-                                data-theme="a"
-                                class="ui-link ui-btn ui-btn-a ui-icon-icons-category ui-btn-icon-top">Category</a>
-                        </li>
-                        <li class="ui-block-c"><a target="" href="MyCart.html" data-icon="icons-cart" data-theme="a"
-                                class="ui-link ui-btn ui-btn-a ui-icon-icons-cart ui-btn-icon-top">Cart</a>
-                        </li>
-                        <li class="ui-block-d"><a target="" href="Game.html" data-icon="icons-game" data-theme="a"
-                                class="ui-link ui-btn ui-btn-a ui-icon-icons-game ui-btn-icon-top">Game</a>
-                        </li>
-                        <li class="ui-block-e"><a target="" href="MyProfile_Customer.html" data-icon="icons-profile"
-                                data-theme="a"
-                                class="ui-link ui-btn ui-btn-a ui-icon-icons-profile ui-btn-icon-top">Profile</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-    <hr />
-    <div style="height: 5px">
-    </div>
-    <div style="padding-left:8px; padding-right:8px;">
-        <h3> Location of the Item</h3>
-            
-                <div id="map"></div>
-                <br>
-    </div>
-
-</div>
 </body>
 
 <script>
@@ -208,7 +211,7 @@
             if (selectedItem.id == favItem.id) {
                 itemAlreadyExisting = true;
             }
-            });
+        });
         if (!itemAlreadyExisting) {
             favItems[favItems.length] = selectedItem;
         }
@@ -218,27 +221,27 @@
 
 <script>
     function addSelectedItemImage(imageURL) {
-    return  '<div style="margin-top: 10%"><img src='+ imageURL +'></div>';
+        return '<div style="margin-top: 10%"><img src=' + imageURL + '></div>';
     }
 
 </script>
 
 <script>
     function addSelectedItemDesc(name, desc) {
-    return '<h4>'+ name +'</h4>' + desc;   
+        return '<h4>' + name + '</h4>' + desc;
     }
 
 </script>
 
 <script>
     function addSelectedItemPrice(price) {
-    return '<P style="text-align: center; padding-top: 12px">Price: ' + price +'</P>';   
+        return '<P style="text-align: center; padding-top: 12px">Price: ' + price + '</P>';
     }
 </script>
 
 <script>
     function addSelectedItemQty(qty) {
-    return '<p style="text-align: center; padding-top: 12px">Qty: ' + qty + '</p>'
+        return '<p style="text-align: center; padding-top: 12px">Qty: ' + qty + '</p>'
     }
 </script>
 
@@ -254,17 +257,17 @@
         });
         var data = JSON.parse(localStorage.getItem('shoppedItems'));
         data = data == null ? [] : data;
-            $.each(data, function (i, shoppedItem) {
+        $.each(data, function (i, shoppedItem) {
             if (selectedItem.id == shoppedItem.id) {
                 itemAlreadyExisting = true;
                 shoppedItem.quantity = shoppedItem.quantity + 1;
             }
-            });
+        });
         if (!itemAlreadyExisting) {
             data[data.length] = selectedItem;
         }
         localStorage.setItem('shoppedItems', JSON.stringify(data));
-        window.location='./MyCart.html';
+        window.location = './MyCart.html';
     }
 </script>
 
