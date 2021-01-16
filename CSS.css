@@ -417,6 +417,8 @@ $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');}); **/
     text-align: center;
     height: 0px;
     line-height: 0px;
+    font-weight: bold;
+    font-size: 1.30em;
   }
   
   .hr-title {
