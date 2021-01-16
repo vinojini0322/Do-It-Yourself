@@ -71,12 +71,12 @@ position: absolute;
   /* Three column layout */
   .side {
     float: left;
-    width: 15%;
-    margin-top: 10px;
+    width: 20%;
+    margin-top:5px;
   }
   
   .middle {
-    float: left;
+    float: right;
     width: 70%;
     margin-top: 10px;
   }
@@ -102,19 +102,10 @@ position: absolute;
   }
   
   /* Individual bars */
-  .bar-5 {width: 60%; height: 18px; background-color: orange;}
+  .bar-5 {width: 60%; height: 18px; background-color: orange}
   .bar-4 {width: 30%; height: 18px; background-color:orange;}
   .bar-3 {width: 10%; height: 18px; background-color:orange;}
   .bar-2 {width: 4%; height: 18px; background-color: orange;}
   .bar-1 {width: 15%; height: 18px; background-color: orange;}
   
-  /* Responsive layout - make the columns stack on top of each other instead of next to each other */
-  @media (max-width: 400px) {
-    .side, .middle {
-      width: 100%;
-    }
-    /* Hide the right column on small screens */
-    .right {
-      display: none;
-    }
-  }
+  
