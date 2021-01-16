@@ -196,6 +196,7 @@ li {
     perspective: 100px;
 }
 
+
 .carousel__viewport {
     position: absolute;
     top: 0;
@@ -424,4 +425,25 @@ $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');}); **/
   .hr-title {
     background-color: rgb(85, 17, 34);
   }
+  .ui-body.ui-body-a.ui-corner-all{
+    width: 90% !important;
+}
+.ui-btn.ui-shadow.ui-corner-all{
+    width:10% !important;
+}
+.ui-btn.ui-corner-all{
+    width:50% !important;
+}
+  @media screen and (max-width: 480px) {
+    .ui-body.ui-body-a.ui-corner-all{
+        width: 78% !important;
+    }
+    .ui-btn.ui-shadow.ui-corner-all{
+        width:60% !important;
+    }
+    .ui-btn.ui-corner-all{
+        width:80% !important;
+    }
+  }
+
   
