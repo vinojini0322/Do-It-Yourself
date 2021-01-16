@@ -167,13 +167,15 @@ $users = json_decode($data);
                             USER RATINGS
                         </span>
                     </div>
-      <div class="ui-body ui-body-a ui-corner-all"
-                        style=" background-color: white; width:99%; height:min-content; border-color:white;">
+      <div class="box-rating"
+      style=" background-color: white; width:99%; height:min-content; border-color:white;">
+      <center>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star"></span>
+  </center>
       <p style="text-align: center;"><b>4.1 average based on 254 reviews.</b></p>
       <hr style="border:3px solid #f1f1f1">
 
@@ -272,18 +274,19 @@ $users = json_decode($data);
   margin-left: auto;
   margin-right: auto;"></a>  
 <br/>  
-<div style="padding-left: 29px;padding-right:5px;
+<div style="padding-left: 29px;padding-right:5px; background-color:white;
     padding-top: -78px;
     margin-top: -17px">
  <?= $user->Comment; ?>
     </div>
 </div>
   
-  <div class="ui-block-b"><?= $user->Name; ?> <br/> <?= $user->Stars; ?> Stars</div>
+  <div class="ui-block-b"><?= $user->Name; ?> <br/> <?= $user->Stars; ?><span class="fa fa-star "></span></div>
   <div class="ui-block-c"><?= $user->Date; ?> </div>
 
 </div>
 <div id="display" style ="padding-left: 35px;padding-right:5px;"> </div>
+
 
 <div id="input_comment" class="input" style=" 
     margin-right: auto;
@@ -298,10 +301,10 @@ $users = json_decode($data);
       
      <fieldset class="ui-grid-a" style="margin-right: auto;margin-left: auto;padding-left: 8px;
     padding-right: 8px;" >
-       <div class="ui-block-a" style="  width:191px;">
-         <input id="submit" type="submit" name="submit" value="Reply To Comment" onclick="on_submit()" data-theme="a"> 
+       <div class="ui-block-a" style= " float:left;">
+         <input class="btn-rating" id="submit" type="submit" name="submit" value="Reply" onclick="on_submit()" data-theme="a"> 
        </div>
-      <div class="ui-block-b" style="width:100px;">
+      <div class="ui-block-b" style="float:right;">
     	    <input class="like"  type="button" id="button" value="LIKE" onclick="setColor(event, 'button', '#101010')" ; data-count="1" style="backgroud-color:red;"  data-theme="b" />
       </div>
     </fieldset>
