@@ -13,212 +13,194 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<style>
-    table {
-        text-align: left;
+
+
+<script>
+    function goToSignIn() {
+        document.location.href = "iPhone/Login.html";
     }
-    div{
-        width: 320px;
-  padding: 10px;
-  border: 5px solid gray;
-  margin: 0;
-    }
-</style>
 
-<script type="text/javascript">
+    function registerUser() {
+        let fName = document.getElementById("txtFName").value;
+        let lName = document.getElementById("txtLName").value;
+        let emailId = document.getElementById("txtEmail").value;
+        let passwod = document.getElementById("txtPW").value;
+        let confPasswod = document.getElementById("txtCPW").value;
+        let mobileNo = document.getElementById("txtMB").value;
 
-    $(document).ready(function () {
-        // set initially button state hidden
-        $("#btn").hide();
-        // use keyup event on email field
-        $("#email").keyup(function () {
-            if (validateEmail()) {
-                // if the email is validated
-                // set input email border green
-                $("#email").css("border", "2px solid green");
-                // and set label 
-                $("#emailMsg").css("text-align", "center");
-                // $("#emailMsg").html("<br/><p class='text-success'>Validated</p>");
-            } else {
-                // if the email is not validated
-                // set border red
-                $("#email").css("border", "2px solid red");
-                //	$("#emailMsg").html("<p class='text-danger'>Un-validated</p>");
-            }
-            buttonState();
-        });
-        // use keyup event on password
-        //Validate password
-        $("#pass").keyup(function () {
-            // check
-            if (validatePassword()) {
-                // set input password border green
-                $("#pass").css("border", "2px solid green");
-                //set passMsg 
-                //$("#passMsg").html("<br/><p class='text-success'>Password verified.</p>");
-            } else {
-                // set input password border red
-                $("#pass").css("border", "2px solid red");
-                //set passMsg 
-                //	$("#passMsg").html("<br/><p class='text-danger'>Incorrect password.Please re-ernter</p>");
-            }
-            buttonState();
-        });
-        $("#rePass").keyup(function () {
-            // check
-            if (reEnterpassword()) {
-                // set input password border green
-                $("#rePass").css("border", "2px solid green");
-                //set passMsg 
-                //$("#passMsg").html("<br/><p class='text-success'>Password verified.</p>");
-            } else {
-                // set input password border red
-                $("#rePass").css("border", "2px solid red");
-                //set passMsg 
-                //	$("#passMsg").html("<br/><p class='text-danger'>Incorrect password.Please re-ernter</p>");
-            }
-            buttonState();
-        });
-        //Validate Phone number
-        $("#phonenum").keyup(function () {
-            // check
-            if (validatePhoneNumber()) {
-                // set input password border green
-                $("#phonenum").css("border", "2px solid green");
-                //set passMsg 
-                //	$("#passMsg").html("<br/><p class='text-success'>Password verified.</p>");
-            } else {
-                // set input password border red
-                $("#phonenum").css("border", "2px solid red");
-                //set passMsg 
-                //	$("#passMsg").html("<br/><p class='text-danger'>Incorrect password.Please re-ernter</p>");
-            }
-            buttonState();
-        });
-    });
+        if (fName === "") {
+            console.log("missing fname")
+            $("#faillregister").popup("open");
+        } else if (lName === "") {
+            console.log("missing lname")
+            $("#faillregister").popup("open");
 
-    function buttonState() {
-        if (validateEmail() && validatePassword()) {
-            // if the both email and password are validate
-            // then button should show visible
-            $("#btn").show();
+        } else if (emailId === "") {
+            console.log("missing email")
+            $("#faillregister").popup("open");
+
+        } else if (passwod === "") {
+            console.log("missing pw")
+            $("#faillregister").popup("open");
+
+        } else if (confPasswod === "") {
+            console.log("missing cpw")
+            $("#faillregister").popup("open");
+
+        } else if (mobileNo === "") {
+            console.log("missing mno")
+            $("#faillregister").popup("open");
+
         } else {
-            // if both email and pasword are not validated
-            // button state should hidden
-            $("#btn").hide();
+            let today = new Date();
+            let dd = String(today.getDate()).padStart(2, '0');
+            let mm = String(today.getMonth() + 1).padStart(2, '0');
+            let yyyy = today.getFullYear();
+            today = yyyy + '-' + mm + '-' + dd;
+
+            console.log(fName, lName, emailId, passwod, confPasswod, mobileNo,);
+            let jsonData = {
+                "User": {
+                    "email": emailId, "password": passwod, "join_date": today, "gender": "M",
+                    "f_name": fName, "l_name": lName, "mobile_no": mobileNo,
+                    "pref_currency": "LKR"
+                }
+            };
+
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var jsonObj = JSON.parse(this.responseText);
+                    console.log(jsonObj.status);
+                    var systemResponse = jsonObj.status;
+                    if (systemResponse == "success") {
+                        sessionStorage.setItem("logged_user", JSON.stringify(jsonObj.data));
+                        $("#sucessregister").popup("open");
+                        // hide(); faillogin
+                        // window.location = "./profile.html";
+
+                    } else if (systemResponse == "failed") {
+                        $("#faillregister").popup("open");
+                    }
+                }
+            };
+            xhttp.open("POST", "http://localhost:9002/KLANmart/user", true);
+            xhttp.setRequestHeader("Content-type", "application/json");
+            xhttp.send(JSON.stringify(jsonData));
         }
     }
 
-    function validateEmail() {
-        // get value of input email
-        var email = $("#email").val();
-        // use reular expression
-        var reg = /^\w+([-+.']\w+)@\w+([-.]\w+)\.\w+([-.]\w+)*$/
-        if (reg.test(email)) {
-            return true;
-        } else {
-            return false;
-        }
+    function wronginputhide() {
+        // $('.ui-popup-screen').off();
+        $("#faillregister").popup('close');
 
     }
-    function validatePassword() {
-        //get input password value
-        var pass = $("#pass").val();
-        // check it s length
-        if (pass.length > 7) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    function reEnterpassword() {
-        var rePass = $("#rePass").val();
-        var pass = $("#pass").val();
-        if (rePass == pass) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
-    function validatePhoneNumber() {
-        //get input password value
-        var phonenum = $("#phonenum").val();
-        // check it s length
-        if (phonenum.length <= 10) {
-            return true;
-        } else {
-            return false;
-        }
+    function hide() {
+        // $('.ui-popup-screen').off();
+        $("#sucessregister").popup('close');
+        window.location = "./login.html";
+
     }
-
-
 </script>
 
 <body class="bg-light">
-<div id=>
+    <div>
+        <div data-role="page" data-fullscreen="true">
+            <div data-role="header" data-position="fixed">
+            </div>
 
-    <table style="width:100%">
-        <tr>
-            <th>User Name</th>
-            <th>
-                <div class="input-container">
-                    <i class="fa fa-lock icon"></i>
-                    <input type="text" class="form-control" id="pass" placeholder="Enter User Name"
-                        autocomplete="off" name="">
+            <div data-role="content" data-theme="a">
+                <div>
+                    <img src="../images/logo1.png" class="logo-image" style="align-content: center;">
                 </div>
-            </th>
-        </tr>
-        <tr>
-            <th>Contact Number</th>
-            <th>
-                <div class="input-container">
-                    <i class="fa fa-lock icon"></i>
-                    <input type="text" class="form-control" id="pass" placeholder="Enter Contacy Number"
-                        autocomplete="off" name="">
-                </div>
-            </th>
-        </tr>
-        <tr>
-            <th>Email</th>
-            <th>
-                <div class="input-container">
-                    <i class="fa fa-lock icon"></i>
-                    <input type="text" class="form-control" id="pass" placeholder="Enter Password"
-                        autocomplete="off" name="">
-                </div>
-            </th>
-        </tr>
-        <tr>
-            <th>Password</th>
-            <th>
-                <div class="input-container">
-                    <i class="fa fa-lock icon"></i>
-                    <input type="password" class="form-control" id="pass" placeholder="Enter Password"
-                        autocomplete="off" name="">
+                <p class="signup-welcome" style="text-align: center;">Sign up with CraftZy</p>
+                <!-- <hr> -->
+                <div class="grid-a-ui">
+                    <div class="ui-field-contain" style="margin-top: -8px;">
+                        <fieldset class="ui-grid-a" style="
+                margin-bottom: -7px;">
+                            <div class="ui-block-a"><input type="text" name="textName" id="txtFName"
+                                    placeholder="First Name*" value="" data-corners="false" data-clear-btn="true"
+                                    data-wrapper-class="inputWrapper"></div>
+                            <div class="ui-block-b"><input type="text" name="txtLName" id="txtLName"
+                                    placeholder="Last Name*" value="" data-corners="false" data-clear-btn="true"
+                                    data-wrapper-class="inputWrapper"></div>
+                        </fieldset>
 
+                        <input type="email" name="textEmail" id="txtEmail" placeholder="Email*" value=""
+                            data-corners="false" data-clear-btn="true" data-wrapper-class="inputWrapper">
+                        <input type="password" name="textPassword" id="txtPW" placeholder="Password*" value=""
+                            data-corners="false" data-clear-btn="true" data-wrapper-class="inputWrapper">
+                        <input type="password" name="textPassword" id="txtCPW" placeholder="Confirm Password*" value=""
+                            data-corners="false" data-clear-btn="true" data-wrapper-class="inputWrapper">
+                        <input type="tel" name="textMobileNo" id="txtMB" placeholder="Mobile No*" value=""
+                            data-corners="false" data-clear-btn="true" data-wrapper-class="inputWrapper">
+
+
+
+                        <button class="reg-btn" data-shadow="false" onclick="registerUser();">
+                            AGREE & CREATE ACCOUNT
+                        </button>
+                    </div>
+                    <div>
+                        <P class="aggrement-text">By registering for an CraftZy account, you agree that you have read
+                            and
+                            accepted out<strong class="main-content"> CraftZy Free Membership Agreement</strong> and
+                            <strong class="main-content">Privacy Policy</strong>.
+                        </P>
+                    </div>
                 </div>
-            </th>
-        </tr>
-        <tr>
-            <th>Confirm Password</th>
-            <th>
-                <div class="input-container">
-                    <i class="fa fa-lock icon"></i>
-                    <input type="password" class="form-control" id="pass" placeholder="Enter Password"
-                        autocomplete="off" name="">
+
+                <div id="sucessregister" data-role="popup" data-dialog="true" data-transition="pop"
+                    style="width: 320px; border: none;">
+
+                    <div data-role="header" data-theme="b"
+                        style="border: none; background-color: rgb(34, 109, 179) !important;">
+                        <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">
+                            Registration
+                            Successful</h1>
+                    </div>
                 </div>
-            </th>
-        </tr>
-        <tr>
-            <th colspan="2" style="color: black;">
-                <input type="checkbox" name="checkbox" value="check" id="agree" /> I have read and agree to the
-                    Terms and Conditions and Privacy Policy
-                    <input type="submit" name="submit" value="submit" />
-            </th>
-        </tr>
-    </table>
-</div>
-    
+
+                <div id="faillregister" data-role="popup" data-dialog="true" data-transition="pop"
+                    style="width: 320px; border: none;">
+
+                    <div data-role="header" data-theme="b"
+                        style="border: none; background-color: rgb(223, 72, 52) !important;">
+                        <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">
+                            Registration
+                            Failed</h1>
+                    </div>
+
+                    <div role="main" class="ui-content">
+                        <p style="text-align: center; font-size: 13px; letter-spacing: 1px;">Please fill all the
+                            fields and </br>Try Again !</p>
+                        <a href="" class="ui-btn ui-shadow ui-btn-b" onclick="wronginputhide()"
+                            style="background-color: rgb(236, 97, 72) !important; font-size: 13px;border: none; text-shadow: none; font-weight: 100;">OK</a>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <br><label for="uname"><b>Or Connect with</b></label><br>
+                    <span><img src="../icons/smi1.png" alt="Apple Id"></span>
+                    <span><img src="../icons/smi2.png" alt="Facebook"></span>
+                    <span><img src="../icons/smi3.png" alt="Google"></span>
+                </div>
+                <div style="text-align: center;">
+                    <p class="sign-in-with-text">Already have an account?
+                        <strong class="main-content" onclick="goToSignIn()">Sign in</strong>
+                    </p>
+                </div>
+            </div>
+            <!--End of data-role content-->
+
+            <div data-role="footer" data-position="fixed">
+            </div>
+
+        </div>
+    </div>
+
 </body>
+
 </html>
