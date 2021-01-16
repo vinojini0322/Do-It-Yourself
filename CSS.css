@@ -89,7 +89,7 @@
 
 .ui-btn.ui-corner-all {
    /* margin-left: 58px;*/
-    margin-top: 25px;
+    /**margin-top: 25px;*/
 }
 
 .ui-grid-a .orderSummary .ui-block-a-label1 {

@@ -19,7 +19,7 @@ $users = json_decode($data);
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <link rel="stylesheet" href="../CSS.css">
   <link rel="stylesheet" href="../Rate.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script>
     function setColor(e, btn, color) {
         var target = e.target,
@@ -107,8 +107,7 @@ $users = json_decode($data);
         box-shadow: 2px 2px #111;
     }
 
-    }
-
+    
 </style>
 <script>
     function setColor(e, btn, color) {
@@ -149,11 +148,27 @@ $users = json_decode($data);
 
 
 
-    <div style="padding-left:8px; padding-right:8px;">
-      <h2 style="text-align:center;">REVIEWS & RATINGS</h2>
+    <div style="padding-left:8px; padding-right:8px; padding-bottom: 58px; background-color: #551122; padding-top: 10px; margin-top:0;">
+    <div class="ui-grid-b">
+  <div class="ui-block-a" >
+    <a target="_self" href="ViewItem.html" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-l"></a> 
+  </div>
+  <div class="ui-block-b">
+    <h2 style="text-align:center;">REVIEWS & RATINGS</h2>
+  </div>
+  </div>
+     
+    
       <div style="height:10px">
       </div>
-      <p style="text-align:justify; font-size:20px;"> <B>User Rating</B></p>
+      <!-- <p style="text-align:justify; font-size:20px;"> <B>User Rating</B></p> -->
+      <div class='hr'>
+                        <span class='hr-title'>
+                            USER RATINGS
+                        </span>
+                    </div>
+      <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:99%; height:min-content; border-color:white;">
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
@@ -164,114 +179,133 @@ $users = json_decode($data);
 
       <div class="row">
         <div class="side">
-          <div>5 star</div>
+        <div>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+         </div>
         </div>
         <div class="middle">
           <div class="bar-container">
             <div class="bar-5"></div>
           </div>
         </div>
-        <div class="side right">
-          <div>150</div>
-        </div>
         <div class="side">
-          <div>4 star</div>
+          <div>  <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span></div>
         </div>
         <div class="middle">
           <div class="bar-container">
             <div class="bar-4"></div>
           </div>
         </div>
-        <div class="side right">
-          <div>63</div>
-        </div>
+       
         <div class="side">
-          <div>3 star</div>
+          <div>  <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star"></span></div>
         </div>
         <div class="middle">
           <div class="bar-container">
             <div class="bar-3"></div>
           </div>
         </div>
-        <div class="side right">
-          <div>15</div>
-        </div>
+        
         <div class="side">
-          <div>2 star</div>
+          <div>  <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star"></span></div>
         </div>
         <div class="middle">
           <div class="bar-container">
             <div class="bar-2"></div>
           </div>
         </div>
-        <div class="side right">
-          <div>6</div>
-        </div>
+       
         <div class="side">
-          <div>1 star</div>
+          <div>  <span class="fa fa-star checked"></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star "></span>
+      <span class="fa fa-star"></span></div>
         </div>
         <div class="middle">
           <div class="bar-container">
             <div class="bar-1"></div>
           </div>
         </div>
-        <div class="side right">
-          <div>20</div>
-        </div>
+        
+      </div>
+
+
+
       </div>
       </br>
-    <hr/>
+ 
     
-<p style="text-align:justify; font-size:20px;"> <B>User Comments</B></p>
+<!-- <p style="text-align:justify; font-size:20px;"> <B>User Comments</B></p> -->
+
+<div class='hr'>
+                        <span class='hr-title'>
+                            USER COMMENTS
+                        </span>
+                    </div>
     <?php 
     
     foreach ($users as $user) { ?>
-   <a class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" style="text-align: display: block;
-  margin-left: auto;
-  margin-right: auto;"></a>
-<div class="ui-grid-b">
    
-    <div class="ui-block-a">
-        <?= $user->Name; ?> 
-		</div>
-
-				<div class="ui-block-b">
-           <?= $user->Stars; ?> Stars
-          
-        </div>
-        <div class="ui-block-c">
-          <?= $user->Date; ?> 
-          
-				</div>
-
-			
+<div style="background-color: white;    width: 95%;
+    margin-left: auto;
+    margin-right: auto; border-radius: 10px;    padding-top: 10px;" >
+<div class="ui-grid-b" >
+  <div class="ui-block-a">
+  <a class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" style="text-align: display: block;
+  margin-left: auto;
+  margin-right: auto;"></a>  
+<br/>  
+<div style="padding-left: 29px;padding-right:5px;
+    padding-top: -78px;
+    margin-top: -17px">
+ <?= $user->Comment; ?>
     </div>
-    
-    
-   <br>
+</div>
+  
+  <div class="ui-block-b"><?= $user->Name; ?> <br/> <?= $user->Stars; ?> Stars</div>
+  <div class="ui-block-c"><?= $user->Date; ?> </div>
 
-    <?= $user->Comment; ?>
-    <div id="display">
-      <p></p>
-    </div>
-    <div id="input_comment" class="input" style="">
+</div>
+<div id="display" style ="padding-left: 35px;padding-right:5px;"> </div>
+
+<div id="input_comment" class="input" style=" 
+    margin-right: auto;
+    margin-left: auto;padding-left: 8px;
+    padding-right: 8px;">
       <input type="text" placeholder="Comment" id="add_comment" name="comment" required>
-      <!--<i id="myDIV" onclick="myFunction(this)" class="fa fa-thumbs-up" ></i>-->
-
      
+
+</div>
+
       
-
-<div class="ui-grid-a">
-
-				<div class="ui-block-a">
-						<input id="submit" type="submit" name="submit" value="Add Comment" onclick="on_submit()">
-				</div>
-
-				<div class="ui-block-b">
-			<input class="like" type="button" id="button" value="LIKE" onclick="setColor(event, 'button', '#101010')" ; data-count="1" style="backgroud-color:red;" />
-				</div>
-			</div>
-
+      
+     <fieldset class="ui-grid-a" style="margin-right: auto;margin-left: auto;padding-left: 8px;
+    padding-right: 8px;" >
+       <div class="ui-block-a" style="  width:191px;">
+         <input id="submit" type="submit" name="submit" value="Reply To Comment" onclick="on_submit()" data-theme="a"> 
+       </div>
+      <div class="ui-block-b" style="width:100px;">
+    	    <input class="like"  type="button" id="button" value="LIKE" onclick="setColor(event, 'button', '#101010')" ; data-count="1" style="backgroud-color:red;"  data-theme="b" />
+      </div>
+    </fieldset>
+    <hr/>
     </div>
 
     <script>
@@ -284,6 +318,7 @@ $users = json_decode($data);
         //display.innerHTML = "Reply Comment " + titleInput + "<br/>";
         var x = document.getElementById("add_comment").value;
         document.getElementById("display").innerHTML = x;
+        document.getElementById('add_comment').value = '';
       }
     </script>
 
