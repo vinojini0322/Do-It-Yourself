@@ -460,8 +460,7 @@ $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');}); **/
     width:50% !important;
 }
 .video-size{
-    width:99%;
-    height:200px;
+    height: 350px !important;
 }
 .btn-rating{
     width:40% !important;
@@ -535,6 +534,9 @@ width:20px;
         padding-right: 10px;
         margin-left: 6px;
     }
+    .video-size{
+        height: max-content !important;
+    }
   }
 
-  
+ 

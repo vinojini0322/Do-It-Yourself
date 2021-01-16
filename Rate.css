@@ -73,6 +73,7 @@ position: absolute;
     float: left;
     width: 20%;
     margin-top:5px;
+    min-height: 23px;
   }
   
   .middle {
