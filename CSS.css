@@ -425,3 +425,6 @@ $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');}); **/
     background-color: rgb(85, 17, 34);
   }
   
+  .space{
+   height: 31px;
+  }
