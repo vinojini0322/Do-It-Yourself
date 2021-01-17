@@ -367,25 +367,17 @@ h2{
 .row{
     margin-left: 10px;
 }
-.textStyle-Feedback{
-    font-size:17px !important;
-    margin-left: 0px !important;
-}
+
 .feeadbackImageStyle{
 width:100px !important; 
-margin-left: auto !important;
+margin-left: 12px !important;
 margin-right: auto !important;
 margin-top: -25px !important;
 box-sizing: none !important;
 color: black;
 font-size: 20px !important;
 }
-.displayCooment-Feedback {
-margin-left: 32px!important;
-margin-right: auto!important;
-font-size: 20px!important;
-color: black;
-}
+
  .box-rating {
 width: 100% !important;
 background-color: white;
@@ -397,12 +389,7 @@ padding-left: 10px;
 padding-right: 10px;
 margin-left: 0px;
 }
-.feeadbackCommentStyle{
-    width: 360px;
-padding-left: 20px;
-padding-right: 10px;
-color: black;
-}
+
 .text-rating{
     text-align: center;
     font-size: 17px;
@@ -422,8 +409,8 @@ height: 300px !important;
 width:99%;
 }
 .POI-image{
-width: 130px;
-height: 120px;
+width: 120px;
+height: 100px;
 }
 
 
@@ -495,7 +482,74 @@ color: rgb(53, 53, 53);
     width: auto;
     padding-right: 5px;
     font-size: 20px;
+    margin-left: -65px;
 }
+/* darshi */
+.row{
+    margin-left: 65px;
+}
+.text-rating{
+text-align: center;
+font-size: 27px;
+}
+.box-rating{
+width: 86% !important;
+background-color: white;
+width: 99%;
+height: max-content;
+border-color: white;
+padding-bottom: 20px;
+border-radius: 10px;
+padding-left: 10px;
+padding-right: 98px;
+margin-left: 76px;
+
+}
+.fa.fa-star{
+    font-size: 20px;
+}
+.feeadbackImageStyle{
+width: 150px;
+margin-left: 72px;
+margin-right: auto;
+margin-top: -37px;
+font-size:50px;
+font-size: 30px;
+color: black;
+}
+.textStyle-Feedback{
+
+font-size:25px;
+margin-left: -44px;
+}
+.displayCooment-Feedback{
+margin-left: 78px;
+margin-right: auto;
+font-size: 25px;
+color: black;
+}
+.text-profile{
+font-size: 30px;
+margin-left: 20px;
+}
+.commentbox{
+background-color: white;    width: 88%;
+margin-left: auto;
+margin-right: auto; border-radius: 10px;    padding-top: 10px;
+}
+.feeadbackCommentStyle{
+width: 866px;
+font-size: 28px;
+padding-left: 70px;
+padding-right: 15px;
+color: black
+}   
+ .back{
+    margin-left: 66px;
+    
+
+}
+/* d */
 
 /* iphone  portrait */
 
@@ -514,16 +568,16 @@ color: rgb(53, 53, 53);
 
     
 .pOI-name {
-    font-size:18px;
+    font-size:16px;
     padding-left: 0px !important;
     
     }
     .pOI-des {
-    font-size: 14px;
+    font-size: 12px;
     padding-left: 0px !important;
     }
     .pOI-price {
-    font-size: 16px;
+    font-size: 14px;
     padding-left: 0px !important;
     }
     .pOI-name-promo {
@@ -571,6 +625,60 @@ color: rgb(53, 53, 53);
     .view-item-grid{
         width: 350px !important;
     }
+    /* darshi */
+
+    .back{
+        margin-left: -6px;
+        width:10px !important;
+        height:10px !important;
+        
+    }
+    .row{
+        margin-left: 10px;
+    }
+    .textStyle-Feedback{
+        font-size:18px !important;
+        margin-left: 0px !important;
+    }
+
+    .displayCooment-Feedback {
+    margin-left: 32px!important;
+    margin-right: auto!important;
+    font-size: 12px!important;
+    color: black;
+}
+     .box-rating {
+    width: 100% !important;
+    background-color: white;
+    height: max-content;
+    border-color: white;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0px;
+}
+.feeadbackCommentStyle{
+        width: 360px;
+    padding-left: 20px;
+    padding-right: 10px;
+    color: black;
+    font-size: 12px !important;
+}
+    .text-rating{
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .fa.fa-star{
+        font-size: 10px;
+    }
+ 
+.commentbox{
+    background-color: white;    width: 100%;
+    margin-left: auto;
+    margin-right: auto; border-radius: 10px;    padding-top: 10px;
+}
 
 }
 
