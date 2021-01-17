@@ -157,12 +157,12 @@ $users = json_decode($data);
   <div class="back">
     <a target="_self" href="ViewItem.html"
                         class="ui-link">
-    <img src="../icons/back.png" > 
+    <img class="back" src="../icons/back.png" > 
   </a>
   </div>
   </div>
   <div class="ui-block-b">
-    <h2>REVIEWS & RATINGS</h2>
+    <h2>REVIEWS</h2>
   </div>
   </div>
      
@@ -173,7 +173,7 @@ $users = json_decode($data);
       <div class="division">
       <div class='hr'>
                         <span class='hr-title'>
-                            USER RATINGS
+                             RATINGS
                         </span>
                     </div>
   </div>
@@ -267,7 +267,7 @@ $users = json_decode($data);
 <div class="division">
 <div class='hr'>
                         <span class='hr-title'>
-                            USER COMMENTS
+                             COMMENTS
                         </span>
                     </div>
   </div>
