@@ -51,8 +51,8 @@
 
 
         <section class="carousel" aria-label="Gallery">
-            <ol class="carousel__viewport">
-                <li id="carousel_slide1" tabindex="0" class="carousel_slide">
+            <ol class="carousel__viewport" id="carouselSection">
+                <!-- <li id="carousel_slide1" tabindex="0" class="carousel_slide">
                     <div class="carousel__snapper">
                         <a href="#carousel__slide4" class="ui-link"><img src="../images/carouselImage1.jpeg"
                                 width="100%" height="100%"></a>
@@ -69,7 +69,7 @@
                         <a href="#carousel__slide2" class="ui-link">
                             <img src="../images/carouselImage3.jpeg" width="100%" height="100%"></a>
                     </div>
-                </li>
+                </li> -->
 
             </ol>
 
@@ -266,5 +266,30 @@
 
 
 </body>
+
+<script>
+    var index = 0;
+    carouselSection = '<li id="carousel_slide1" tabindex="0" class="carousel_slide">' +
+            '<div class="carousel__snapper">' +
+                '<a href="#carousel__slide4" class="ui-link"><img src="../images/carasol-1.jpeg" width="100%" height="100%"></a>' +
+            '</div>' +
+        '</li>';
+    $('#carouselSection').append(carouselSection);
+    setInterval(function(){ 
+        index = index == 3 ? 0 : index;
+        var carouselImages = ["../images/carasol-1.jpeg", "../images/carasol-2.png", "../images/carasole-3.png"];
+
+        carouselSection = '<li id="carousel_slide1" tabindex="0" class="carousel_slide">' +
+            '<div class="carousel__snapper">' +
+                '<a href="#carousel__slide4" class="ui-link"><img src=' + carouselImages[index] + ' width="100%" height="100%"></a>' +
+            '</div>' +
+        '</li>';
+
+        index = index + 1;
+        $('#carouselSection').empty();
+        $('#carouselSection').append(carouselSection);
+        
+        }, 2000);
+</script>
 
 </html>

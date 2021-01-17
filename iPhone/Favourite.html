@@ -30,7 +30,8 @@
                     <div class="ui-bar ui-bar-a" style="color:red;">
 
                         <form class="ui-filterable" style="color:red;">
-                            <input type="search" name="search" id="search-basic" value="" />
+                            <input id="filterBasic-input" type="search" name="search" value="" />
+                        </form>    
                     </div>
                 </div>
 
@@ -45,9 +46,6 @@
             <h2 style="font-family:Roboto Slab; text-align:center">
                 Favourites List
             </h2>
-            <form class="ui-filterable">
-                <input id="filterBasic-input" data-type="search" placeholder="search favourites">
-            </form>
             <table id="favList" data-filter="true" data-input="#filterBasic-input" style="background-color: white">
             </table>
 
