@@ -86,16 +86,18 @@
             <h2>VIEW ITEM</h2>
 
 
-            <div style=" margin-left: 5%; margin-right: 5%">
+            <div class="view-item-grid" >
                 <div class="ui-grid-a"
                     style="border-style:solid; color: black; position: relative; background-color: white">
-                    <div class="ui-block-a" style="width: 20%" id="selectedItemImage">
-
+                    <div class="ui-block-a" >
+                         <div  class="view-item-img" id="selectedItemImage"></div>
                     </div>
                     <div class="ui-block-b"
-                        style="width: 65%; position: absolute; height: -webkit-fill-available; right: 0; text-align: center">
-                        <p style="font-family: serif; margin-left: 8%" id="selectedItemDesc" style="margin-left: 8%">
+                        style=" position: absolute; height: -webkit-fill-available; right: 0; ">
+                        <div class="view-item-des">
+                        <p id="selectedItemDesc" style="margin-left: 8%">
                         </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -235,7 +237,7 @@
 
 <script>
     function addSelectedItemImage(imageURL) {
-        return '<div style="margin-top: 10%"><img src=' + imageURL + '></div>';
+        return '<div style="margin-top: 10%; margin-left:auto; margin-right:auto;"><img src=' + imageURL + '></div>';
     }
 
 </script>
@@ -249,7 +251,7 @@
 
 <script>
     function addSelectedItemPrice(price) {
-        return '<P style="text-align: center; padding-top: 12px">Price: ' + price + '</P>';
+        return '<P style="text-align: center; padding-top: 12px">Price: LKR ' + price + '</P>';
     }
 </script>
 
