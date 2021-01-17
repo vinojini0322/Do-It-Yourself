@@ -432,6 +432,10 @@ $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');}); **/
     background-color: rgb(85, 17, 34);
   
   }
+
+  .space{
+   height: 31px;
+  }
   .ui-body.ui-body-a.ui-corner-all{
     width: 80% !important;
     margin-right: 37px;
