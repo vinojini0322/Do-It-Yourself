@@ -286,7 +286,7 @@ li {
 }
 
 #map {
-    height: 200px;
+    height: 300px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -547,9 +547,44 @@ color: black
  .back{
     margin-left: 66px;
     
+}
+.view-item-price{
+    height: 80px;
+    font-size: 22px;
+    margin-left: 71px;
+    margin-right: 9px;
 
 }
-/* d */
+.view-item-star{
+    height: 80px;
+    font-size: 22px;
+    margin-left: 71px;
+    margin-right: 9px;
+    padding-top: 35px;
+
+}
+.view-sub{
+    font-size: 24px;
+    text-align: left;
+    display:inline;
+    white-space:nowrap;
+}
+
+.view-seller-details{
+    margin-left: 27%;
+    width: 462px;
+    height: 225px;
+}
+.view-cart-icon{
+    width: 60px;
+    margin-left: 83%;
+    margin-top: 61px;
+}
+.view-cart-fav{
+    width: 60px;
+    margin-left: 100%;
+    margin-top: 61px;
+}
 
 /* iphone  portrait */
 
@@ -679,9 +714,49 @@ color: black
     margin-left: auto;
     margin-right: auto; border-radius: 10px;    padding-top: 10px;
 }
+.view-item-price{
+    height: 50px;
+    font-size: 16px;
+    margin-left: 0px;
+}
+.view-sub{
+    font-size: 18px;
+    text-align: left;
+    display:inline;
+    white-space:nowrap;
+}
+.view-seller-details{
+    margin-left: 10%;
+    width: auto;
+    height: auto;
+}
+#map {
+    height: 200px !important;
+    
+   }
+
+   .view-item-price{
+    height: 60px;
+    font-size: 16px;
+    margin-left: 0px;
+    margin-right: 0px;
+
+}
+.view-item-star{
+    height: 60px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 27px;
+
+}
+.view-cart-icon{
+    width: 44px;
+    margin-left: 83%;
+    margin-top: -12px;
 
 }
 
+}
 
 
 
