@@ -57,25 +57,6 @@
     background: url("icons/icon-category.png");
 }
 
-
-/* Confirm Order */
-
-/* table {
-    border-collapse: collapse;
-  }
-  
-  table tr {
-    border-bottom: 1px solid rgb(235, 220, 220);
-  }
-  
-  table tr:last-child {
-    border: 0;
-  } */
-
-/* table tr:last-child { 
-    border-bottom: none; 
-} */
-
 .ui-body-a .ui-block-a {
     height: auto;
 }
@@ -87,10 +68,7 @@
         align-content: center;
     }
 
-.ui-btn.ui-corner-all {
-   /* margin-left: 58px;*/
-    /**margin-top: 25px;*/
-}
+
 
 .ui-grid-a .orderSummary .ui-block-a-label1 {
     padding-right: 0px;
@@ -299,9 +277,6 @@ li {
     padding-top: 0px;
     /* box-shadow: 17px 12px #88888866;*/
 }
-/* $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');});
-$ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');}); **/
-
 .POI-image{
     width: 130px;
     height:120px;
@@ -396,18 +371,6 @@ $ ('.ui-grid-b').html(function (i,h){return h.replace(/&nbsp;/g,'');}); **/
     margin-right: 37px;
     margin-left: 37px;
 }
-.box-rating{
-    width: 98% !important;
-    background-color: white;
-    width: 99%;
-    height: max-content;
-    border-color: white;
-    padding-bottom: 20px;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 6px;
-}
 
 .ui-btn.ui-shadow.ui-corner-all{
     width:40% !important;
@@ -427,9 +390,8 @@ width:20px;
 }
 
 
-
-
-  @media screen and (max-width: 680px) {
+/* phone landscape */
+  @media screen and (width: 667px) {
     .ui-body.ui-body-a.ui-corner-all{
         width: 70% !important;     
         margin-right: auto;
@@ -442,6 +404,17 @@ width:20px;
     .ui-btn.ui-corner-all{
         width:80% !important;
         
+    }
+    h2{
+        text-align: left;
+        font-size: 27px;
+        margin-top: -1px;
+        padding-top: 10px;
+        margin-left: -91px;
+        width: 500px;
+    }
+    .back{
+        margin-left: 31px;
     }
     .POI-image{
         width: 100px !important;
@@ -473,7 +446,9 @@ width:20px;
     .pOI-price-promo { 
         font-size:18px;
     }
-
+    .video-size{
+        height: max-content !important;
+    }
     .division{
       padding-top: 10px; 
       padding-bottom: 15px; 
@@ -490,9 +465,319 @@ width:20px;
         padding-right: 10px;
         margin-left: 6px;
     }
-    .video-size{
-        height: max-content !important;
+    
+    .feeadbackImageStyle{
+        width:100px !important;
+        height:initial; 
+        margin-left: 45px !important;
+        margin-right: auto !important;
+        margin-top: -25px !important;
+        font-size: 20px!important;
+    }
+    .textStyle-Feedback{
+        font-size:17px !important;
+        margin-left: -35px !important;
+    }
+ 
+    .row{
+        margin-left: 10px;
+    }
+    .commentbox{
+        background-color: white;    
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto; 
+        border-radius: 10px;    
+        padding-top: 10px;
+    }
+     .displayCooment-Feedback {
+        margin-left: 32px!important;
+        margin-right: auto!important;
+        font-size: 20px!important;
+        color: black;
+    }
+    .text-rating{
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .fa.fa-star{
+        font-size: 10px;
+    }
+ 
+    .commentbox{
+        background-color: white;    width: 100%;
+        margin-left: auto;
+        margin-right: auto; border-radius: 10px;    padding-top: 10px;
+    }
+    .feeadbackCommentStyle{
+        width: 640px;
+        padding-left: 25px;
+        padding-right: 10px;
+        color: black
     }
   }
+  /* Iphone potrate */
+@media screen and (width: 375px) { 
+    
+.ui-body.ui-body-a.ui-corner-all{
+        width: 70% !important;     
+        margin-right: auto;
+        margin-left: auto;
+        float: none !important;
+    }
+    .ui-btn.ui-shadow.ui-corner-all{
+        width:88% !important;
+    }
+    .ui-btn.ui-corner-all{
+        width:80% !important;
+        
+    }
+    h2{
+        text-align: left;
+        font-size: 27px;
+        margin-top: -1px;
+        padding-top: 10px;
+        margin-left: -80px;
+        width: 500px;
+    }
+    .back{
+        margin-left: -6px;
+    }
+    .row{
+        margin-left: 10px;
+    }
+    .textStyle-Feedback{
+        font-size:17px !important;
+        margin-left: 0px !important;
+    }
+.feeadbackImageStyle{
+    width:100px !important; 
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: -25px !important;
+    box-sizing: none !important;
+    color: black;
+    font-size: 20px !important;
+}
+    .displayCooment-Feedback {
+    margin-left: 32px!important;
+    margin-right: auto!important;
+    font-size: 20px!important;
+    color: black;
+}
+     .box-rating {
+    width: 100% !important;
+    background-color: white;
+    height: max-content;
+    border-color: white;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0px;
+}
+.feeadbackCommentStyle{
+        width: 360px;
+    padding-left: 20px;
+    padding-right: 10px;
+    color: black;
+}
+    .text-rating{
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .fa.fa-star{
+        font-size: 10px;
+    }
+ 
+.commentbox{
+    background-color: white;    width: 100%;
+    margin-left: auto;
+    margin-right: auto; border-radius: 10px;    padding-top: 10px;
+}
+ }
+/* IPad potrate  */
+ @media screen and (width: 768px) { 
+     .ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{
+        font-size: 20px;
+    }
+    .ui-body.ui-body-a.ui-corner-all{
+        width: 70% !important;     
+        margin-right: auto;
+        margin-left: auto;
+        float: none !important;
+    }
+    .ui-btn.ui-shadow.ui-corner-all{
+        width:88% !important;
+    }
+    .ui-btn.ui-corner-all{
+        width:80% !important;   
+    }
+     h2{
+            text-align: left;
+    font-size: 40px;
+    margin-top: -1px;
+    padding-top: -12px;
+   
+    margin-left: -91px;
+  
+    width: 500px;
+    }
+    .back{
+margin-left: 31px;
+    }
+     .box-rating {
+    width: 90% !important;
+    background-color: white;
+    width: 99%;
+    height: max-content;
+    border-color: white;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    padding-left: 27px;
+    padding-right: 10px;
+    margin-left: 38px;
+}
+.row{
+        margin-left: 10px;
+    }
+    .text-rating{
+        text-align: center;
+    font-size: 25px;
+    }
+
+    .fa.fa-star{
+        font-size: 20px;
+}
+
+.textStyle-Feedback{
+    font-size:25px !important;
+    margin-left: -10px !important;
+}
+.feeadbackImageStyle{
+    width: 150px !important;
+    font-size: 25px !important;
+    margin-left: 29px !important;
+    margin-right: auto !important;
+    margin-top: -37px !important;
+    color: black;
+    }
+    .displayCooment-Feedback{
+    margin-left: 78px;
+    margin-right: auto;
+     font-size: 25px;
+    color: black;
+}
+.text-profile{
+font-size: 30px;
+    margin-left: 20px;
+}
+.commentbox{
+    background-color: white;    width: 88%;
+    margin-left: auto;
+    margin-right: auto; border-radius: 10px;    padding-top: 10px;
+}
+.feeadbackCommentStyle{
+    width: 638px;
+    font-size: 30px;
+    padding-left: 43px;
+    padding-right: 15px;
+    color: black;
+}
+ }
+ /* IPad landscape  */
+ @media screen and (width: 1024px) { 
+     .ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{
+        font-size: 20px;
+    }
+    .division{
+      padding-top: 10px; 
+      padding-bottom: 29px;
+    }
+.ui-body.ui-body-a.ui-corner-all{
+        width: 70% !important;     
+        margin-right: auto;
+        margin-left: auto;
+        float: none !important;
+    }
+    .back{
+        margin-left: 66px;
+    }
+    h2{
+        text-align: left;
+        font-size: 40px;
+        margin-top: -1px;
+        padding-top: -12px;
+        margin-left: -190px;
+    }
+    .ui-btn.ui-shadow.ui-corner-all{
+        width:88% !important;
+    }
+    .ui-btn.ui-corner-all{
+        width:80% !important;
+        
+    }
+    .row{
+        margin-left: 65px;
+    }
+    .text-rating{
+    text-align: center;
+    font-size: 27px;
+    }
+    .box-rating{
+    width: 86% !important;
+    background-color: white;
+    width: 99%;
+    height: max-content;
+    border-color: white;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 98px;
+    margin-left: 76px;
+
+    }
+.fa.fa-star{
+        font-size: 20px;
+}
+.feeadbackImageStyle{
+    width: 150px;
+    margin-left: 72px;
+    margin-right: auto;
+    margin-top: -37px;
+    font-size:50px;
+    font-size: 30px;
+    color: black;
+    }
+.textStyle-Feedback{
+    
+    font-size:30px;
+    margin-left: -44px;
+}
+.displayCooment-Feedback{
+    margin-left: 78px;
+    margin-right: auto;
+    font-size: 30px;
+    color: black;
+}
+.text-profile{
+    font-size: 30px;
+    margin-left: 20px;
+}
+.commentbox{
+    background-color: white;    width: 88%;
+    margin-left: auto;
+    margin-right: auto; border-radius: 10px;    padding-top: 10px;
+}
+.feeadbackCommentStyle{
+    width: 866px;
+    font-size: 30px;
+    padding-left: 70px;
+    padding-right: 15px;
+    color: black
+}
+ }
 
  

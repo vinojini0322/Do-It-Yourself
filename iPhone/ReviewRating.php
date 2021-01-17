@@ -151,10 +151,18 @@ $users = json_decode($data);
     <div style="padding-left:8px; padding-right:8px; padding-bottom: 58px; background-color: #551122; padding-top: 10px; margin-top:0;">
     <div class="ui-grid-b">
   <div class="ui-block-a" >
-    <a target="_self" href="ViewItem.html" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-l"></a> 
+    <!-- <a target="_self" href="ViewItem.html" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-l"></a> 
+  -->
+  
+  <div class="back">
+    <a target="_self" href="ViewItem.html"
+                        class="ui-link">
+    <img src="../icons/back.png" > 
+  </a>
+  </div>
   </div>
   <div class="ui-block-b">
-    <h2 style="text-align:center;">REVIEWS & RATINGS</h2>
+    <h2>REVIEWS & RATINGS</h2>
   </div>
   </div>
      
@@ -162,21 +170,24 @@ $users = json_decode($data);
       <div style="height:10px">
       </div>
       <!-- <p style="text-align:justify; font-size:20px;"> <B>User Rating</B></p> -->
+      <div class="division">
       <div class='hr'>
                         <span class='hr-title'>
                             USER RATINGS
                         </span>
                     </div>
+  </div>
       <div class="box-rating"
       style=" background-color: white; width:99%; height:min-content; border-color:white;">
-      <center>
+      <center style="
+    padding-top: 10px;">
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star"></span>
   </center>
-      <p style="text-align: center;"><b>4.1 average based on 254 reviews.</b></p>
+      <div class="text-rating" ><b>4.1 average based on 254 reviews.</b></div>
       <hr style="border:3px solid #f1f1f1">
 
       <div class="row">
@@ -253,39 +264,40 @@ $users = json_decode($data);
       </div>
       </br>
  
-    
-<!-- <p style="text-align:justify; font-size:20px;"> <B>User Comments</B></p> -->
-
+<div class="division">
 <div class='hr'>
                         <span class='hr-title'>
                             USER COMMENTS
                         </span>
                     </div>
+  </div>
     <?php 
     
     foreach ($users as $user) { ?>
    
-<div style="background-color: white;    width: 95%;
-    margin-left: auto;
-    margin-right: auto; border-radius: 10px;    padding-top: 10px;" >
+<div class ="commentbox" >
 <div class="ui-grid-b" >
   <div class="ui-block-a">
-  <a class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" style="text-align: display: block;
-  margin-left: auto;
-  margin-right: auto;"></a>  
+   <img src="../icons/profileIcon-feedback.jpg" class="feeadbackImageStyle"> 
 <br/>  
-<div style="padding-left: 29px;padding-right:5px; background-color:white;
-    padding-top: -78px;
-    margin-top: -17px">
+<div class="feeadbackCommentStyle">
  <?= $user->Comment; ?>
     </div>
 </div>
   
-  <div class="ui-block-b"><?= $user->Name; ?> <br/> <?= $user->Stars; ?><span class="fa fa-star "></span></div>
-  <div class="ui-block-c"><?= $user->Date; ?> </div>
+  <div class="ui-block-b">
+    <div class="textStyle-Feedback">
+    <?= $user->Name; ?> <br/> <?= $user->Stars; ?><span class="fa fa-star "></span>
+    </div>
+  </div>
+  <div class="textStyle-Feedback">
+  <div class="ui-block-c"><?= $user->Date; ?> 
+    </div>
+</div>
 
 </div>
-<div id="display" style ="padding-left: 35px;padding-right:5px;"> </div>
+<br>
+<div id="display" class="displayCooment-Feedback" > </div>
 
 
 <div id="input_comment" class="input" style=" 
@@ -317,8 +329,6 @@ $users = json_decode($data);
       }
 
       function on_submit() {
-        //var titleInput  = document.getElementById("add_comment");
-        //display.innerHTML = "Reply Comment " + titleInput + "<br/>";
         var x = document.getElementById("add_comment").value;
         document.getElementById("display").innerHTML = x;
         document.getElementById('add_comment').value = '';
