@@ -264,8 +264,6 @@ $users = json_decode($data);
       </div>
       </br>
  
-    
-<!-- <p style="text-align:justify; font-size:20px;"> <B>User Comments</B></p> -->
 <div class="division">
 <div class='hr'>
                         <span class='hr-title'>
@@ -277,18 +275,12 @@ $users = json_decode($data);
     
     foreach ($users as $user) { ?>
    
-<div style="background-color: white;    width: 88%;
-    margin-left: auto;
-    margin-right: auto; border-radius: 10px;    padding-top: 10px;" >
+<div class ="commentbox" >
 <div class="ui-grid-b" >
   <div class="ui-block-a">
-  <!-- <a class="ui-btn ui-shadow ui-corner-all ui-icon-user ui-btn-icon-notext" style="text-align: display: block;
-  margin-left: auto;
-  margin-right: auto;"></a>   -->
    <img src="../icons/profileIcon-feedback.jpg" class="feeadbackImageStyle"> 
 <br/>  
-<div class="feeadbackImageStyle">
-<!--style="padding-left: 29px;padding-right:5px; background-color:white; padding-top: -78px; margin-top: -17px" -->
+<div class="feeadbackCommentStyle">
  <?= $user->Comment; ?>
     </div>
 </div>
@@ -337,8 +329,6 @@ $users = json_decode($data);
       }
 
       function on_submit() {
-        //var titleInput  = document.getElementById("add_comment");
-        //display.innerHTML = "Reply Comment " + titleInput + "<br/>";
         var x = document.getElementById("add_comment").value;
         document.getElementById("display").innerHTML = x;
         document.getElementById('add_comment').value = '';
