@@ -1,81 +1,162 @@
-<?php
-  ob_start();
-  session_start();
-?>
+<html lang="en">
 
-<?
-  // error_reporting(E_ALL);
-  // ini_set("display_errors", 1);
-?>
+<head>
+  <title>Craftzy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../themes/Craftzy.min.css" />
+  <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+  <link rel="stylesheet" href="../CSS.css">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-<html lang = "en">
- 
-  <head>
-    <title>Craftzy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../themes/Craftzy.min.css" />
-    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-    <link rel="stylesheet" href="../CSS.css">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
 
-  </head>
+<script>
+  function goToSignUp() {
+    document.location.href = "./SignUp_Customer.html";
+  }
 
-  <body>
-     
-    <div style="text-align: center;"><a href="#page1"><img src="../images/logo.jpg"></a></div>
-     <div class = "container form-signin">
-       
-        <?php
-           $msg = '';
-           
-           if (isset($_POST['login']) && !empty) {
+  function loginBtn() {
+    let email = document.getElementById("txtEmailId").value;
+    let password = document.getElementById("txtPassword").value;
 
-              if ($_POST['username'] == 'vino' &&
-                 $_POST['password'] == '1234') {
-                 $_SESSION['valid'] = true;
-                 $_SESSION['timeout'] = time();
-               
-                 
-                 echo 'You have entered valid use name and password';
+    if (email === "") {
+      console.log("no username");
+      $("#validationfaillogin").popup("open");
+    } else if (password === "") {
+      console.log("no pass");
+      $("#validationfaillogin").popup("open");
+      // validationlogin
+    } else {
+      console.log(email, password);
+      let jsonData = {
+        "User": {
+          "email": email, "password": password
+        }
+      };
 
-              }else {
-                 $msg = 'Wrong username or password';
-              }
-           }
-        ?>
+      let xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+          var jsonObj = JSON.parse(this.responseText);
+          console.log(jsonObj.status);
+          var systemResponse = jsonObj.status;
+          if (systemResponse == "success") {
+            sessionStorage.setItem("logged_user", JSON.stringify(jsonObj.data));
+            $("#sucesslogin").popup("open");
 
+          } else if (systemResponse == "failed") {
+            $("#faillogin").popup("open");
+          }
+        }
+      };
+      xhttp.open("POST", "http://localhost:9002/KLANmart/login", true);
+      xhttp.setRequestHeader("Content-type", "application/json");
+      xhttp.send(JSON.stringify(jsonData));
+    }
+  }
+  function validationFailed() {
+    $("#validationfaillogin").popup('close');
+  }
 
-     <div class="container">
+  function wronginputhide() {
+    $("#faillogin").popup('close');
 
-        <form class="form-signing" role="form" action="Home.html"
-        <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
+  }
 
+  function hide() {
+    $("#sucesslogin").popup('close');
+    window.location = "./profile.html";
+  }
 
-            <div class="container">
-                <label for="username"><b>Username</b></label>
-                <input type="text" class="form-control" name="username" placeholder="User Name" required autofocus></br>
-                <label for="password"><b>Password</b></label>
-                <input type="password" class="form-control" name="password" placeholder="Password" required><br>
-            </div>
-            <div style="align-content: space-between;">
-                <br><span><input type="checkbox" checked="checked" name="remember">Remember me</span><span
-                    class="psw"><a href="#" style="color: #AB821E;">Forgot password?</a></span><br>
-            </div>
-            <div><button class="btn btn-lg btn-primary btn-block" type="submit" name="login" id="submit">Login</button>
-            </div>
-            <div style="text-align: center;">
-                <br><label for="uname"><b>Or Connect with</b></label><br>
-                <span><img src="../icons/smi1.png" alt="Apple Id"></span>
-                <span><img src="../icons/smi2.png" alt="Facebook"></span>
-                <span><img src="../icons/smi3.png" alt="Google"></span>
-            </div>
-            <div style="text-align: center;">
-                <br><label for="uname"><b>Not a member?<a href="#" style="color: #AB821E;"> Sign up </a></b></label><br>
-            </div>
-        </form>
+</script>
+
+<body>
+  <div data-role="content" data-theme="a" class="content-body" style="text-align: center; align-content: center;">
+
+    <div class="login-container">
+      <div class="ui-a-grid">
+        <h1 class="welcome-txt" style="font-weight: 100;">Welcome</h1>
+        <p class="login-txt">Sign In to your CraftZy account</p>
+      </div>
+      <div class="ui-field-contain">
+        <div class="ui-b-grid">
+
+          <input type="email" name="textEmail" id="txtEmailId" placeholder="Email Id*" value="" data-corners="false"
+            data-clear-btn="true" data-wrapper-class="inputWrapper" style="padding-top: 15px !important; padding-bottom: 8px;
+                  padding-right: 15px;padding-left: 15px;">
+
+          <input type="password" name="textPasseord" id="txtPassword" placeholder="Password*" value=""
+            data-corners="false" data-clear-btn="true" data-wrapper-class="inputWrapper">
+
+          <p class="forgot-pw-txt">Forgot password?</p>
+
+          <button class="login-btn" data-shadow="false" onclick="loginBtn()">SIGN
+            IN</button>
+        </div>
+        <div id="sucesslogin" data-role="popup" data-dialog="true" data-transition="pop"
+          style="width: 300px; border: none;">
+
+          <div data-role="header" data-theme="b" style="border: none; background-color: rgb(34, 109, 179) !important;">
+            <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">Login
+              Successful</h1>
+          </div>
+
+          <div role="main" class="ui-content">
+            <p style="text-align: center; font-size: 13px; letter-spacing: 1px;">Welome to
+              CraftZy</br>Thank you !</p>
+            <a href="" class="ui-btn ui-shadow ui-btn-b" onclick="hide()"
+              style="background-color: rgb(22, 69, 158) !important; font-size: 13px;border: none; text-shadow: none; font-weight: 100;">OK</a>
+          </div>
+        </div>
+
+        <div id="faillogin" data-role="popup" data-dialog="true" data-transition="pop"
+          style="width: 300px; border: none;">
+
+          <div data-role="header" data-theme="b" style="border: none; background-color: rgb(223, 72, 52) !important;">
+            <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">Login
+              Failed</h1>
+          </div>
+
+          <div role="main" class="ui-content">
+            <p style="text-align: center; font-size: 13px; letter-spacing: 1px;">please enter correct
+              credentials and </br>Try Again !</p>
+            <a href="" class="ui-btn ui-shadow ui-btn-b" onclick="wronginputhide()"
+              style="background-color: rgb(236, 97, 72) !important; font-size: 13px;border: none; text-shadow: none; font-weight: 100;">OK</a>
+          </div>
+        </div>
+
+        <div id="validationfaillogin" data-role="popup" data-dialog="true" data-transition="pop"
+          style="width: 300px; border: none;">
+
+          <div data-role="header" data-theme="b" style="border: none; background-color: rgb(223, 72, 52) !important;">
+            <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">Login
+              Failed</h1>
+          </div>
+
+          <div role="main" class="ui-content">
+            <p style="text-align: center; font-size: 13px; letter-spacing: 1px;">please fill all fields and
+              </br>Try Again !</p>
+            <a href="" class="ui-btn ui-shadow ui-btn-b" onclick="validationFailed()"
+              style="background-color: rgb(236, 97, 72) !important; font-size: 13px;border: none; text-shadow: none; font-weight: 100;">OK</a>
+          </div>
+        </div>
+        <p class="sign-in-with-txt">You can also</p>
+        <div style="text-align: center;">
+          <br><label for="uname"><b>Or Connect with</b></label><br>
+          <span><img src="../icons/smi1.png" alt="Apple Id"></span>
+          <span><img src="../icons/smi2.png" alt="Facebook"></span>
+          <span><img src="../icons/smi3.png" alt="Google"></span>
+        </div>
+        <div style="text-align: center;">
+          <p class="sign-in-with-text">Don't have an account?
+            <strong class="main-content" onclick="goToSignUp()">Sign in</strong>
+          </p>
+        </div>
+      </div>
     </div>
-     
-  </body>
+
+</body>
+
 </html>
