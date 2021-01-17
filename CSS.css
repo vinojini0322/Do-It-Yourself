@@ -277,50 +277,7 @@ li {
     padding-top: 0px;
     /* box-shadow: 17px 12px #88888866;*/
 }
-.POI-image{
-    width: 130px;
-    height:120px;
-}
 
-
-.pOI-name {
-	text-align: left;
-	font-family:inter; 
-	font-size:22px;
-	font-weight: bold;
-    color: #000;
-    padding-left: 34px;
-}
-.pOI-des {
-	text-align: left;
-    font-family: inter;
-    font-size: 20px;
-    padding-left: 34px;
-    font-weight: normal;
-    color: rgb(102, 100, 100);
-}
-.pOI-price {
-	text-align: left;
-    font-family: inter;
-    padding-left: 34px;
-    font-size: 22px;
-    font-weight: bold;
-    color: rgb(53, 53, 53);
-}
-.pOI-name-promo {
-	text-align: center;
-	font-family:inter; 
-	font-size:24px;
-	font-weight: bold;
-	color: #000;
-}
-.pOI-price-promo {
-	text-align: center;
-	font-family:inter; 
-	font-size:22px;
-	font-weight: bold;
-	color: rgb(53, 53, 53);
-}
 #map {
     height: 200px;
     width: 100%;
@@ -516,6 +473,55 @@ width:20px;
         padding-right: 10px;
         color: black
     }
+    .video-size{
+        height: 190px !important;
+        width:99%;
+    }
+.POI-image{
+    width: 130px;
+    height:120px;
+}
+
+
+.pOI-name {
+	text-align: left;
+	font-family:inter; 
+	font-size:22px;
+	font-weight: bold;
+    color: #000;
+    padding-left: 34px;
+}
+.pOI-des {
+	text-align: left;
+    font-family: inter;
+    font-size: 20px;
+    padding-left: 34px;
+    font-weight: normal;
+    color: rgb(102, 100, 100);
+}
+.pOI-price {
+	text-align: left;
+    font-family: inter;
+    padding-left: 34px;
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(53, 53, 53);
+}
+.pOI-name-promo {
+	text-align: center;
+	font-family:inter; 
+	font-size:24px;
+	font-weight: bold;
+	color: #000;
+}
+.pOI-price-promo {
+	text-align: center;
+	font-family:inter; 
+	font-size:22px;
+	font-weight: bold;
+	color: rgb(53, 53, 53);
+}
+
   }
   /* Iphone potrate */
 @media screen and (width: 375px) { 
@@ -538,7 +544,7 @@ width:20px;
         font-size: 27px;
         margin-top: -1px;
         padding-top: 10px;
-        margin-left: -80px;
+        /* margin-left: -80px; */
         width: 500px;
     }
     .back{
@@ -597,6 +603,55 @@ width:20px;
     margin-left: auto;
     margin-right: auto; border-radius: 10px;    padding-top: 10px;
 }
+.video-size{
+    height: 170px !important;
+    width:99%;
+}
+.POI-image{
+    width: 100px;
+    height: 100px;
+}
+
+
+.pOI-name {
+	text-align: left;
+	font-family:inter; 
+	font-size:18px;
+	font-weight: bold;
+    color: #000;
+  
+}
+.pOI-des {
+	text-align: left;
+    font-family: inter;
+    font-size: 13px;
+ 
+    font-weight: normal;
+    color: rgb(102, 100, 100);
+}
+.pOI-price {
+	text-align: left;
+    font-family: inter;
+
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(53, 53, 53);
+}
+.pOI-name-promo {
+	text-align: center;
+	font-family:inter; 
+	font-size:24px;
+	font-weight: bold;
+	color: #000;
+}
+.pOI-price-promo {
+	text-align: center;
+	font-family:inter; 
+	font-size:22px;
+	font-weight: bold;
+	color: rgb(53, 53, 53);
+}
+
  }
 /* IPad potrate  */
  @media screen and (width: 768px) { 
