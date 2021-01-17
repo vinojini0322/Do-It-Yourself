@@ -151,7 +151,7 @@ body {
 
 *::-webkit-scrollbar-thumb {
     background: transparent;
-    border: none;
+    border: none;   
 }
 
 * {
@@ -516,7 +516,15 @@ width:20px;
         padding-right: 10px;
         color: black
     }
+
   }
+
+
+
+
+
+
+
   /* Iphone potrate */
 @media screen and (width: 375px) { 
     
@@ -596,6 +604,55 @@ width:20px;
     background-color: white;    width: 100%;
     margin-left: auto;
     margin-right: auto; border-radius: 10px;    padding-top: 10px;
+}
+.viewItemImage{
+    margin-top: 10%;
+    border-style:solid;
+     color: black; 
+     position: relative;
+      background-color: white
+}
+.viewItmeDiscription{
+    font-family: serif;
+     margin-left: 8%; 
+     text-align: left;
+     width: 65%; 
+     position: absolute;
+      height: -webkit-fill-available; 
+      right: 0;
+     text-align: center;
+      background-color: white;
+      color: black;
+}
+.itemPic{
+    width: 100px;
+    padding-top: 10px;
+}
+.itemName{
+    text-align: -webkit-center; 
+    padding-top: 6%; 
+}
+.itemPrice{
+    text-align: center;
+}
+.itemQty{
+    text-align: center;
+}
+.plus{
+    text-align: -webkit-center;
+     width: 24%;
+    padding-left: 42px;
+}
+.minus{
+    width: 36px;
+    padding-right: 20px;
+}
+.itemsCartList{
+    background-color: white;
+    text-align: -webkit-center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 101%;
 }
  }
 /* IPad potrate  */
@@ -777,6 +834,34 @@ font-size: 30px;
     padding-left: 70px;
     padding-right: 15px;
     color: black
+}
+.itemPic{
+    width: 100px;
+    padding-top: 10px;
+}
+.itemName{
+    text-align: -webkit-center; 
+    padding-top: 10%; 
+    font-size: x-large;
+}
+.itemPrice{
+    text-align: center;
+     font-size: x-large;
+}
+.itemQty{
+
+}
+.plus{
+    text-align: -webkit-center;
+     width: 12%;
+}
+.minus{
+    width: 36px;
+}
+.itemsCartList
+{
+    width: 
+
 }
  }
 

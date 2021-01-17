@@ -46,7 +46,7 @@
 </head>
 
 <body class="ui-mobile-viewport ui-overlay-a">
-    <div id="ConfirmOrder" data-role="page" data-position="fixed">
+    <div id="ConfirmOrder" data-role="page" data-position="fixed" style="background-color: #551122">
         <!-- Header -->
         <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
 
@@ -70,14 +70,15 @@
         </div>
 
 
-        <div role="orderConfirmation" class="ui-content" style="background-color: #551122">
+        <div class="ui-content">
             <div>
-                <h2 style="font-family:Roboto Slab; text-align:center">
+                <h2 class="h2">
                     MY CART
                 </h2>
             </div>
-            <div style="text-align: -webkit-center">
-                <table id="itemsList" style="background-color: white">
+            <div class ="itemsCartList" style="text-align: -webkit-center">
+                <table id="itemsList">
+                    
                 </table>
             </div>
             <div class="emptySpace" style="padding-top: 20px">
@@ -88,7 +89,7 @@
 
                         <tr>
                             <td>
-                                <div class="ui-block-a-label2" ></div><label for="textinput" style="color: black; font-weight: bolder">Total</label>
+                                <div class="ui-block-a-label2" ></div><label for="textinput" style="color: #AB821E; font-weight: bolder">Total</label>
                                 </div>
                             </td>
                             <td>
@@ -142,20 +143,19 @@
 <script>
     function addElement(item) {
         return '<tr>' +
-            '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
+            '<td class="itemPic" rowspan="3"><img src=' + item.picUrl + '>' +
             '</td>' +
-            '<td colspan="4" style="text-align: -webkit-center; padding-top: 10%">' + item.name + '</td>' +
+            '<td class="itemName" colspan="4">' + item.name + '</td>' +
             '</tr>' +
             '<tr>' +
-            '<td colspan="4" style="text-align: center"> LKR ' + item.price + '</td>' +
+            '<td class="itemPrice" colspan="4"> LKR ' + item.price + '</td>' +
             '</tr>' +
             '<tr>' +
-            '<td colspan="1"></td>' +
-            '<td style="text-align: -webkit-center">' +
+            '<td class="plus">' +
             '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-plus ui-btn-icon-notext ui-mini" onclick="addQty(' + item.id + ')">Confirm Order</button>' +
             '</td>' +
-            '<td style="padding-top: 5%">' + item.quantity + '</td>' +
-            '<td>' +
+            '<td class="itemQty">' + item.quantity + '</td>' +
+            '<td class= "minus">' +
             '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-minus ui-btn-icon-notext ui-mini" onclick="reduceQty(' + item.id + ')">Confirm Order</button>' +
             '</td>' +
             '</tr>' +
