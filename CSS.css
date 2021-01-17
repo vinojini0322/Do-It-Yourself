@@ -538,7 +538,7 @@ width:20px;
         font-size: 27px;
         margin-top: -1px;
         padding-top: 10px;
-        margin-left: -80px;
+        /* margin-left: -80px; */
         width: 500px;
     }
     .back{
