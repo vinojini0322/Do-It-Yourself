@@ -12,7 +12,7 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
 
-    
+
     <script>
         function addQty(itemId) {
             // add qty to the db
@@ -76,31 +76,29 @@
                     MY CART
                 </h2>
             </div>
-            <div class ="itemsCartList" style="text-align: -webkit-center">
+            <div class="itemsCartList" style="text-align: -webkit-center">
                 <table id="itemsList">
-                    
+
                 </table>
             </div>
             <div class="emptySpace" style="padding-top: 20px">
             </div>
             <div class="ui-body">
                 <div class="ui-grid-a" style="text-align: -webkit-center">
-                    <table class="total">
+                    <table>
 
                         <tr>
                             <td>
-                                <div class="ui-block-a-label2" ></div><label for="textinput" style="color: #AB821E; font-weight: bolder">Total</label>
-                                </div>
+                                <div class="totalText" for="textinput">Total</label>
                             </td>
                             <td>
-                                    <div class="ui-block-b"><input type="text"
-                                        name="textinput" id="textinput" style="text-align: -webkit-center; background-color: white"></div>
+                                    <div class="totalValue"><input type="text" name="textinput" id="textinput" style="background-color: white" ></div>
                             </td>
                         </tr>
                     </table>
 
-                    <button onclick="window.location='./ConfirmOrder.html'">Checkout Cart</button>
-                    <button onclick="window.location='./Categories.html'">Continue Shopping</button>
+                    <button class="checkout" onclick="window.location='./ConfirmOrder.html'">Checkout Cart</button>
+                    <button class="continueShopping" onclick="window.location='./Categories.html'">Continue Shopping</button>
                 </div>
 
             </div>
@@ -159,7 +157,7 @@
             '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-minus ui-btn-icon-notext ui-mini" onclick="reduceQty(' + item.id + ')">Confirm Order</button>' +
             '</td>' +
             '</tr>' +
-            '<tr>' +          
+            '<tr>' +
             '</tr>';
     }
 </script>

@@ -357,7 +357,6 @@ h2{
     font-size: 27px;
     margin-top: -1px;
     padding-top: 10px;
-    /* margin-left: -80px; */
     width: auto;
     font-family: roboto slab;
 }
@@ -467,11 +466,6 @@ font-weight: bold;
 color: rgb(53, 53, 53);
 }
 
-/* .ui-link-QR.ui-link{
-    widows: 30px;
-    height: 30px;
-    padding-top: 15px;
-} */
 .QRStyle{
     height: 53px !important;
     padding-left: 3px;
@@ -496,6 +490,102 @@ color: rgb(53, 53, 53);
     padding-right: 5px;
     font-size: 20px;
 }
+
+/* My cart */
+.itemPic{
+    width: 100px;
+    padding-top: 10px;
+}
+.itemName{
+    text-align: end; 
+    padding-top: 6%; 
+    color: #AB821E;
+    font-size: x-large;
+}
+.itemPrice{
+    color: #AB821E;
+    font-size: x-large;
+    padding-left: 16px;
+}
+.itemQty{
+    color: #AB821E;
+    font-size: x-large;
+    padding-left: 16px;
+    padding-left: 29px;
+    padding-bottom: 20px;
+}
+.plus{
+    text-align: -webkit-center;
+    width: 27%;
+    padding-left: 42px;
+}
+.minus{
+    width: 36px;
+    padding-right: 20px;
+}
+.itemsCartList{
+    background-color: white;
+    text-align: -webkit-center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 51%
+}
+.totalText{
+    font-size: x-large;
+    margin-top: 10px;
+    color: #AB821E; 
+    font-weight: bolder;
+    margin-top: 19px;
+    margin-right: 12px;
+}
+.totalValue{
+    width: 161px;
+    font-size: larger;
+    text-align: -webkit-center;
+    background-color: white !important;
+}
+.checkout.ui-btn.ui-shadow.ui-corner-all{
+    width: 39% !important;
+    font-size: larger;
+}
+.continueShopping.ui-btn.ui-shadow.ui-corner-all{
+    width: 39% !important;
+    font-size: larger;
+}
+
+/* Confirm order */
+.confirmOrderList{
+    border-width: 1px; 
+    border-style: solid; 
+    margin-left: auto;
+    margin-right: auto; 
+    background-color:white;
+    width: 519px
+
+}
+.orderSummary{
+    margin-right: auto;
+    margin-left: auto;
+    color: #AB821E;
+    font-size: x-large;
+}
+.voucherCode{
+    font-size: larger !important;
+    padding-right: 10px;
+}
+.voucherCodeValue{
+    background-color: white !important;
+}
+.ConfirmOrder.ui-btn.ui-shadow.ui-corner-all{
+    width: 42% !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    font-size: larger;
+}
+
+
 
 /* iphone  portrait */
 
@@ -547,8 +637,6 @@ color: rgb(53, 53, 53);
          margin-right:0px;
          font-size: 16px;
          height: 200px;
-         
-         /* box-shadow: 17px 12px #88888866;*/
      }
      .QRStyle{
         padding-left: 1px !important;
@@ -570,6 +658,79 @@ color: rgb(53, 53, 53);
     }
     .view-item-grid{
         width: 350px !important;
+    }
+    .itemPic{
+        width: 100px;
+        padding-top: 10px;
+    }
+    .itemName{
+        text-align: -webkit-center; 
+        padding-top: 6%; 
+        font-size: medium !important;
+    }
+    .itemPrice{
+        text-align: center;
+        font-size: medium !important
+    }
+    .itemQty{
+        text-align: center;
+        font-size: medium !important
+    }
+    .plus{
+        text-align: -webkit-center;
+         width: 24%;
+        padding-left: 42px;
+    }
+    .minus{
+        width: 36px;
+        padding-right: 20px;
+    }
+    .itemsCartList{
+        background-color: white;
+        text-align: -webkit-center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100% !important;
+    }
+    .itemsCartList{
+        background-color: white;
+        text-align: -webkit-center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 51%
+    }
+    .totalText{
+        font-size: large !important;
+        margin-top: 10px;
+        color: #AB821E; 
+        font-weight: bolder;
+        margin-top: 19px;
+        margin-right: 12px;
+    }
+    .totalValue{
+        width: 109px !important;
+        font-size: medium !important;
+        text-align: -webkit-center;
+         background-color: white"
+    }
+    .checkout.ui-btn.ui-shadow.ui-corner-all{
+        width: 73% !important;
+        font-size: medium;
+    }
+    .continueShopping.ui-btn.ui-shadow.ui-corner-all{
+        width: 73% !important;
+        font-size: medium;
+    }
+
+    /* My cart */
+    .confirmOrderList{
+        border-width: 1px; 
+        border-style: solid; 
+        margin-left: auto;
+        margin-right: auto; 
+        background-color:white;
+        width: 342px;
+    
     }
 
 }
