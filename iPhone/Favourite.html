@@ -16,7 +16,7 @@
 </head>
 
 <body class="ui-mobile-viewport ui-overlay-a">
-    <div data-role="page" id="Favourites" data-position="fixed">
+    <div data-role="page" id="Favourites" data-position="fixed" style="background-color: #551122">
 
         <!-- Header -->
         <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
@@ -30,7 +30,8 @@
                     <div class="ui-bar ui-bar-a" style="color:red;">
 
                         <form class="ui-filterable" style="color:red;">
-                            <input type="search" name="search" id="search-basic" value="" />
+                            <input id="filterBasic-input" type="search" name="search" value="" />
+                        </form>    
                     </div>
                 </div>
 
@@ -45,10 +46,7 @@
             <h2 style="font-family:Roboto Slab; text-align:center">
                 Favourites List
             </h2>
-            <form class="ui-filterable">
-                <input id="filterBasic-input" data-type="search" placeholder="search favourites">
-            </form>
-            <table id="favList" data-filter="true" data-input="#filterBasic-input">
+            <table id="favList" data-filter="true" data-input="#filterBasic-input" style="background-color: white">
             </table>
 
         </div>
@@ -134,17 +132,15 @@
     function addElement(item) {
         return '<tr>' +
             '<td>' +
-            '<input type="checkbox" name=' + item.id + ' id=' + item.id + ' data-enhanced="true">' +
+            '<input type="checkbox" name=' + item.id + ' id=' + item.id + ' data-enhanced="true" style="width: 23px; height: 40px; margin-left: 71%;">' +
             '</td>' +
             '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
             '</td>' +
-            '<td colspan="3"> </td>' +
             '<td>' + item.name + '</td>' +
             '</tr>' +
             '<tr>' +
             '<td>' +
             '</td>' +
-            '<td colspan="3" style="padding-left:60px"></td>' +
             '<td>LKR ' + item.price + '</td>' +
             '</tr>' +
             '<tr>' +

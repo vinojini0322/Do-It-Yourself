@@ -12,7 +12,7 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
 
-    
+
     <script>
         function addQty(itemId) {
             // add qty to the db
@@ -46,7 +46,7 @@
 </head>
 
 <body class="ui-mobile-viewport ui-overlay-a">
-    <div id="ConfirmOrder" data-role="page" data-position="fixed">
+    <div id="ConfirmOrder" data-role="page" data-position="fixed" style="background-color: #551122">
         <!-- Header -->
         <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
 
@@ -70,36 +70,35 @@
         </div>
 
 
-        <div role="orderConfirmation" class="ui-content">
+        <div class="ui-content">
             <div>
-                <h2 style="font-family:Roboto Slab; text-align:center">
+                <h2 class="h2">
                     MY CART
                 </h2>
             </div>
-            <div class="ui-body-a" style="text-align: -webkit-center;">
+            <div class="itemsCartList" style="text-align: -webkit-center">
                 <table id="itemsList">
+
                 </table>
             </div>
             <div class="emptySpace" style="padding-top: 20px">
             </div>
             <div class="ui-body">
                 <div class="ui-grid-a" style="text-align: -webkit-center">
-                    <table class="total">
+                    <table>
 
                         <tr>
                             <td>
-                                <div class="ui-block-a-label2" ></div><label for="textinput" style="color: black; font-weight: bolder">Total</label>
-                                </div>
+                                <div class="totalText" for="textinput">Total</label>
                             </td>
                             <td>
-                                    <div class="ui-block-b"><input type="text"
-                                        name="textinput" id="textinput" style="text-align: -webkit-center; background-color: white"></div>
+                                    <div class="totalValue"><input type="text" name="textinput" id="textinput" style="background-color: white" ></div>
                             </td>
                         </tr>
                     </table>
 
-                    <button onclick="window.location='./ConfirmOrder.html'">Checkout Cart</button>
-                    <button onclick="window.location='./Categories.html'">Continue Shopping</button>
+                    <button class="checkout" onclick="window.location='./ConfirmOrder.html'">Checkout Cart</button>
+                    <button class="continueShopping" onclick="window.location='./Categories.html'">Continue Shopping</button>
                 </div>
 
             </div>
@@ -142,24 +141,23 @@
 <script>
     function addElement(item) {
         return '<tr>' +
-            '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
+            '<td class="itemPic" rowspan="3"><img src=' + item.picUrl + '>' +
             '</td>' +
-            '<td colspan="4" style="text-align: -webkit-center; padding-top: 10%">' + item.name + '</td>' +
+            '<td class="itemName" colspan="4">' + item.name + '</td>' +
             '</tr>' +
             '<tr>' +
-            '<td colspan="4" style="text-align: center"> LKR ' + item.price + '</td>' +
+            '<td class="itemPrice" colspan="4"> LKR ' + item.price + '</td>' +
             '</tr>' +
             '<tr>' +
-            '<td colspan="1"></td>' +
-            '<td style="text-align: -webkit-center">' +
+            '<td class="plus">' +
             '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-plus ui-btn-icon-notext ui-mini" onclick="addQty(' + item.id + ')">Confirm Order</button>' +
             '</td>' +
-            '<td style="padding-top: 5%">' + item.quantity + '</td>' +
-            '<td>' +
+            '<td class="itemQty">' + item.quantity + '</td>' +
+            '<td class= "minus">' +
             '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-minus ui-btn-icon-notext ui-mini" onclick="reduceQty(' + item.id + ')">Confirm Order</button>' +
             '</td>' +
             '</tr>' +
-            '<tr>' +          
+            '<tr>' +
             '</tr>';
     }
 </script>

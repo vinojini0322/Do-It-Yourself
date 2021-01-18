@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+<<<<<<< HEAD
     <meta charset="utf-8">
     <title>CraftZy - Items</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -365,27 +365,35 @@
             description: "Digital Sports Watch Water Resistant 60 Lap 3 Alarm Stopwatch Dual Time Black Men's Watch"
         },
     ];
+=======
+    <title>Sorting</title>
+    <meta name="viewport" content="width= device-width, initial-scale =1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles/libraries/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="../../scripts/libraries/http_ajax.googleapis.com_ajax_libs_jquery_3.4.1_jquery.js"></script>
+    <script src="../../scripts/libraries/http_maxcdn.bootstrapcdn.com_bootstrap_3.4.0_js_bootstrap.js"></script>
+    <script src="../../scripts/libraries/http_code.jquery.com_jquery-1.11.3.js"></script>
+    <script src="../../scripts/libraries/jquery.mobile-1.4.5.min.js"></script>
+</head>
 
-    function displayResults() {
-        document.getElementById("itemContainer").innerHTML = "";
-        for (let i = 0; i < resultArray.length; i++) {
-            var content = `
-                    <div class="item">
-                    <img src="${resultArray[i].image}" width="35%" height="90%" class="item-image">
-                    <div class="item-description">
-                        <p class="product-name">${resultArray[i].description}</p>
-                        <i class="fas fa-tags"></i>
-                        <p class="price-tag">LKR ${resultArray[i].price}.00</p> <br>
-                        <p class="shiping-details">Free Shipping</p>
-                        <div class="rating">${resultArray[i].rating}</div>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>`;
-            document.getElementById("itemContainer").innerHTML += content;
+<body>
+    <script>
+        $(".list li").sort(asc_sort).appendTo('.list');
+        
+>>>>>>> 577643e27d882d4bad246537ca4ac3a64b3159ba
+
+        // accending sort
+        function asc_sort(a, b) {
+            return ($(b).text()) < ($(a).text()) ? 1 : -1;
         }
-    }
-    displayResults();
-</script>
-</body>
 
-</html>
+        // decending sort
+        function dec_sort(a, b) {
+            return ($(b).text()) > ($(a).text()) ? 1 : -1;
+        }
+    </script>
+</body>
