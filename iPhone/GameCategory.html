@@ -1,98 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Order History</title>
-    <link rel="stylesheet" href="../CSS.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../themes/Craftzy.min.css" />
-    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
+    <script src="https://kit.fontawesome.com/2d990cff29.js" crossorigin="anonymous"></script>
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <title>Craftzy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../themes/Craftzy.min.css">
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
+    <link rel="stylesheet" href="../CSS.css">
+    <script>
+        $(document).ready(function () {
+            $("#select-choice-mini2").change(function () {
+                var selectedVal = $("#select-choice-mini2 option:selected").val();
+                if (selectedVal === "l2h") {
+                    resultArray.sort(function (a, b) { return a.price - b.price });
+                } else {
+                    resultArray.sort(function (a, b) { return b.price - a.price });
+                }
+
+                displayResults();
+            });
+
+            $("#select-choice-mini").change(function () {
+                var selectedVal = $("#select-choice-mini option:selected").val();
+                if (selectedVal === "l2h") {
+                    resultArray.sort(function (a, b) { return a.rating - b.rating });
+                } else {
+                    resultArray.sort(function (a, b) { return b.rating - a.rating });
+                }
+
+                displayResults();
+            });
+        });
+    </script>
 </head>
 
-<body class="ui-mobile-viewport ui-overlay-a">
-    <div data-role="page" id="Favourites" data-position="fixed">
-        <div data-role="header">
-            <table>
-                <tr>
-                    <td><a href="#page1"><img src="../images/logo1.png"> </a></td>
-                    <td><a href="C:/Users/user/Desktop/UIUX/CWK-2/Student%202/Offers.html"> <img
-                                src="../icons/icon-QRAR.png" width="42" height="42" style="margin-left:250px"> </a></td>
-                </tr>
-                <tr>
-                </tr>
-            </table>
-        </div>
-        <div role="orderConfirmation" class="ui-content">
-            <div>
-                <h2 style="font-family:Roboto Slab; text-align:center">
-                    Order History
-                </h2>
-            </div>
-            <div>
-                <form class="ui-filterable">
-                        <input id="filterBasic-input" data-type="search" placeholder="search favourites">
-                </form>
-                <table id="favList" data-filter="true" data-input="#filterBasic-input">
-                </table>
-            </div>
-            <!-- <div class="ui-body-a">
-                <table id="itemsList">
-                </table>
-            </div> -->
-        </div>
-        <!-- Navigation -->
-        <div data-role="footer" data-position="fixed">
-            <nav data-role="navbar">
-                <ul>
-                    <li><a target href="Home.html" data-icon="icons-home" class="ui-state-persist"
-                            data-theme="a">Home</a>
-                    </li>
-                    <li><a target href="Categories.html" data-icon="icons-category" data-theme="a">Category</a></li>
-                    <li><a target href="MyCart.html" data-icon="icons-cart" data-theme="a">Cart</a></li>
-                    <li><a target href="Game.html" data-icon="icons-game" data-theme="a">Game</a></li>
-                    <li><a target href="MyProfile_Customer.html" data-icon="icons-profile" data-theme="a">Profile</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+<body>
+    <div data-role="page" data-role="page" data-position="fixed" data-url="page1" tabindex="0"
+        class="ui-page ui-page-theme-a ui-page-footer-fixed ui-page-active"
+        style="padding-bottom: 58px; background-color: #551122">
 
+        <div id="itemContainer" class="ui-body ui-body-a ui-corner-all" style="  width:75%; height:min-content;"
+            onclick="savePoints()">
+        </div>
     </div>
+    
+    
+    <script>
+        function goToHome() {
+            document.location.href = "./home.html";
+        }
+        function savePoints() {
+            $("#faillogin").popup("open");
+        }
+        let resultArray = [
+            {
+                image: "../images/pot-11.png", price: 400.00, rating: 4.3,
+                description: "Mini garden hard clay pot"
+            },
+            {
+                image: "../images/pots.jpg", price: 2000.00, rating: 3.8,
+                description: "Handmade soft clay pot set"
+            },
+            {
+                image: "../images/sglue.jpg", price: 300.00, rating: 4.6,
+                description: "200ml A22 paper glue bottle"
+            },
+            {
+                image: "../images/poi4.png", price: 1000.00, rating: 4.2,
+                description: "hight quality 12A paint brush"
+            },
+            {
+                image: "../images/baloon.jpg", price: 10.00, rating: 3.7,
+                description: "Soft baloon"
+            },
+            {
+                image: "../images/string.jpg", price: 200.00, rating: 3.7,
+                description: "B4 soft string ball"
+            },
+            {
+                image: "../images/DUCT-TAPE.jpg", price: 100.00, rating: 3.7,
+                description: "Sticky grey duct tape"
+            },
+
+        ];
+
+        function displayResults() {
+            document.getElementById("itemContainer").innerHTML = "";
+            for (let i = 0; i < resultArray.length; i++) {
+                var content = `
+                    <div class="item">
+                    <img src="${resultArray[i].image}" width="50%" height="90%" class="item-image">
+                    <div class="item-description">
+                        <p class="product-name">${resultArray[i].description}</p>
+                        <i class="fas fa-tags"></i>
+                        <p class="price-tag">LKR ${resultArray[i].price}.00</p> <br>
+                        <p class="shiping-details">Free Shipping</p>
+                        <div class="rating">${resultArray[i].rating}</div>
+                        <i class="fas fa-star"></i>
+                        
+                    </div>
+                    
+                </div>
+                <br>
+                        <br>`;
+
+                document.getElementById("itemContainer").innerHTML += content;
+            }
+        }
+        displayResults();
+    </script>
 </body>
-<script>
-    function addElement(item) {
-        return '<tr>' +
-            '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
-            '</td>' +
-            '<td colspan="3"> </td>' +
-            '<td>' + item.name + '</td>' +
-            '</tr>' +
-            '<tr>' +
-            '<td colspan="3" style="padding-left:60px"></td>' +
-            '<td>LKR ' + item.price + '</td>' +
-            '</tr>' +
-            '<tr>' +
-            '<td colspan="3"></td>' +
-            '<td>Qty ' + item.quantity + '</td>' +
-            '</tr>'        
-    }
-</script>
-<script>
-    function populateItemList() {
-        $('#favList').empty();
-        var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
-        $.each(shoppedItems, function (i, item) {
-            $('#favList').append(addElement(item));
-        });
-    }
-</script>
-
-<script>
-    populateItemList();
-</script>
-
 
 </html>

@@ -2,19 +2,18 @@
 
 <head>
 
+    <title>Craftzy</title>
     <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> -->
-    <!-- <link rel="stylesheet" href="../CSS.css"> -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <!-- <link rel="stylesheet" href="../themes/Craftzy.min.css" /> -->
-    <!-- <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" /> -->
-    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
+    <script src="https://kit.fontawesome.com/2d990cff29.js" crossorigin="anonymous"></script>
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../themes/Craftzy.min.css">
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script> -->
-
-
+    <link rel="stylesheet" href="../CSS.css">
 
     <style>
         .ui-page-theme-a {
@@ -65,6 +64,9 @@
             height: 500px;
             top: 0;
             left: 0;
+            padding-left: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
 
         label {
@@ -108,7 +110,9 @@
 </head>
 
 <body>
-    <div id="chart"></div>
+    <div id="chart" style="padding-left: 20px;
+    padding-top: 50px;
+    padding-bottom: 100px;"></div>
     <div id="question">
         <h1 style="text-align: center;"></h1>
     </div>
@@ -270,13 +274,27 @@
             }
             return array;
         }
+
+        function savePoints() {
+            $("#faillogin").popup("open");
+
+        }
     </script>
-    <button type="button">Save points</button>
-    <button type="button">Purchase</button>
+
+    <div id="faillogin" data-role="popup" data-dialog="true" data-transition="pop" style="width: 300px; border: none; text-align: right;">
+
+        <div data-role="header" data-theme="b"
+            style="border: none; background-color: #551122; color: beige !important;">
+            <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px; font-size: 10px;">Saved!</h1>
+        </div>
+
+    </div>
+    <button type="button" onclick="savePoints()">Save points</button>
+    <button type="button" onclick="window.location='./GameCategory.html'">Purchase</button>
+
+
 </body>
 
-<script>
 
-</script>
 
 </html>
