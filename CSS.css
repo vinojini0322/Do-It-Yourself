@@ -446,7 +446,6 @@ h2{
     color: #000;
 }
 .pOI-price-promo {
-<<<<<<< HEAD
     text-align: center;
     font-family:inter; 
     font-size:22px;
@@ -455,15 +454,6 @@ h2{
 }
 
 
-=======
-text-align: center;
-font-family:inter; 
-font-size:22px;
-font-weight: bold;
-color: rgb(53, 53, 53);
-}
-
->>>>>>> 3fa10a1001271ff2e94030f879057d4bf7ea7466
 .QRStyle{
     height: 53px !important;
     padding-left: 3px;
