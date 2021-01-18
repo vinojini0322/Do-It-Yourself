@@ -1,1 +1,13 @@
+<<<<<<< HEAD
 [{"Name":"wes","Date":"Jan 15, 2021","Comment":"wes","ReplyComment":"","Stars":"3"},{"Name":"ARPICO","Date":"Jan 15, 2021","Comment":"asdf","ReplyComment":"","Stars":"3"},{"Name":"Anne Cristal","Date":"Jan 17, 2021","Comment":"I just simply want to say again: Thank you so much! Dear Sir, Just a note to let you know I received my goods (CMD-850) today and am delighted with the product. Good delivery (1 week), great service. I shall certainly use your company again.","ReplyComment":"","Stars":"5"},{"Name":"vidu","Date":"Jan 17, 2021","Comment":"bbbbb","ReplyComment":"","Stars":"3"}]
+=======
+[
+    {
+        "Name": "Anne Cristal",
+        "Date": "Jan 17, 2021",
+        "Comment": "I just simply want to say again: Thank you so much! Dear Sir, Just a note to let you know I received my goods (CMD-850) today and am delighted with the product. Good delivery (1 week), great service. I shall certainly use your company again.",
+        "ReplyComment": "",
+        "Stars": "5"
+    }
+]
+>>>>>>> 836bb8b26fb9827454552581e8ce3b884b6bbcac
