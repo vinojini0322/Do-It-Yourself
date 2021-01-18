@@ -1,24 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-<<<<<<< HEAD
     <meta charset="utf-8">
-    <title>CraftZy - Items</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css"/> 
-    <script src="../lib/jquery-1.11.1.min.js"></script>
-    <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
+
+    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
     <script src="https://kit.fontawesome.com/2d990cff29.js" crossorigin="anonymous"></script>
-    <script src="../js/common.js"></script>
     <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <title>Craftzy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../themes/Craftzy.min.css">
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="../CSS.css">
     <script>
         $(document).ready(function () {
             $("#select-choice-mini2").change(function () {
                 var selectedVal = $("#select-choice-mini2 option:selected").val();
-                if (selectedVal === "l2h"){
-                    resultArray.sort(function(a, b){return a.price - b.price});
+                if (selectedVal === "l2h") {
+                    resultArray.sort(function (a, b) { return a.price - b.price });
                 } else {
-                    resultArray.sort(function(a, b){return b.price - a.price});
+                    resultArray.sort(function (a, b) { return b.price - a.price });
                 }
 
                 displayResults();
@@ -26,374 +30,140 @@
 
             $("#select-choice-mini").change(function () {
                 var selectedVal = $("#select-choice-mini option:selected").val();
-                if (selectedVal === "l2h"){
-                    resultArray.sort(function(a, b){return a.rating - b.rating});
+                if (selectedVal === "l2h") {
+                    resultArray.sort(function (a, b) { return a.rating - b.rating });
                 } else {
-                    resultArray.sort(function(a, b){return b.rating - a.rating});
+                    resultArray.sort(function (a, b) { return b.rating - a.rating });
                 }
 
                 displayResults();
             });
         });
     </script>
-    <style>
-        .body {
-            margin: 0;
-            padding: 0;
-        }
-
-        .header-bar {
-            background-color: rgb(12, 64, 161) !important;
-            height: 60px !important;
-        }
-
-        .ui-btn {
-            line-height: 2.3 !important;
-            font-family: sans-serif;
-            font-size: 15px !important;
-            background-color: white !important;
-            border-left-width: 0px !important;
-            border-right-width: 0px !important;
-            border-top-width: 0px !important;
-            border-bottom-width: 0px !important;
-        }
-
-        .ui-btn-active {
-            background-color: white !important;
-            color: rgb(21, 98, 146) !important;
-            text-shadow: none !important;
-            border-color: transparent !important;
-            border-left-width: 0px !important;
-            border-right-width: 0px !important;
-            border-top-width: 0px !important;
-            border-bottom-width: 0px !important;
-            text-shadow: none !important;
-            box-shadow: none !important;
-        }
-
-        .fa-bars {
-            color: white;
-            margin-left: 10px;
-            float: left;
-            margin-top: 12px;
-            margin-right: 7px;
-            font-size: 24px;
-        }
-
-        .serachInputWrapper {
-            padding-top: 2px;
-            margin-left: 10px;
-            float: left;
-            height: 40px !important;
-            border: 1px solid rgb(86, 132, 216) !important;
-            font-size: 15px;
-            font-weight: 100;
-            width: 78%;
-        }
-
-        .fa-camera {
-            color: rgb(224, 224, 223);
-            float: left;
-            margin-top: 15px;
-            margin-left: 7px;
-            font-size: 23px;
-        }
-
-        .category-text {
-            font-weight: 100;
-            text-shadow: none;
-            font-size: 22px;
-            margin-top: -2px;
-            margin-left: 12px;
-        }
-
-        .item-container {
-            margin-top: -9px;
-            width: 97%;
-            margin-left: 10px;
-        }
-
-        .item {
-            width: 95%;
-            height: 100px;
-            border: 1px solid lightblue;
-            padding-top: 10px;
-            padding-left: 2px;
-            padding-right: 2px;
-            box-shadow: 0 4px 4px 0 rgba(214, 213, 213, 0.2), 0 6px 10px 0 rgba(185, 183, 183, 0.19);
-            margin-bottom: 10px;
-            margin-right: 10px;
-        }
-
-        .item .item-image {
-            border-right: 1px solid lightblue;
-            padding-bottom: 1px;
-            float: left;
-        }
-
-        .item .item-description {
-            width: 60%;
-            float: left;
-            margin-left: 5px;
-            margin-top: -12px;
-        }
-
-        .item .product-name {
-            font-size: 10px;
-            /* text-align: left; */
-            padding-left: 10px;
-        }
-
-        .item .price-tag {
-            text-align: center;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 5px;
-            margin-top: -4px;
-            float: left;
-            margin-left: 2px;
-        }
-
-        .fa-tags {
-            font-size: 9px;
-            padding-left: 10px;
-            float: left;
-            color: rgb(91, 92, 92);
-        }
-
-        .shiping-details {
-            font-size: 8px;
-            padding-left: 10px;
-            margin-top: -1px;
-            margin-bottom: 0px;
-        }
-
-        .fa-chevron-circle-right {
-            float: right;
-            margin-top: -5px;
-            margin-right: 5px;
-            font-size: 19px;
-            color: rgb(52, 53, 53);
-
-        }
-
-        .fa-star {
-            font-size: 8px;
-            color: rgb(243, 77, 47);
-            padding-left: 3px;
-            float: left;
-            margin-top: 2px;
-        }
-
-        .header-bar .back-icon {
-            float: left;
-            margin-top: 22px;
-            margin-left: 15px;
-            color: white;
-        }
-
-        .header-bar .page-detail {
-            color: white;
-            letter-spacing: 2px;
-            font-weight: 100;
-            font-size: 17px;
-            margin-top: 18px;
-            text-align: center;
-            margin-bottom: 0px;
-        }
-
-        /* Top bar */
-        .top-header {
-            width: 100%;
-            height: 54px;
-            margin: 1px auto;
-            background: rgb(234, 247, 253);
-            position: relative;
-        }
-
-        .top-header .share-btn {
-            background-color: transparent !important;
-            border: 1px solid rgb(12, 64, 161) !important;
-            color: rgb(12, 64, 161) !important;
-            float: right;
-            font-size: 12px;
-            margin-top: 5px;
-            height: 30px;
-            margin-right: 20px;
-            padding-top: 6px;
-        }
-
-        .top-header .share-btn .share-icon {
-            color: rgb(12, 64, 161);
-            font-size: 14px;
-            margin-top: 3px;
-            margin-right: 5px;
-        }
-
-        .top-header .share-btn:hover {
-            background-color: rgb(240, 244, 252) !important;
-        }
-
-        .filter-favourite {
-            height: 17px !important;
-            font-size: 11px;
-            color: rgb(16, 57, 146);
-            text-shadow: none !important;
-            width: 65px !important;
-            padding: 0px 0px;
-            margin-top: -4px;
-            padding-bottom: 4px;
-            float: left;
-        }
-
-        .ui-select .ui-btn select {
-            left: 10px !important;
-            font-size: 12px !important;
-            text-align: center !important;
-            color: black !important;
-            background-color: rgb(255, 255, 255) !important;
-            width: 90px !important;
-            padding-left: 23px !important;
-        }
-
-        .ui-select {
-            border: 1px solid rgb(6, 54, 109);
-            margin-left: 41px;
-            box-shadow: 0 1px 1px 0 rgba(54, 114, 163, 0.2), 0 6px 10px 0 rgba(79, 128, 161, 0.19);
-        }
-
-        .rating {
-            float: left;
-            margin-left: 10px;
-            font-size: 10px;
-            font-weight: 100;
-            margin-top: 1px;
-        }
-
-        @media all and (min-width: 20em) {
-        }
-
-        @media all and (min-width: 40em) {
-            .item {
-                width: 75%;
-                margin-right: auto;
-                margin-left: auto;
-            }
-
-            .item .product-name {
-                font-size: 12px;
-            }
-
-            .item .price-tag {
-                margin-left: 4px;
-                font-size: 14px;
-            }
-
-            .shiping-details {
-                font-size: 10px;
-            }
-
-            .rating {
-                font-size: 12px;
-            }
-
-            .fa-star {
-                margin-top: 4px;
-            }
-
-            .serachInputWrapper {
-                width: 89%;
-            }
-
-            .filter-section {
-                margin-left: 28%;
-            }
-        }
-    </style>
 </head>
 
 <body>
-<div data-role="page">
-    <div data-role="content" data-theme="a" style="padding-top: 0px; padding-left: 0px; padding-right: 0px;">
-        <div class="top-header">
-            <div class="filter-section">
-                <select name="select-choice-mini" id="select-choice-mini" data-mini="true" data-inline="true"
-                        class="filter-favourite">
-                    <option value="none">Rating</option>
-                    <option value="l2h">Rating (Low to High)</option>
-                    <option value="h2l">Rating (High to Low)</option>
-                </select>
-                <select name="select-choice-mini" id="select-choice-mini2" data-mini="true" data-inline="true"
-                        class="filter-favourite">
-                    <option value="none">Price</option>
-                    <option value="l2h">Price (Low to High)</option>
-                    <option value="h2l">Price (High to Low)</option>
-                </select>
+    <div data-role="page" data-role="page" data-position="fixed" data-url="page1" tabindex="0"
+        class="ui-page ui-page-theme-a ui-page-footer-fixed ui-page-active"
+        style="padding-bottom: 58px; background-color: #551122">
+        <div data-role="header" data-postion="fixed" class="header-bar">
+            <div>
+                <i class="fas fa-chevron-left back-icon" onclick="goToHome()"></i>
+                <div class="search-container">
+                    <input type="search" name="password" id="search" value="" placeholder=" Search"
+                        data-wrapper-class="serachInputWrapper" style="padding-top: 9px !important; padding-bottom: 8px;
+                        padding-right: 15px;padding-left: 25px;">
+                </div>
             </div>
         </div>
-        <br>
-        <div id="itemContainer" class="item-container">
+        <div data-role="content" data-theme="a" style="padding-top: 0px; padding-left: 0px; padding-right: 0px;">
+            <div class="top-header" st>
+                <table>
+                    <div class="filter-section"></div>
+                    <th>
+                    <td style="padding-left: 10px;">
+                        <p style="    height: 7px;
+                            text-align: center;
+                            color: #ab821e;">Rating</p>
+                        <select name="select-choice-mini" id="select-choice-mini" data-mini="true" data-inline="true"
+                            class="filter-favourite" style="float:left">
+
+                            <option value="none">Rating</option>
+                            <option value="l2h">Low - High</option>
+                            <option value="h2l">High - Low</option>
+
+                        </select>
+
+                    </td>
+                    <td style="padding-left: 50px;">
+                        <p style="    height: 7px;
+                            text-align: center;
+                            color: #ab821e;">Price</p>
+                        <select name="select-choice-mini" id="select-choice-mini2" data-mini="true" data-inline="true"
+                            class="filter-favourite" style="float:right">
+
+                            <option value="none">Price</option>
+                            <option value="l2h">Low - High</option>
+                            <option value="h2l">High - Low</option>
+
+                        </select>
+                    </td>
+                    </th>
+            </div>
+            </table>
         </div>
+        <br>
+
+        <div id="itemContainer" class="ui-body ui-body-a ui-corner-all" style="  width:75%; height:min-content;">
+
+        </div>
+
     </div>
 
 
-</div>
-<script>
-    function goToHome() {
-        document.location.href = "./home.html";
-    }
-
-    let resultArray = [
-        {
-            image: "../assets/images/Categories/Watch/watch3.jpg", price: 3550.00, rating: 4.3,
-            description: "PALADA Men's Digital Sports Watch Waterproof Tactical Watch with LED Backlight Watch for Men"
-        },
-        {
-            image: "../assets/images/Categories/Watch/watch6.jpg", price: 2950.00, rating: 3.8,
-            description: "CAGOS Compatible Watch 42mm Band Set, 2 Pack Stainless Steel Bracelet Replacement for Samsung Galaxy Watch"
-        },
-        {
-            image: "../assets/images/Categories/Watch/watch1.jpg", price: 2650.00, rating: 4.6,
-            description: "Casio Men's GD100-1BCR G-Shock X-Large Black Multi-Functional Digital Sport Watch"
-        },
-        {
-            image: "../assets/images/Categories/Watch/watch7.jpg", price: 1450.00, rating: 4.2,
-            description: "Marathon by Timex Men's T5K359 Digital Full-Size Black/Blue Resin Strap Watch version 3"
-        },
-        {
-            image: "../assets/images/Categories/Watch/watch8.jpg", price: 1380.00, rating: 3.7,
-            description: "Digital Sports Watch Water Resistant 60 Lap 3 Alarm Stopwatch Dual Time Black Men's Watch"
-        },
-    ];
-=======
-    <title>Sorting</title>
-    <meta name="viewport" content="width= device-width, initial-scale =1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/libraries/jquery.mobile.structure-1.4.5.min.css" />
-    <script src="../../scripts/libraries/http_ajax.googleapis.com_ajax_libs_jquery_3.4.1_jquery.js"></script>
-    <script src="../../scripts/libraries/http_maxcdn.bootstrapcdn.com_bootstrap_3.4.0_js_bootstrap.js"></script>
-    <script src="../../scripts/libraries/http_code.jquery.com_jquery-1.11.3.js"></script>
-    <script src="../../scripts/libraries/jquery.mobile-1.4.5.min.js"></script>
-</head>
-
-<body>
+    </div>
     <script>
-        $(".list li").sort(asc_sort).appendTo('.list');
-        
->>>>>>> 577643e27d882d4bad246537ca4ac3a64b3159ba
-
-        // accending sort
-        function asc_sort(a, b) {
-            return ($(b).text()) < ($(a).text()) ? 1 : -1;
+        function goToHome() {
+            document.location.href = "./home.html";
         }
 
-        // decending sort
-        function dec_sort(a, b) {
-            return ($(b).text()) > ($(a).text()) ? 1 : -1;
+        let resultArray = [
+            {
+                image: "../images/pot-11.png", price: 400.00, rating: 4.3,
+                description: "Mini garden hard clay pot"
+            },
+            {
+                image: "../images/pots.jpg", price: 2000.00, rating: 3.8,
+                description: "Handmade soft clay pot set"
+            },
+            {
+                image: "../images/sglue.jpg", price: 300.00, rating: 4.6,
+                description: "200ml A22 paper glue bottle"
+            },
+            {
+                image: "../images/poi4.png", price: 1000.00, rating: 4.2,
+                description: "hight quality 12A paint brush"
+            },
+            {
+                image: "../images/baloon.jpg", price: 10.00, rating: 3.7,
+                description: "Soft baloon"
+            },
+            {
+                image: "../images/string.jpg", price: 200.00, rating: 3.7,
+                description: "B4 soft string ball"
+            }, 
+            {
+                image: "../images/DUCT-TAPE.jpg", price: 100.00, rating: 3.7,
+                description: "Sticky grey duct tape"
+            },
+
+        ];
+
+        function displayResults() {
+            document.getElementById("itemContainer").innerHTML = "";
+            for (let i = 0; i < resultArray.length; i++) {
+                var content = `
+                    <div class="item">
+                    <img src="${resultArray[i].image}" width="35%" height="90%" class="item-image">
+                    <div class="item-description">
+                        <p class="product-name">${resultArray[i].description}</p>
+                        <i class="fas fa-tags"></i>
+                        <p class="price-tag">LKR ${resultArray[i].price}.00</p> <br>
+                        <p class="shiping-details">Free Shipping</p>
+                        <div class="rating">${resultArray[i].rating}</div>
+                        <i class="fas fa-star"></i>
+                        
+                    </div>
+                    
+                </div>
+                <br>
+                        <br>`;
+
+                document.getElementById("itemContainer").innerHTML += content;
+            }
         }
+        displayResults();
     </script>
 </body>
+
+</html>
