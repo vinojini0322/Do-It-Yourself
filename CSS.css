@@ -446,7 +446,7 @@ h2{
     color: #000;
 }
 .pOI-price-promo {
-<<<<<<< HEAD
+
     text-align: center;
     font-family:inter; 
     font-size:22px;
@@ -455,15 +455,7 @@ h2{
 }
 
 
-=======
-text-align: center;
-font-family:inter; 
-font-size:22px;
-font-weight: bold;
-color: rgb(53, 53, 53);
-}
 
->>>>>>> 3fa10a1001271ff2e94030f879057d4bf7ea7466
 .QRStyle{
     height: 53px !important;
     padding-left: 3px;
@@ -551,7 +543,7 @@ color: rgb(53, 53, 53);
 }   
  .back{
     margin-left: 66px;
-<<<<<<< HEAD
+
 }
 .text-profile{
     font-size: 40px;
@@ -579,7 +571,7 @@ color: rgb(53, 53, 53);
 /* ****************************************************************************************************************
 *******************************************************************************************************************
 *******************************************************************************************************************/
-=======
+
     
 }
 .view-item-price{
@@ -660,10 +652,9 @@ color: rgb(53, 53, 53);
     width: 51%
 }
 .totalText{
-    font-size: x-large;
+    font-size: 29px;
     margin-top: 10px;
     color: #AB821E; 
-    font-weight: bolder;
     margin-top: 19px;
     margin-right: 12px;
 }
@@ -714,8 +705,6 @@ color: rgb(53, 53, 53);
     font-size: larger;
 }
 
-
->>>>>>> 3fa10a1001271ff2e94030f879057d4bf7ea7466
 
 /* iphone  portrait */
 
@@ -790,13 +779,14 @@ color: rgb(53, 53, 53);
         width: 350px !important;
     }
     .itemPic{
-        width: 100px;
+        width: 90px !important;
         padding-top: 10px;
     }
     .itemName{
-        text-align: -webkit-center; 
-        padding-top: 6%; 
-        font-size: medium !important;
+        text-align: end; 
+        padding-top: 8%; 
+        font-size: large !important;
+        
     }
     .itemPrice{
         text-align: center;
@@ -830,11 +820,11 @@ color: rgb(53, 53, 53);
         width: 51%
     }
     .totalText{
-        font-size: large !important;
+        font-size: 29px !important;
         margin-top: 10px;
         color: #AB821E; 
         font-weight: bolder;
-        margin-top: 19px;
+        margin-top: 28px;
         margin-right: 12px;
     }
     .totalValue{
@@ -851,6 +841,7 @@ color: rgb(53, 53, 53);
         width: 73% !important;
         font-size: medium;
     }
+  
 
     /* My cart */
     .confirmOrderList{
@@ -861,6 +852,7 @@ color: rgb(53, 53, 53);
         background-color:white;
         width: 342px;
     }
+
     /* darshi */
 
     .back{
@@ -915,7 +907,7 @@ color: rgb(53, 53, 53);
     margin-left: auto;
     margin-right: auto; border-radius: 10px;    padding-top: 10px;
 }
-<<<<<<< HEAD
+
 .text-profile {
     font-size: 20px!important;
     margin-top: 31px!important;
@@ -940,12 +932,12 @@ color: rgb(53, 53, 53);
     margin-left: auto;
 }
 
-=======
+
 .view-item-price{
     height: 50px;
     font-size: 16px;
     margin-left: 0px;
->>>>>>> 3fa10a1001271ff2e94030f879057d4bf7ea7466
+
 }
 .view-sub{
     font-size: 18px;
@@ -983,11 +975,27 @@ color: rgb(53, 53, 53);
     margin-top: -12px;
 
 }
+
+.voucherCode{
+    font-size: 18px !important;
+    padding-right: 10px;
+}
+.ConfirmOrder.ui-btn.ui-shadow.ui-corner-all{
+    width: 74% !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    font-size: medium;
+}
+
 .item{
     background-color: white;
     border-radius: 10px;
 }
+
 }
+
 
 
 
