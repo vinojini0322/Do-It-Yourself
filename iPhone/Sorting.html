@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>CraftZy - Items</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css"/> 
     <script src="../lib/jquery-1.11.1.min.js"></script>
     <script src="../lib/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://kit.fontawesome.com/2d990cff29.js" crossorigin="anonymous"></script>
@@ -36,20 +36,284 @@
             });
         });
     </script>
+    <style>
+        .body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-bar {
+            background-color: rgb(12, 64, 161) !important;
+            height: 60px !important;
+        }
+
+        .ui-btn {
+            line-height: 2.3 !important;
+            font-family: sans-serif;
+            font-size: 15px !important;
+            background-color: white !important;
+            border-left-width: 0px !important;
+            border-right-width: 0px !important;
+            border-top-width: 0px !important;
+            border-bottom-width: 0px !important;
+        }
+
+        .ui-btn-active {
+            background-color: white !important;
+            color: rgb(21, 98, 146) !important;
+            text-shadow: none !important;
+            border-color: transparent !important;
+            border-left-width: 0px !important;
+            border-right-width: 0px !important;
+            border-top-width: 0px !important;
+            border-bottom-width: 0px !important;
+            text-shadow: none !important;
+            box-shadow: none !important;
+        }
+
+        .fa-bars {
+            color: white;
+            margin-left: 10px;
+            float: left;
+            margin-top: 12px;
+            margin-right: 7px;
+            font-size: 24px;
+        }
+
+        .serachInputWrapper {
+            padding-top: 2px;
+            margin-left: 10px;
+            float: left;
+            height: 40px !important;
+            border: 1px solid rgb(86, 132, 216) !important;
+            font-size: 15px;
+            font-weight: 100;
+            width: 78%;
+        }
+
+        .fa-camera {
+            color: rgb(224, 224, 223);
+            float: left;
+            margin-top: 15px;
+            margin-left: 7px;
+            font-size: 23px;
+        }
+
+        .category-text {
+            font-weight: 100;
+            text-shadow: none;
+            font-size: 22px;
+            margin-top: -2px;
+            margin-left: 12px;
+        }
+
+        .item-container {
+            margin-top: -9px;
+            width: 97%;
+            margin-left: 10px;
+        }
+
+        .item {
+            width: 95%;
+            height: 100px;
+            border: 1px solid lightblue;
+            padding-top: 10px;
+            padding-left: 2px;
+            padding-right: 2px;
+            box-shadow: 0 4px 4px 0 rgba(214, 213, 213, 0.2), 0 6px 10px 0 rgba(185, 183, 183, 0.19);
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+
+        .item .item-image {
+            border-right: 1px solid lightblue;
+            padding-bottom: 1px;
+            float: left;
+        }
+
+        .item .item-description {
+            width: 60%;
+            float: left;
+            margin-left: 5px;
+            margin-top: -12px;
+        }
+
+        .item .product-name {
+            font-size: 10px;
+            /* text-align: left; */
+            padding-left: 10px;
+        }
+
+        .item .price-tag {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            margin-top: -4px;
+            float: left;
+            margin-left: 2px;
+        }
+
+        .fa-tags {
+            font-size: 9px;
+            padding-left: 10px;
+            float: left;
+            color: rgb(91, 92, 92);
+        }
+
+        .shiping-details {
+            font-size: 8px;
+            padding-left: 10px;
+            margin-top: -1px;
+            margin-bottom: 0px;
+        }
+
+        .fa-chevron-circle-right {
+            float: right;
+            margin-top: -5px;
+            margin-right: 5px;
+            font-size: 19px;
+            color: rgb(52, 53, 53);
+
+        }
+
+        .fa-star {
+            font-size: 8px;
+            color: rgb(243, 77, 47);
+            padding-left: 3px;
+            float: left;
+            margin-top: 2px;
+        }
+
+        .header-bar .back-icon {
+            float: left;
+            margin-top: 22px;
+            margin-left: 15px;
+            color: white;
+        }
+
+        .header-bar .page-detail {
+            color: white;
+            letter-spacing: 2px;
+            font-weight: 100;
+            font-size: 17px;
+            margin-top: 18px;
+            text-align: center;
+            margin-bottom: 0px;
+        }
+
+        /* Top bar */
+        .top-header {
+            width: 100%;
+            height: 54px;
+            margin: 1px auto;
+            background: rgb(234, 247, 253);
+            position: relative;
+        }
+
+        .top-header .share-btn {
+            background-color: transparent !important;
+            border: 1px solid rgb(12, 64, 161) !important;
+            color: rgb(12, 64, 161) !important;
+            float: right;
+            font-size: 12px;
+            margin-top: 5px;
+            height: 30px;
+            margin-right: 20px;
+            padding-top: 6px;
+        }
+
+        .top-header .share-btn .share-icon {
+            color: rgb(12, 64, 161);
+            font-size: 14px;
+            margin-top: 3px;
+            margin-right: 5px;
+        }
+
+        .top-header .share-btn:hover {
+            background-color: rgb(240, 244, 252) !important;
+        }
+
+        .filter-favourite {
+            height: 17px !important;
+            font-size: 11px;
+            color: rgb(16, 57, 146);
+            text-shadow: none !important;
+            width: 65px !important;
+            padding: 0px 0px;
+            margin-top: -4px;
+            padding-bottom: 4px;
+            float: left;
+        }
+
+        .ui-select .ui-btn select {
+            left: 10px !important;
+            font-size: 12px !important;
+            text-align: center !important;
+            color: black !important;
+            background-color: rgb(255, 255, 255) !important;
+            width: 90px !important;
+            padding-left: 23px !important;
+        }
+
+        .ui-select {
+            border: 1px solid rgb(6, 54, 109);
+            margin-left: 41px;
+            box-shadow: 0 1px 1px 0 rgba(54, 114, 163, 0.2), 0 6px 10px 0 rgba(79, 128, 161, 0.19);
+        }
+
+        .rating {
+            float: left;
+            margin-left: 10px;
+            font-size: 10px;
+            font-weight: 100;
+            margin-top: 1px;
+        }
+
+        @media all and (min-width: 20em) {
+        }
+
+        @media all and (min-width: 40em) {
+            .item {
+                width: 75%;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .item .product-name {
+                font-size: 12px;
+            }
+
+            .item .price-tag {
+                margin-left: 4px;
+                font-size: 14px;
+            }
+
+            .shiping-details {
+                font-size: 10px;
+            }
+
+            .rating {
+                font-size: 12px;
+            }
+
+            .fa-star {
+                margin-top: 4px;
+            }
+
+            .serachInputWrapper {
+                width: 89%;
+            }
+
+            .filter-section {
+                margin-left: 28%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 <div data-role="page">
-    <div data-role="header" data-postion="fixed" class="header-bar">
-        <div>
-            <i class="fas fa-chevron-left back-icon" onclick="goToHome()"></i>
-            <div class="search-container">
-                <input type="search" name="password" id="search" value="" placeholder=" Watch"
-                       data-wrapper-class="serachInputWrapper" style="padding-top: 9px !important; padding-bottom: 8px;
-                        padding-right: 15px;padding-left: 25px;">
-            </div>
-        </div>
-    </div>
     <div data-role="content" data-theme="a" style="padding-top: 0px; padding-left: 0px; padding-right: 0px;">
         <div class="top-header">
             <div class="filter-section">
@@ -76,7 +340,7 @@
 </div>
 <script>
     function goToHome() {
-        document.location.href = "./Home.html";
+        document.location.href = "./home.html";
     }
 
     let resultArray = [
