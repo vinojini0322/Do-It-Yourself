@@ -154,7 +154,7 @@ body {
 
 *::-webkit-scrollbar-thumb {
     background: transparent;
-    border: none;
+    border: none;   
 }
 
 * {
@@ -283,7 +283,7 @@ li {
 }
 
 #map {
-    height: 200px;
+    height: 300px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -446,6 +446,7 @@ h2{
     color: #000;
 }
 .pOI-price-promo {
+<<<<<<< HEAD
     text-align: center;
     font-family:inter; 
     font-size:22px;
@@ -454,6 +455,15 @@ h2{
 }
 
 
+=======
+text-align: center;
+font-family:inter; 
+font-size:22px;
+font-weight: bold;
+color: rgb(53, 53, 53);
+}
+
+>>>>>>> 3fa10a1001271ff2e94030f879057d4bf7ea7466
 .QRStyle{
     height: 53px !important;
     padding-left: 3px;
@@ -541,6 +551,7 @@ h2{
 }   
  .back{
     margin-left: 66px;
+<<<<<<< HEAD
 }
 .text-profile{
     font-size: 40px;
@@ -568,6 +579,143 @@ h2{
 /* ****************************************************************************************************************
 *******************************************************************************************************************
 *******************************************************************************************************************/
+=======
+    
+}
+.view-item-price{
+    height: 80px;
+    font-size: 22px;
+    margin-left: 71px;
+    margin-right: 9px;
+
+}
+.view-item-star{
+    height: 80px;
+    font-size: 22px;
+    margin-left: 71px;
+    margin-right: 9px;
+    padding-top: 35px;
+
+}
+.view-sub{
+    font-size: 24px;
+    text-align: left;
+    display:inline;
+    white-space:nowrap;
+}
+
+.view-seller-details{
+    margin-left: 27%;
+    width: 462px;
+    height: 225px;
+}
+.view-cart-icon{
+    width: 60px;
+    margin-left: 83%;
+    margin-top: 61px;
+}
+.view-cart-fav{
+    width: 60px;
+    margin-left: 100%;
+    margin-top: 61px;
+}
+
+/* My cart */
+.itemPic{
+    width: 100px;
+    padding-top: 10px;
+}
+.itemName{
+    text-align: end; 
+    padding-top: 6%; 
+    color: #AB821E;
+    font-size: x-large;
+}
+.itemPrice{
+    color: #AB821E;
+    font-size: x-large;
+    padding-left: 16px;
+}
+.itemQty{
+    color: #AB821E;
+    font-size: x-large;
+    padding-left: 16px;
+    padding-left: 29px;
+    padding-bottom: 20px;
+}
+.plus{
+    text-align: -webkit-center;
+    width: 27%;
+    padding-left: 42px;
+}
+.minus{
+    width: 36px;
+    padding-right: 20px;
+}
+.itemsCartList{
+    background-color: white;
+    text-align: -webkit-center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 51%
+}
+.totalText{
+    font-size: x-large;
+    margin-top: 10px;
+    color: #AB821E; 
+    font-weight: bolder;
+    margin-top: 19px;
+    margin-right: 12px;
+}
+.totalValue{
+    width: 161px;
+    font-size: larger;
+    text-align: -webkit-center;
+    background-color: white !important;
+}
+.checkout.ui-btn.ui-shadow.ui-corner-all{
+    width: 39% !important;
+    font-size: larger;
+}
+.continueShopping.ui-btn.ui-shadow.ui-corner-all{
+    width: 39% !important;
+    font-size: larger;
+}
+
+/* Confirm order */
+.confirmOrderList{
+    border-width: 1px; 
+    border-style: solid; 
+    margin-left: auto;
+    margin-right: auto; 
+    background-color:white;
+    width: 519px
+
+}
+.orderSummary{
+    margin-right: auto;
+    margin-left: auto;
+    color: #AB821E;
+    font-size: x-large;
+}
+.voucherCode{
+    font-size: larger !important;
+    padding-right: 10px;
+}
+.voucherCodeValue{
+    background-color: white !important;
+}
+.ConfirmOrder.ui-btn.ui-shadow.ui-corner-all{
+    width: 42% !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    font-size: larger;
+}
+
+
+>>>>>>> 3fa10a1001271ff2e94030f879057d4bf7ea7466
 
 /* iphone  portrait */
 
@@ -619,8 +767,6 @@ h2{
          margin-right:0px;
          font-size: 16px;
          height: 200px;
-         
-         /* box-shadow: 17px 12px #88888866;*/
      }
      .QRStyle{
         padding-left: 1px !important;
@@ -642,6 +788,78 @@ h2{
     }
     .view-item-grid{
         width: 350px !important;
+    }
+    .itemPic{
+        width: 100px;
+        padding-top: 10px;
+    }
+    .itemName{
+        text-align: -webkit-center; 
+        padding-top: 6%; 
+        font-size: medium !important;
+    }
+    .itemPrice{
+        text-align: center;
+        font-size: medium !important
+    }
+    .itemQty{
+        text-align: center;
+        font-size: medium !important
+    }
+    .plus{
+        text-align: -webkit-center;
+         width: 24%;
+        padding-left: 42px;
+    }
+    .minus{
+        width: 36px;
+        padding-right: 20px;
+    }
+    .itemsCartList{
+        background-color: white;
+        text-align: -webkit-center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100% !important;
+    }
+    .itemsCartList{
+        background-color: white;
+        text-align: -webkit-center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 51%
+    }
+    .totalText{
+        font-size: large !important;
+        margin-top: 10px;
+        color: #AB821E; 
+        font-weight: bolder;
+        margin-top: 19px;
+        margin-right: 12px;
+    }
+    .totalValue{
+        width: 109px !important;
+        font-size: medium !important;
+        text-align: -webkit-center;
+         background-color: white"
+    }
+    .checkout.ui-btn.ui-shadow.ui-corner-all{
+        width: 73% !important;
+        font-size: medium;
+    }
+    .continueShopping.ui-btn.ui-shadow.ui-corner-all{
+        width: 73% !important;
+        font-size: medium;
+    }
+
+    /* My cart */
+    .confirmOrderList{
+        border-width: 1px; 
+        border-style: solid; 
+        margin-left: auto;
+        margin-right: auto; 
+        background-color:white;
+        width: 342px;
     }
     /* darshi */
 
@@ -697,6 +915,7 @@ h2{
     margin-left: auto;
     margin-right: auto; border-radius: 10px;    padding-top: 10px;
 }
+<<<<<<< HEAD
 .text-profile {
     font-size: 20px!important;
     margin-top: 31px!important;
@@ -721,10 +940,54 @@ h2{
     margin-left: auto;
 }
 
+=======
+.view-item-price{
+    height: 50px;
+    font-size: 16px;
+    margin-left: 0px;
+>>>>>>> 3fa10a1001271ff2e94030f879057d4bf7ea7466
 }
+.view-sub{
+    font-size: 18px;
+    text-align: left;
+    display:inline;
+    white-space:nowrap;
+}
+.view-seller-details{
+    margin-left: 10%;
+    width: auto;
+    height: auto;
+}
+#map {
+    height: 200px !important;
+    
+   }
 
+   .view-item-price{
+    height: 60px;
+    font-size: 16px;
+    margin-left: 0px;
+    margin-right: 0px;
 
+}
+.view-item-star{
+    height: 60px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 27px;
 
+}
+.view-cart-icon{
+    width: 44px;
+    margin-left: 83%;
+    margin-top: -12px;
+
+}
+.item{
+    background-color: white;
+    border-radius: 10px;
+}
+}
 
 
 

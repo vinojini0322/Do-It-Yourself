@@ -40,50 +40,47 @@
         </div>
 
 
-        <div role="orderConfirmation" class="ui-content">
+        <div role="orderConfirmation" class="ui-content" style="background-color: #551122">
             <div>
                 <h2 style="font-family:Roboto Slab; text-align:center">
                     Order Confirmation
                 </h2>
             </div>
 
-            <div class="ui-body-a">
-                <table id="itemsList">
-                </table>
+            <div class="confirmOrderList">
+                <div class="ui-body-a">
+                    <table id="itemsList">
+                    </table>
 
+                </div>
             </div>
-
             <div class="emptySpace" style="padding-top: 20px">
             </div>
 
             <div class="ui-body">
-                <h3 style="font-family:Inter">
-                    Order Summary
-                </h3>
                 <div class="ui-grid-a">
                     <table class="orderSummary">
                         <tr>
                             <td>
-                                    <div class="ui-block-a-label1" style="color: black"><label
-                                        for="voucherInput">Voucher
-                                        code</label></div>
+                                   <label class="voucherCode" for="voucherInput">Voucher
+                                    code</label>
                             </td>
-                               <td> <div class="ui-block-b"><input type="text" name="voucherInput" id="voucherInput">
-                                </div>
+                               <td> <input class="voucherCodeValue" type="text" name="voucherInput" id="voucherInput">
+
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <div class="ui-block-a-label2" style="color: black"><label for="textinput">Total</label>
-                                </div>
+                                <div class="totalText" for="textinput">Total</label>
                             </td>
                             <td>
-                                    <div class="ui-block-b"><input type="text" name="textinput" id="textinput"
-                                        style="text-align: -webkit-center"></div>
+                                    <input type="text" name="textinput" id="textinput"
+                                    style="background-color: white; text-align: center;">
                             </td>
                         </tr>
                     </table>
-                    <button onclick="window.location='./PaymentGateway.html'">Confirm Order</button>
+                    <button class="ConfirmOrder" onclick="window.location='./PaymentGateway.html'">Confirm
+                        Order</button>
                 </div>
 
             </div>
@@ -95,7 +92,8 @@
             <nav data-role="navbar">
                 <ul>
                     <li><a target href="Home.html" data-icon="icons-home" class="ui-state-persist"
-                            data-theme="a">Home</a> </li>
+                            data-theme="a">Home</a>
+                    </li>
                     <li><a target href="Categories.html" data-icon="icons-category" data-theme="a">Category</a></li>
                     <li><a target href="MyCart.html" data-icon="icons-cart" data-theme="a">Cart</a></li>
                     <li><a target href="Game.html" data-icon="icons-game" data-theme="a">Game</a></li>
@@ -110,20 +108,19 @@
 <script>
     function addElement(item) {
         return '<tr>' +
-            '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;"></td>' +
-            '<td colspan="3"> </td>' +
-            '<td>' + item.name + '</td>' +
+            '<td class="itemPic" rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;"></td>' +
+            '<td> </td>' +
+            '<td class="itemName" colspan="4">' + item.name + '</td>' +
             '</tr>' +
             '<tr>' +
             '<td colspan="3" style="padding-left:60px"></td>' +
-            '<td>LKR ' + item.price + '</td>' +
+            '<td class="itemPrice" colspan="4">LKR ' + item.price + '</td>' +
             '</tr>' +
             '<tr>' +
             '<td colspan="3"></td>' +
-            '<td>Qty ' + item.quantity + '</td>' +
+            '<td class="itemQty">Qty ' + item.quantity + '</td>' +
             '</tr>'
-
-            '<tr>' +
+        '<tr>' +
             '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
             '</td>' +
             '<td colspan="4" style="text-align: -webkit-center; padding-top: 10%">' + item.name + '</td>' +
@@ -141,23 +138,23 @@
             '<button class="ui-btn ui-corner-all ui-btn-inline ui-icon-minus ui-btn-icon-notext ui-mini" onclick="reduceQty(' + item.id + ')">Confirm Order</button>' +
             '</td>' +
             '</tr>' +
-            '<tr>' +          
+            '<tr>' +
             '</tr>';
 
-            // '<tr>' +
-            // '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;"></td>' +
-            // '<td colspan="3"> </td>' +
-            // '<td>' + item.name + '</td>' +
-            // '</tr>' +
-            // '<tr>' +
-            // '<td colspan="3" style="padding-left:60px"></td>' +
-            // '<td>LKR ' + item.price + '</td>' +
-            // '</tr>' +
-            // '<tr>' +
-            // '<td colspan="3"></td>' +
-            // '<td>Qty ' + item.quantity + '</td>' +
-            // '</tr>'
-           
+        // '<tr>' +
+        // '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;"></td>' +
+        // '<td colspan="3"> </td>' +
+        // '<td>' + item.name + '</td>' +
+        // '</tr>' +
+        // '<tr>' +
+        // '<td colspan="3" style="padding-left:60px"></td>' +
+        // '<td>LKR ' + item.price + '</td>' +
+        // '</tr>' +
+        // '<tr>' +
+        // '<td colspan="3"></td>' +
+        // '<td>Qty ' + item.quantity + '</td>' +
+        // '</tr>'
+
     }
 </script>
 
