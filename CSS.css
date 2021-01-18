@@ -446,14 +446,12 @@ h2{
     color: #000;
 }
 .pOI-price-promo {
-
     text-align: center;
     font-family:inter; 
     font-size:22px;
     font-weight: bold;
     color: rgb(53, 53, 53);
 }
-
 
 
 .QRStyle{
@@ -543,7 +541,6 @@ h2{
 }   
  .back{
     margin-left: 66px;
-
 }
 .text-profile{
     font-size: 40px;
@@ -571,7 +568,6 @@ h2{
 /* ****************************************************************************************************************
 *******************************************************************************************************************
 *******************************************************************************************************************/
-
     
 }
 .view-item-price{
@@ -704,6 +700,7 @@ h2{
     padding-bottom: 20px;
     font-size: larger;
 }
+
 
 
 /* iphone  portrait */
@@ -852,7 +849,7 @@ h2{
         background-color:white;
         width: 342px;
     }
-
+    
     /* darshi */
 
     .back{
@@ -907,7 +904,6 @@ h2{
     margin-left: auto;
     margin-right: auto; border-radius: 10px;    padding-top: 10px;
 }
-
 .text-profile {
     font-size: 20px!important;
     margin-top: 31px!important;
@@ -932,12 +928,10 @@ h2{
     margin-left: auto;
 }
 
-
 .view-item-price{
     height: 50px;
     font-size: 16px;
     margin-left: 0px;
-
 }
 .view-sub{
     font-size: 18px;
@@ -975,7 +969,6 @@ h2{
     margin-top: -12px;
 
 }
-
 .voucherCode{
     font-size: 18px !important;
     padding-right: 10px;
@@ -989,11 +982,11 @@ h2{
     font-size: medium;
 }
 
+
 .item{
     background-color: white;
     border-radius: 10px;
 }
-
 }
 
 
