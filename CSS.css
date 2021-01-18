@@ -620,10 +620,9 @@ color: black
     width: 51%
 }
 .totalText{
-    font-size: x-large;
+    font-size: 29px;
     margin-top: 10px;
     color: #AB821E; 
-    font-weight: bolder;
     margin-top: 19px;
     margin-right: 12px;
 }
@@ -749,13 +748,14 @@ color: black
         width: 350px !important;
     }
     .itemPic{
-        width: 100px;
+        width: 90px !important;
         padding-top: 10px;
     }
     .itemName{
-        text-align: -webkit-center; 
-        padding-top: 6%; 
-        font-size: medium !important;
+        text-align: end; 
+        padding-top: 8%; 
+        font-size: large !important;
+        
     }
     .itemPrice{
         text-align: center;
@@ -789,11 +789,11 @@ color: black
         width: 51%
     }
     .totalText{
-        font-size: large !important;
+        font-size: 29px !important;
         margin-top: 10px;
         color: #AB821E; 
         font-weight: bolder;
-        margin-top: 19px;
+        margin-top: 28px;
         margin-right: 12px;
     }
     .totalValue{
@@ -810,6 +810,7 @@ color: black
         width: 73% !important;
         font-size: medium;
     }
+  
 
     /* My cart */
     .confirmOrderList{
@@ -819,6 +820,7 @@ color: black
         margin-right: auto; 
         background-color:white;
         width: 342px;
+    }
     
     /* darshi */
 
@@ -915,8 +917,22 @@ color: black
     margin-top: -12px;
 
 }
+.voucherCode{
+    font-size: 18px !important;
+    padding-right: 10px;
+}
+.ConfirmOrder.ui-btn.ui-shadow.ui-corner-all{
+    width: 74% !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    font-size: medium;
+}
+
 
 }
+
 
 
 
