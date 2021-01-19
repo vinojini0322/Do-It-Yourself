@@ -617,9 +617,7 @@ h2{
     text-align: end; 
     padding-top: 6%; 
     color: #AB821E;
-    font-size: x-large; 
-    padding-right: 48px;
-
+    font-size: x-large;
 }
 .itemPrice{
     color: #AB821E;
@@ -703,11 +701,44 @@ h2{
     font-size: larger;
 }
 
+.ui-block-c.ui-responsive.home-gride{
+    display: inline !important;
+    width: 33.333% !important;
+}
+/* iphone  landscape */
+@media only screen and (max-width: 670px) {
+    .ui-block-c.ui-responsive.home-gride{
+        display: inline !important;
+        width: 33.333% !important;
+    } 
+    .pOI-name {
+        font-size:16px !important;
+        padding-left: 0px !important;
+        
+        }
+   .pOI-des {
+        font-size: 12px !important;
+        padding-left: 0px !important;
+        }
+        .pOI-price {
+        font-size: 14px !important;
+        padding-left: 0px !important;
+        }
+        .pOI-name-promo {
+        font-size:18px;
+        }
+        .pOI-price-promo {
+        font-size:18px;
+        }
+        .video-size{
+            height: 170px !important;
+        }
+}
 
 
 /* iphone  portrait */
 
-@media screen and (max-width: 680px ) and (min-width: 370px) {
+@media only screen and (max-width: 385px) {
 
     .ui-body.ui-body-a.ui-corner-all{
         width: 70% !important;     
@@ -722,16 +753,16 @@ h2{
 
     
 .pOI-name {
-    font-size:16px;
+    font-size:16px !important;
     padding-left: 0px !important;
     
     }
     .pOI-des {
-    font-size: 12px;
+    font-size: 12px !important;
     padding-left: 0px !important;
     }
     .pOI-price {
-    font-size: 14px;
+    font-size: 14px !important;
     padding-left: 0px !important;
     }
     .pOI-name-promo {
@@ -830,8 +861,7 @@ h2{
         width: 109px !important;
         font-size: medium !important;
         text-align: -webkit-center;
-         background-color: white;
-         border-radius:19px;
+         background-color: white"
     }
     .checkout.ui-btn.ui-shadow.ui-corner-all{
         width: 73% !important;
@@ -991,9 +1021,27 @@ h2{
     border-radius: 10px;
 }
 
-
+.ui-block-c.ui-responsive.home-gride{
+    display: none !important;
+}
+.ui-block-a.ui-responsive.width-change{
+    width: 50% !important;
+    float: left !important;
+}
+.ui-block-b.ui-responsive.width-change{
+    width: 50% !important;
+    float: right !important;
 }
 
+
+    /* .my-breakpoint .ui-block-a,
+	.my-breakpoint .ui-block-b,
+	.my-breakpoint .ui-block-c,
+	.my-breakpoint .ui-block-d{
+		width: 50%;
+		float: none;
+	} */
+}
 
 
 

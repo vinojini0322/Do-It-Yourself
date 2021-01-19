@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" href="../CSS.css">
+    <link rel="stylesheet" href="../test-css.css">
 
     <script>
         window.onload = function () {
@@ -19,10 +19,6 @@
                 window.dispatchEvent(resizeEvent);
             }, 3000);
         };		
-    </script>
-
-    <script>
-        localStorage.setItem('favouritesList', JSON.stringify([]));
     </script>
 </head>
 
@@ -160,8 +156,8 @@
                     </div>
 
 
-                    <fieldset class="ui-grid-a">
-                        <div class="ui-block-a">
+                    <fieldset class="ui-grid-b ui-responsive">
+                        <div class="ui-block-a ui-responsive width-change">
                             <div class="ui-body ui-body-a ui-corner-all"
                                 style=" background-color: white; width:75%; height:min-content; border-color:white;">
 
@@ -175,7 +171,7 @@
 
                             </div>
                         </div>
-                        <div class=" ui-block-b">
+                        <div class=" ui-block-b ui-responsive width-change">
                             <div class="ui-body ui-body-a ui-corner-all"
                                 style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
                                 <a href="ViewItem.html" class="ui-link"><img src="../images/sil.jpeg"
@@ -188,10 +184,8 @@
                             </div>
 
                         </div>
-                    </fieldset>
-                    <br>
-                    <fieldset class=" ui-grid-a">
-                        <div class="ui-block-a">
+                  
+                        <div class="ui-block-c ui-responsive home-gride">
                             <div class="ui-body ui-body-a ui-corner-all"
                                 style=" background-color: white; width:75%; height:min-content; border-color:white;">
                                 <a href="ViewItem.html" class="ui-link"><img src="../images/candle00.jpg"
@@ -203,19 +197,7 @@
 
                             </div>
                         </div>
-                        <div class=" ui-block-b">
-                            <div class="ui-body ui-body-a ui-corner-all"
-                                style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
-                                <a href="ViewItem.html" class="ui-link"><img src="../images/gluegun.jpg"
-                                        class="POI-image"></a>
-
-                                <div class="pOI-name"> Glue Gun </div>
-                                <p class="pOI-des"> 1000w machanical glue gun </p>
-                                <p class="pOI-price">RS. 1000</p>
-
-                            </div>
-
-                        </div>
+                     
                     </fieldset>
 
                     <br>
