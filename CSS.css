@@ -617,7 +617,9 @@ h2{
     text-align: end; 
     padding-top: 6%; 
     color: #AB821E;
-    font-size: x-large;
+    font-size: x-large; 
+    padding-right: 48px;
+
 }
 .itemPrice{
     color: #AB821E;
@@ -828,7 +830,8 @@ h2{
         width: 109px !important;
         font-size: medium !important;
         text-align: -webkit-center;
-         background-color: white"
+         background-color: white;
+         border-radius:19px;
     }
     .checkout.ui-btn.ui-shadow.ui-corner-all{
         width: 73% !important;
