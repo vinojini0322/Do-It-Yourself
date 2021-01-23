@@ -782,9 +782,9 @@ h2{
         padding-top: 10px;
     }
     .itemName{
-        text-align: end; 
         padding-top: 8%; 
         font-size: large !important;
+        padding-left: 11px;
         
     }
     .itemPrice{
@@ -793,7 +793,8 @@ h2{
     }
     .itemQty{
         text-align: center;
-        font-size: medium !important
+        font-size: medium !important;
+        padding-top: 16px;
     }
     .plus{
         text-align: -webkit-center;
