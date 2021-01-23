@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" href="../CSS.css">
+    <link rel="stylesheet" href="../test-css.css">
 
     <script>
         window.onload = function () {
@@ -20,6 +20,10 @@
             }, 3000);
         };		
     </script>
+
+    <script>
+        localStorage.setItem('favouritesList', JSON.stringify([]));
+    </script>
 </head>
 
 <body class="ui-mobile-viewport ui-overlay-a">
@@ -28,13 +32,13 @@
         style="padding-bottom: 58px; background-color: #551122">
 
         <!-- Header -->
-        <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit" data-position="fixed">
 
             <div class="ui-grid-b">
                 <div class="ui-block-a" style="width: 15%;">
-                    
+
                     <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
-               
+
                 </div>
 
                 <div class="ui-block-b" style="width:73%; margin: auto; color:red;">
@@ -57,104 +61,140 @@
 
         <section class="carousel" aria-label="Gallery">
             <ol class="carousel__viewport" id="carouselSection">
-                <!-- <li id="carousel_slide1" tabindex="0" class="carousel_slide">
-                    <div class="carousel__snapper">
-                        <a href="#carousel__slide4" class="ui-link"><img src="../images/carouselImage1.jpeg"
-                                width="100%" height="100%"></a>
-                    </div>
-                </li>
-                <li id="carousel_slide2" tabindex="0" class="carousel_slide">
-                    <div class="carousel__snapper">
-                        <a href="#carousel__slide1" class="ui-link">
-                            <img src="../images/carouselImage2.jpeg" width="100%" height="100%"></a>
-                    </div>
-                </li>
-                <li id="carousel_slide3" tabindex="0" class="carousel_slide">
-                    <div class="carousel__snapper">
-                        <a href="#carousel__slide2" class="ui-link">
-                            <img src="../images/carouselImage3.jpeg" width="100%" height="100%"></a>
-                    </div>
-                </li> -->
 
             </ol>
 
         </section>
+        <div class='hr' style="padding-bottom: 7px;">
+            <span class='hr-title'>
+                RROMOTIONS
+            </span>
+        </div>
+
+        <fieldset class="ui-grid-a">
+            <div class="ui-block-a">
+                <div class="ui-body ui-body-a ui-corner-all"
+                    style=" background-color: white; width:75%; height:min-content; border-color:white;">
+                    <a href="ViewItem.html" class="ui-link"><img src="../images/potsPromo.jpeg" class="POI-image"></a>
+                    <div class="pOI-name-promo"> Clay Pots </div>
+                    <p class="pOI-price-promo">LKR 550</p>
+
+                </div>
+            </div>
+            <div class=" ui-block-b">
+                <div class="ui-body ui-body-a ui-corner-all"
+                    style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                    <a href="ViewItem.html" class="ui-link"><img src="../images/maskPromo.jpeg" class="POI-image"></a>
+
+                    <div class="pOI-name-promo">Face Mask</div>
+                    <p class="pOI-price-promo">LKR 100</p>
+                </div>
+
+            </div>
+        </fieldset>
 
         <div style="padding-left:10px; padding-right:10px;">
 
-            <div class="box">
+            <!-- <h3>TRENDING TOP DIY PROJECTS</h3>-->
+            <div class="division"></div>
+            <div class='hr'>
+                <span class='hr-title'>
+                    TRENDINGS
+                </span>
+            </div>
+        </div>
+        <div style="padding-top:15px; padding-bottom:15px; padding-left:5%; padding-right: 5%; ">
+            <fieldset class="ui-grid-a">
+
+                <iframe class="video-size" src=" https://www.youtube.com/embed/SSUkMAD7TNs?rel=0;&autoplay=1&mute=1"
+                    allow="autoplay" frameborder="0" allowfullscreen></iframe>
+
+            </fieldset>
+        </div>
+        <!-- <div class="box">
                 <h3>Bringing out the creative you ... </h3>
-                <p style="color :black;">You are in the best platform to explore the creativity and make them come true.
+                <p class="Home-p" style="color :black;">You are in the best platform to explore the creativity and make them come true.
                     you can choose
                     projects that suit your taste, create them in according to your choice, and then use them to
-                    your heart’s content. Craftzy is here to provide you the step by step guides and related items
+                    your heart content. Craftzy is here to provide you the step by step guides and related items
                     that you need.</p>
-            </div>
-
-            <div class=space></div>
+            </div> -->
 
 
-            <!-- <h3>TRENDING TOP DIY PROJECTS</h3>-->
+        <div>
+            <!-- <h3>BEST SELLER</h3> -->
             <div class="division">
                 <div class='hr'>
                     <span class='hr-title'>
-                        TRENDINGS
+                        BEST SELLER
                     </span>
                 </div>
             </div>
-            <div style="padding-top:15px; padding-bottom:15px; padding-left:5%; padding-right: 5%; ">
-                <fieldset class="ui-grid-a">
 
-                    <iframe class="video-size" src=" https://www.youtube.com/embed/SSUkMAD7TNs?rel=0;&autoplay=1&mute=1"
-                        allow="autoplay" frameborder="0" allowfullscreen></iframe>
 
-                </fieldset>
-            </div>
+            <fieldset class="ui-grid-b ui-responsive">
+                <div class="ui-block-a ui-responsive width-change">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; height:min-content; border-color:white;">
 
-            <div>
-                <!-- <h3>RROMOTIONS</h3> -->
-                <div class="division">
-                    <div class='hr'>
-                        <span class='hr-title'>
-                            RROMOTIONS
-                        </span>
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/scissor.jpg" class="POI-image"></a>
+
+                        <div class="pOI-name">Paper Scissor</div>
+                        <p class="pOI-des"> papper cutting shaped scissors </p>
+                        <p class="pOI-price">LKR 150</p>
+
+
+                    </div>
+                </div>
+                <div class=" ui-block-b ui-responsive width-change">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/sil.jpeg" class="POI-image"></a>
+
+                        <div class="pOI-name">Nail Strips </div>
+                        <p class="pOI-des"> silver and gold dusted nail strips </p>
+                        <p class="pOI-price">LKR 200</p>
+
+                    </div>
+
+                </div>
+
+                <div class="ui-block-c ui-responsive home-gride">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; height:min-content; border-color:white;">
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/candle00.jpg" class="POI-image"></a>
+
+                        <div class="pOI-name">Mini Candles</div>
+                        <p class="pOI-des"> 2'2' mini christmas candles </p>
+                        <p class="pOI-price">LKR 300</p>
+
                     </div>
                 </div>
 
-                <fieldset class="ui-grid-a">
-                    <div class="ui-block-a">
-                        <div class="ui-body ui-body-a ui-corner-all"
-                            style=" background-color: white; width:75%; height:min-content; border-color:white;">
-                            <a href="ViewItem.html" class="ui-link"><img src="../images/potsPromo.jpeg"
-                                    class="POI-image"></a>
-                            <div class="pOI-name-promo"> Clay Pots </div>
-                            <p class="pOI-price-promo">RS. 550</p>
+            </fieldset>
+            <br>
+            <fieldset class="ui-grid-b ui-responsive">
+                <div class="ui-block-a ui-responsive width-change">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/gluegun.jpg" class="POI-image"></a>
 
-                        </div>
-                    </div>
-                    <div class=" ui-block-b">
-                        <div class="ui-body ui-body-a ui-corner-all"
-                            style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
-                            <a href="ViewItem.html" class="ui-link"><img src="../images/maskPromo.jpeg"
-                                    class="POI-image"></a>
-
-                            <div class="pOI-name-promo">Face Mask</div>
-                            <p class="pOI-price-promo">RS. 100</p>
-                        </div>
+                        <div class="pOI-name"> Glue Gun </div>
+                        <p class="pOI-des"> 1000w glue gun </p>
+                        <p class="pOI-price">LKR 1000</p>
 
                     </div>
-                </fieldset>
+                </div>
+                <div class=" ui-block-b ui-responsive width-change">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; height:min-content; border-color:white;">
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/pot.jpg" class="POI-image"></a>
 
-                <div>
-                    <!-- <h3>BEST SELLER</h3> -->
-                    <div class="division">
-                        <div class='hr'>
-                            <span class='hr-title'>
-                                BEST SELLER
-                            </span>
-                        </div>
+                        <div class="pOI-name">Clay Pot</div>
+                        <p class="pOI-des"> mini garden clay pot</p>
+                        <p class="pOI-price">LKR 400</p>
+
                     </div>
-
 
                     <fieldset class="ui-grid-a">
                         <div class="ui-block-a">
@@ -196,6 +236,7 @@
                                 <div class="pOI-name">Mini Candles</div>
                                 <p class="pOI-des"> 2'2' mini christmas candles </p>
                                 <p class="pOI-price">RS. 300</p>
+                                <img src="homeFav1.png">
 
                             </div>
                         </div>
@@ -247,34 +288,135 @@
                     <br>
                 </div>
 
+                <div class="ui-block-c ui-responsive home-gride">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/mask.jpg" class="POI-image"></a>
 
-            </div>
+                        <div class="pOI-name"> Face Mask </div>
+                        <p class="pOI-des">cotton face mask </p>
+                        <p class="pOI-price">LKR 100</p>
+
+                    </div>
+
+                </div>
+
+            </fieldset>
+            <br>
+
+            <fieldset class="ui-grid-b ui-responsive">
+                <div class="ui-block-a ui-responsive width-change">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; height:min-content; border-color:white;">
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/sglue.jpg" width="100px"
+                                height="100px"></a>
+
+                        <div class="pOI-name">Glue Bottle</div>
+                        <p class="pOI-des"> 200ml A22 paper glue bottle </p>
+                        <p class="pOI-price">LKR 300</p>
+
+                    </div>
+                </div>
+                <div class=" ui-block-b ui-responsive width-change">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/harrish.jpg" width="100px"
+                                height="100px"></a>
+
+                        <div class="pOI-name"> Harrish Brush </div>
+                        <p class="pOI-des"> hight quality 12A paint brush </p>
+                        <p class="pOI-price">LKR 1000</p>
+
+                    </div>
+
+                </div>
+
+                <div class="ui-block-c ui-responsive home-gride">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/string.jpg" width="100px"
+                                height="100px"></a>
+
+                        <div class="pOI-name">String Ball </div>
+                        <p class="pOI-des"> B4 soft string ball </p>
+                        <p class="pOI-price">LKR 200</p>
+
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <br>
+
+            <fieldset class="ui-grid-b ui-responsive">
+                <div class="ui-block-a ui-responsive width-change">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/string.jpg" width="100px"
+                                height="100px"></a>
+
+                        <div class="pOI-name">String Ball </div>
+                        <p class="pOI-des"> B4 soft string ball </p>
+                        <p class="pOI-price">LKR 200</p>
+
+                    </div>
+                </div>
+                <div class=" ui-block-b ui-responsive width-change">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; height:min-content; border-color:white;">
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/thread.jpg" width="100px"
+                                height="100px"></a>
+
+                        <div class="pOI-name"> Blue Thread </div>
+                        <p class="pOI-des"> blue linen thread</p>
+                        <p class="pOI-price">LKR 50</p>
+
+                    </div>
+
+                </div>
+
+                <div class="ui-block-c ui-responsive home-gride">
+                    <div class="ui-body ui-body-a ui-corner-all"
+                        style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                        <a href="ViewItem.html" class="ui-link"><img src="../images/plastic.jpg" width="100px"
+                                height="100px"></a>
+
+                        <div class="pOI-name"> Mix Beads </div>
+                        <p class="pOI-des"> Plastic,bead fun pack </p>
+                        <p class="pOI-price">LKR 450</p>
+
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <br>
         </div>
 
 
-        <!-- Navigation -->
-        <div data-role="footer" data-position="fixed">
-            <nav data-role="navbar">
-                <ul class="ui-grid-d">
-
-
-                    <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home" data-theme="a"
-                            data-transition="slide" class="ui-btn-active">Home</a></li>
-                    <li class="ui-block-b"><a target="_self" href="Categories.html" data-icon="icons-category"
-                            data-theme="a" data-transition="slide">Category</a>
-                    </li>
-                    <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart" data-theme="a"
-                            data-transition="slide">Cart</a></li>
-                    <li class="ui-block-d"><a target="_self" href="Game.html" data-icon="icons-game" data-theme="a"
-                            data-transition="slide">Game</a></li>
-                    <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html" data-icon="icons-profile"
-                            data-theme="a" data-transition="slide">Profile</a></li>
-
-                </ul>
-            </nav>
-        </div>
     </div>
 
+    <!-- Navigation -->
+    <div data-role="footer" data-position="fixed">
+        <nav data-role="navbar">
+            <ul class="ui-grid-d">
+
+
+                <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home" data-theme="a"
+                        data-transition="slide" class="ui-btn-active">Home</a></li>
+                <li class="ui-block-b"><a target="_self" href="Categories.html" data-icon="icons-category"
+                        data-theme="a" data-transition="slide">Category</a>
+                </li>
+                <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart" data-theme="a"
+                        data-transition="slide">Cart</a></li>
+                <li class="ui-block-d"><a target="_self" href="Game.html" data-icon="icons-game" data-theme="a"
+                        data-transition="slide">Game</a></li>
+                <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html" data-icon="icons-profile"
+                        data-theme="a" data-transition="slide">Profile</a></li>
+
+            </ul>
+        </nav>
+    </div>
 
 </body>
 
