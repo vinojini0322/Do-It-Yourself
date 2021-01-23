@@ -334,7 +334,7 @@ h2{
 
 .pOI-name {
     text-align: left;
-    font-family:inter; 
+    font-family: serif !important; 
     font-size:26px;
     font-weight: bold;
     color: #000;
@@ -343,7 +343,7 @@ h2{
 }
 .pOI-des {
     text-align: left;
-    font-family: inter;
+    font-family: serif !important;
     font-size: 20px;
     font-weight: normal;
     color: rgb(102, 100, 100);
@@ -351,7 +351,7 @@ h2{
 }
 .pOI-price {
     text-align: left;
-    font-family: inter;
+    font-family: serif !important;
     font-size: 24px;
     font-weight: bold;
     color: rgb(53, 53, 53);
@@ -359,14 +359,14 @@ h2{
 }
 .pOI-name-promo {
     text-align: center;
-    font-family:inter; 
+    font-family: serif;
     font-size:24px;
     font-weight: bold;
     color: #000;
 }
 .pOI-price-promo {
     text-align: center;
-    font-family:inter; 
+    font-family: serif !important;
     font-size:22px;
     font-weight: bold;
     color: rgb(53, 53, 53);
@@ -553,7 +553,7 @@ h2{
     .pOI-name {
         font-size:16px !important;
         padding-left: 0px !important;
-        
+        font-family: serif !important;
         }
    .pOI-des {
         font-size: 12px !important;
@@ -565,6 +565,7 @@ h2{
         }
         .pOI-name-promo {
         font-size:18px;
+        font-family: serif;
         }
         .pOI-price-promo {
         font-size:18px;
@@ -601,6 +602,7 @@ h2{
 .pOI-name {
     font-size:16px !important;
     padding-left: 0px !important;
+    font-family: serif !important;
     
     }
     .pOI-des {
@@ -612,10 +614,11 @@ h2{
     padding-left: 0px !important;
     }
     .pOI-name-promo {
-    font-size:18px;
+    font-size:16px;
+    font-family: serif;
     }
     .pOI-price-promo {
-    font-size:18px;
+    font-size:16px;
     }
     .video-size{
         height: 170px !important;
