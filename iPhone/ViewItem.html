@@ -67,7 +67,7 @@
                 <div class="ui-block-b" style="width:73%; margin: auto;">
                     <div class="ui-bar ui-bar-a">
 
-                        <form class="ui-filterable">
+                        <form class="ui-filterable" style="background-color:#dddddd8f;border-radius: 12px;">
                             <input type="search" name="search" id="search-basic" value="" />
                     </div>
                 </div>
@@ -86,17 +86,16 @@
             <h2>VIEW ITEM</h2>
 
 
-            <div class="view-item-grid" >
+            <div class="view-item-grid">
                 <div class="ui-grid-a"
                     style="border-style:solid; color: black; position: relative; background-color: white">
-                    <div class="ui-block-a" >
-                         <div  class="view-item-img" id="selectedItemImage"></div>
+                    <div class="ui-block-a">
+                        <div class="view-item-img" id="selectedItemImage"></div>
                     </div>
-                    <div class="ui-block-b"
-                        style=" position: absolute; height: -webkit-fill-available; right: 0; ">
+                    <div class="ui-block-b" style=" position: absolute; height: -webkit-fill-available; right: 0; ">
                         <div class="view-item-des">
-                        <p id="selectedItemDesc" style="margin-left: 8%">
-                        </p>
+                            <p id="selectedItemDesc" style="margin-left: 8%">
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -114,8 +113,8 @@
                     </div>
                     <div class="ui-block-c">
                         <div class="view-item-star">
-                            
-                            <img  src="../icons/star.png">
+
+                            <img src="../icons/star.png">
                         </div>
                     </div>
                 </div>
@@ -133,13 +132,14 @@
                     <table>
                         <tr>
                             <td style="text-align: -webkit-center">
-                             
-                                <img class="view-cart-icon" onclick="window.location='./MyCart.html'" src="../icons/icon-cart.png" >
-                              
+
+                                <img class="view-cart-icon" onclick="window.location='./MyCart.html'"
+                                    src="../icons/icon-cart.png">
+
                             </td>
                             <td style="text-align: -webkit-center" id=favIconSection>
                             </td>
-                        
+
                         </tr>
                     </table>
                 </div>
@@ -158,7 +158,7 @@
             </div>
             <hr />
             <div>
-                <h3  class="view-sub"> Seller Details</h3>
+                <h3 class="view-sub"> Seller Details</h3>
                 <div class="ui-grid-a"><img class="view-seller-details" src="../images/sellerDetails.png">
                     <!-- <div style="height: 20px">
                     </div> -->
@@ -167,7 +167,7 @@
                     <div style="height: 5px">
                     </div>
                     <div style="padding-left:8px; padding-right:8px;">
-                        <h3  class="view-sub"> Location of the Item</h3>
+                        <h3 class="view-sub"> Location of the Item</h3>
                         <div id="map"></div>
                         <br>
                     </div>
@@ -175,33 +175,26 @@
                 </div>
             </div>
         </div>
-                 <!-- Navigation -->
-                 <div data-role="footer" data-position="fixed" role="contentinfo"
-                 class="ui-footer ui-bar-inherit ui-footer-fixed slideup">
-                 <nav data-role="navbar" class="ui-navbar" role="navigation">
-                     <ul class="ui-grid-d">
-                         <li class="ui-block-a"><a target="" href="Home.html" data-icon="icons-home"
-                                 class="ui-state-persist ui-link ui-btn ui-btn-a ui-icon-icons-home ui-btn-icon-top ui-btn-active"
-                                 data-theme="a">Home</a></li>
-                         <li class="ui-block-b"><a target="" href="Categories.html" data-icon="icons-category"
-                                 data-theme="a"
-                                 class="ui-link ui-btn ui-btn-a ui-icon-icons-category ui-btn-icon-top">Category</a>
-                         </li>
-                         <li class="ui-block-c"><a target="" href="MyCart.html" data-icon="icons-cart"
-                                 data-theme="a"
-                                 class="ui-link ui-btn ui-btn-a ui-icon-icons-cart ui-btn-icon-top">Cart</a>
-                         </li>
-                         <li class="ui-block-d"><a target="" href="Game.html" data-icon="icons-game"
-                                 data-theme="a"
-                                 class="ui-link ui-btn ui-btn-a ui-icon-icons-game ui-btn-icon-top">Game</a>
-                         </li>
-                         <li class="ui-block-e"><a target="" href="MyProfile_Customer.html"
-                                 data-icon="icons-profile" data-theme="a"
-                                 class="ui-link ui-btn ui-btn-a ui-icon-icons-profile ui-btn-icon-top">Profile</a>
-                         </li>
-                     </ul>
-                 </nav>
-             </div>
+        <!-- Navigation -->
+        <div data-role="footer" data-position="fixed">
+            <nav data-role="navbar">
+                <ul class="ui-grid-d">
+
+                    <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home" data-theme="a"
+                            data-transition="slide">Home</a></li>
+                    <li class="ui-block-b"><a target="_self" href="Categories.html" data-icon="icons-category"
+                            data-theme="a" data-transition="slide">Category</a>
+                    </li>
+                    <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart" data-theme="a"
+                            data-transition="slide">Cart</a></li>
+                    <li class="ui-block-d"><a target="_self" href="Game.html" data-icon="icons-game" data-theme="a"
+                            data-transition="slide">Game</a></li>
+                    <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html" data-icon="icons-profile"
+                            data-theme="a" data-transition="slide">Profile</a></li>
+
+                </ul>
+            </nav>
+        </div>
 </body>
 
 <script>
@@ -272,8 +265,8 @@
             }
         });
         return isAlreadyFav ?
-            '<img onclick="addToFvas()" src="../icons/favIcon-Color.png" style="width: 30%;">' :
-            '<img onclick="addToFvas()" src="../icons/favouritesIcon.png" style="width: 30%;">'
+            '<img onclick="addToFvas()" src="../icons/favIcon-Color.png" style="width: 39px; margin-left: 83%;margin-top: -7px;">' :
+            '<img onclick="addToFvas()" src="../icons/favouritesIcon.png" style="width: 39px; margin-left: 83%;margin-top: -7px;">'
     }
 </script>
 
@@ -313,7 +306,7 @@
         }
     });
     let price = selectedItem.price;
-    if (selectedItem.discountPrice){ 
+    if (selectedItem.discountPrice) {
         price = selectedItem.discountPrice;
     }
     $('#selectedItemImage').append(addSelectedItemImage(selectedItem.picUrl));

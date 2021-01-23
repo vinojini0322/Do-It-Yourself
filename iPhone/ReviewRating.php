@@ -135,7 +135,7 @@ $users = json_decode($data);
         <div class="ui-block-b" style="width:73%; margin: auto;">
           <div class="ui-bar ui-bar-a">
 
-            <form class="ui-filterable">
+            <form class="ui-filterable" style="background-color:#dddddd8f;border-radius: 12px;">
               <input type="search" name="search" id="search-basic" value="" />
           </div>
         </div>

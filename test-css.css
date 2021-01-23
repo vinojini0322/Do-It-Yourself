@@ -5,6 +5,54 @@
 
 /* category */
 
+.ui-icon-icons-game:after {
+    background-image: url("icons/icon-game.png");
+    background-size: 20px 20px;
+}
+
+.ui-nosvg .ui-icon-icons-game:after {
+    background: url("icons/icon-game.png");
+}
+
+
+/* home */
+
+.ui-icon-icons-home:after {
+    background-image: url("icons/icon-home.png");
+    background-size: 20px 20px;
+}
+
+.ui-nosvg .ui-icon-icons-home:after {
+    background: url("icons/icon-home.png");
+}
+
+
+/* cart */
+
+.ui-icon-icons-cart:after {
+    background-image: url("icons/icon-cart.png");
+    background-size: 20px 20px;
+}
+
+.ui-nosvg .ui-icon-icons-cart:after {
+    background: url("icons/icon-cart.png");
+}
+
+
+/* profile */
+
+.ui-icon-icons-profile:after {
+    background-image: url("icons/icon-profile.png");
+    background-size: 20px 20px;
+}
+
+.ui-nosvg .ui-icon-icons-profile:after {
+    background: url("icons/icon-profile.png");
+}
+
+
+/* category */
+
 .ui-icon-icons-category:after {
     background-image: url("icons/icon-category.png");
     background-size: 20px 20px;
@@ -13,6 +61,7 @@
 .ui-nosvg .ui-icon-icons-category:after {
     background: url("icons/icon-category.png");
 }
+
 
 .ui-body-a .ui-block-a {
     height: auto;
@@ -831,13 +880,9 @@ h2{
 }
 
 
-    /* .my-breakpoint .ui-block-a,
-	.my-breakpoint .ui-block-b,
-	.my-breakpoint .ui-block-c,
-	.my-breakpoint .ui-block-d{
-		width: 50%;
-		float: none;
-	} */
+    ui-input-search.ui-body-inherit.ui-corner-all.ui-shadow-inset.ui-input-has-clear{
+        background-color: #fff;
+    }
 }
 
 
