@@ -2,20 +2,20 @@
 <html>
 
 <head>
-    <title>Craftzy</title>
+    <title>Home Deco</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../themes/Craftzy.min.css" />
     <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-    <link rel="stylesheet" href="../CSS.css">
+    <link rel="stylesheet" href="../test-css.css">
     <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <script>
         var products = [
-            {
-                "id": 1,
+        {
+                "id": 8,
                 "picUrlSmall": "../images/thread.jpg",
                 "picUrl": "../images/threadResize.png",
                 "name": "Blue Thread",
@@ -26,7 +26,7 @@
                 "isSelected": false
             },
             {
-                "id": 2,
+                "id": 9,
                 "picUrlSmall": "../images/ring.jpg",
                 "picUrl": "../images/ringResize.jpeg",
                 "name": "Plastic Ring",
@@ -37,7 +37,7 @@
                 "isSelected": false
             },
             {
-                "id": 3,
+                "id": 10,
                 "picUrlSmall": "../images/Bic-White-Glue.jpg",
                 "picUrl": "../images/Bic-White-GlueResize.jpeg",
                 "name": "Bic Glue",
@@ -48,7 +48,7 @@
                 "isSelected": false
             },
             {
-                "id": 4,
+                "id": 11,
                 "picUrlSmall": "../images/plastic.png",
                 "picUrl": "../images/plasticResize.png",
                 "name": "Mix Beads",
@@ -59,7 +59,7 @@
                 "isSelected": false
             },
             {
-                "id": 5,
+                "id": 12,
                 "picUrlSmall": "../images/pink.jpg",
                 "picUrl": "../images/pinkResize.png",
                 "name": "Nail Polish",
@@ -70,7 +70,7 @@
                 "isSelected": false
             },
             {
-                "id": 6,
+                "id": 13,
                 "picUrlSmall": "../images/gliter.jpg",
                 "picUrl": "../images/gliterResize.jpeg",
                 "name": "Glitter Polish",
@@ -81,7 +81,7 @@
                 "isSelected": false
             },
             {
-                "id": 7,
+                "id": 14,
                 "picUrlSmall": "../images/sticker.jpg",
                 "picUrl": "../images/stickerResize.jpeg",
                 "name": "Nails Stickers",
@@ -92,7 +92,7 @@
                 "isSelected": false
             },
             {
-                "id": 8,
+                "id": 15,
                 "picUrlSmall": "../images/goldsticker.jpg",
                 "picUrl": "../images/goldstickerResize.jpeg",
                 "name": "Gold Tape",
@@ -107,189 +107,201 @@
     </script>
 </head>
 
-<body>
+<body class="ui-mobile-viewport ui-overlay-a">
+    <div data-role="page" style="background-color: #551122">
 
-    <!-- Header -->
-    <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+        <!-- Header -->
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit" data-position="fixed">
 
-        <div class="ui-grid-b">
-            <div class="ui-block-a" style="width: 15%;">
-                <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
+            <div class="ui-grid-b">
+                <div class="ui-block-a" style="width: 15%;">
+                    <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
+                </div>
+
+                <div class="ui-block-b" style="width:73%; margin: auto;">
+                    <div class="ui-bar ui-bar-a">
+
+                        <form class="ui-filterable" style="background-color: rgb(53, 53, 53)">
+                            <input type="search" name="search" id="search-basic" value="" />
+                    </div>
+                </div>
+
+                <div class="ui-block-c" style="width: 10%;  position: relative;"><a target="_self" href="Offers.html"
+                        class="ui-link"> <img src="../icons/icon-QRAR.png" width="42" height="42"
+                            style="padding-top:20%;">
+                    </a></div>
             </div>
+        </div>
 
-            <div class="ui-block-b" style="width:73%; margin: auto;">
-                <div class="ui-bar ui-bar-a">
 
-                    <form class="ui-filterable">
-                        <input type="search" name="search" id="search-basic" value="" />
+        <div class="space"></div>
+        <div style="padding-right: 3%; padding-left: 3%;">
+            <h2 style="text-align: center;">BEAUTY & HEALTH</h2>
+                <fieldset class="ui-grid-a">
+                    <p style="text-align:center; font-size:20px;"> <B>Dumbbells - Home GYM Equipment </B></p>
+                    <video id="video-mute" class="video-size"  controls  autoplay>
+                        <source src="../videos/handmade.mp4" type="video/mp4">
+                   </video>
+                </fieldset>
+                 <!-- <iframe style="width: 99%; height:195px; align-content: center;" src="../videos/pot.mp4"
+                        frameborder="0" allowfullscreen></iframe> -->
+                <br>
+                <div class="ui-body" style="align-content: center;">
+                    <fieldset class=" ui-grid-a">
+                        <div class="ui-block-a" onclick="selectItem(8)">
+                            <div class="ui-body ui-body-a ui-corner-all"
+                                style=" background-color: white; width:75%; height:min-content; border-color:white;">
+                                <a href="ViewItem.html" class="ui-link"><img src="../images/thread.jpg" width="100px"
+                                    height="100px"></a>
+    
+                            <div class="pOI-name"> Blue Thread </div>
+                            <p class="pOI-des">Deep and rich blue linen thread</p>
+                            <p class="pOI-price">LKR 50</p>
+                            </div>
+                        </div>
+                        <div class=" ui-block-b" onclick="selectItem(9)">
+                            <div class="ui-body ui-body-a ui-corner-all"
+                                style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                                <a href="ViewItem.html" class="ui-link"><img src="../images/ring.jpg" width="100px"
+                                    height="100px"></a>
+    
+                            <div class="pOI-name"> Plastic Ring</div>
+                            <p class="pOI-des">"2.5" outside diameter, 1.75" inside diameter</p>
+                            <p class="pOI-price">LKR 100</p>
+    
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset class=" ui-grid-a">
+                        <div class="ui-block-a" onclick="selectItem(10)">
+                            <div class="ui-body ui-body-a ui-corner-all"
+                                style=" background-color: white; width:75%; height:min-content; border-color:white;">
+                                <a href="ViewItem.html" class="ui-link"><img src="../images/Bic-White-Glue.jpg" width="100px"
+                                    height="100px"></a>
+    
+                            <div class="pOI-name">Bic Glue</div>
+                            <p class="pOI-des">Non-toxic Bic white glue 225 ml</p>
+                            <p class="pOI-price">LKR 150</p>
+
+                            </div>
+                        </div>
+                        <div class=" ui-block-b" onclick="selectItem(11)">
+                            <div class="ui-body ui-body-a ui-corner-all"
+                                style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                                <a href="ViewItem.html" class="ui-link"><img src="../images/harrish.jpg" width="100px"
+                                    height="100px"></a>
+
+                            <div class="pOI-name"> Harrish Brush </div>
+                            <p class="pOI-des"> hight quality 12A paint brush </p>
+                            <p class="pOI-price">LKR 1000</p>
+
+                            </div>
+
+                        </div>
+                    </fieldset>
+                   
+
                 </div>
-            </div>
+                <br>
+                <fieldset class="ui-grid-a">
+                    <p style="text-align:center; font-size: 20px;"> <B>Beauty - Cate Type Nail Paint</B></p>
+                    <video id="video-mute" class="video-size"  controls  autoplay>
+                        <source src="../videos/nailpaint.mp4" type="video/mp4">
+                   </video>
+                    <!-- <iframe style="width: 99%; height:196px;" src="../videos/diy.mp4" frameborder="0"
+                        allowfullscreen></iframe> -->
+                </fieldset>
+                <br>
+                <div class="ui-body style="align-content: center;">
+                    <fieldset class=" ui-grid-a">
+                        <div class="ui-block-a" onclick="selectItem(12)">
+                            <div class="ui-body ui-body-a ui-corner-all"
+                                style=" background-color: white; width:75%; height:min-content; border-color:white;">
+                                <a href="ViewItem.html" class="ui-link"><img src="../images/pink.jpg" width="100px"
+                                    height="100px"></a>
+    
+                            <div class="pOI-name">Nail Polish</div>
+                            <p class="pOI-des">OPI Pink (NL H38) 15ml</p>
+                            <p class="pOI-price">LKR 250</p>
 
-            <div class="ui-block-c" style="width: 10%;  position: relative;"><a target="_self" href="Offers.html"
-                    class="ui-link"> <img src="../icons/icon-QRAR.png" width="42" height="42" style="padding-top:20%;">
-                </a></div>
+                            </div>
+                        </div>
+                        <div class=" ui-block-b" onclick="selectItem(13)">
+                            <div class="ui-body ui-body-a ui-corner-all"
+                                style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                                <a href="ViewItem.html" class="ui-link"><img src="../images/gliter.png" width="100px"
+                                    height="100px"></a>
+    
+                            <div class="pOI-name">Glitter Polish </div>
+                            <p class="pOI-des"> Deborah Lippmann Glitter Nail Polish </p>
+                            <p class="pOI-price">LKR 500</p>
+
+                            </div>
+
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset class=" ui-grid-a">
+                        <div class="ui-block-a" onclick="selectItem(14)">
+                            <div class="ui-body ui-body-a ui-corner-all"
+                                style=" background-color: white; width:75%; height:min-content; border-color:white;">
+                                <a href="ViewItem.html" class="ui-link"><img src="../images/sticker.jpeg" width="100px"
+                                    height="100px"></a>
+    
+                            <div class="pOI-name">Nails Stickers</div>
+                            <p class="pOI-des"> Gold 3D Nail Sticker Stripe Lines Nails </p>
+                            <p class="pOI-price">LKR 300</p>
+
+                            </div>
+                        </div>
+                        <div class=" ui-block-b" onclick="selectItem(15)">
+                            <div class="ui-body ui-body-a ui-corner-all"
+                                style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
+                                <a href="ViewItem.html" class="ui-link"><img src="../images/goldsticker.jpg" width="100px"
+                                    height="100px"></a>
+    
+                            <div class="pOI-name">Gold Tape </div>
+                            <p class="pOI-des">Neworldline Rolls Striping Tape Line </p>
+                            <p class="pOI-price">LKR. 100</p>
+
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+                </div>
+     
+        <div class="space"></div>
+
+        <!-- Navigation -->
+        <div data-role="footer" data-position="fixed">
+            <nav data-role="navbar">
+                <ul class="ui-grid-d">
+
+                    <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home" data-theme="a"
+                            data-transition="slide">Home</a></li>
+                    <li class="ui-block-b"><a target="_self" href="Categories.html" data-icon="icons-category"
+                            data-theme="a" data-transition="slide" class="ui-btn-active">Category</a>
+                    </li>
+                    <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart" data-theme="a"
+                            data-transition="slide">Cart</a></li>
+                    <li class="ui-block-d"><a target="_self" href="Game.html" data-icon="icons-game" data-theme="a"
+                            data-transition="slide">Game</a></li>
+                    <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html" data-icon="icons-profile"
+                            data-theme="a" data-transition="slide">Profile</a></li>
+
+                </ul>
+            </nav>
         </div>
     </div>
-    <div style="padding-right: 3%; padding-left: 3%;">
-        <h2 style="text-align: center;">BEAUTY & HEALTH</h2>
-
-        <fieldset class="ui-grid-a">
-            <p style="text-align:justify; font-size:20px;"> <B>Dumbbells - Home GYM Equipment
-                </B></p>
-            <iframe style="width: 99%; height:195px; align-content: center;" src="../videos/handmade.mp4"
-                frameborder="0" allowfullscreen></iframe>
-        </fieldset>
-        <br>
-        <div class="ui-body ui-body-a ui-corner-all" style="align-content: center;">
-            <fieldset class="ui-grid-a">
-                <div class="ui-block-a" onclick="selectItem(1)">
-                    <div class="ui-body ui-body-a ui-corner-all"
-                        style=" background-color: white; width:75%; height:min-content; border-color:white;">
-                        <a href="ViewItem.html" class="ui-link"><img src="../images/thread.jpg" width="100px"
-                                height="100px"></a>
-
-                        <div class="pOI-name"> Blue Thread </div>
-                        <p class="pOI-des">Deep and rich blue linen thread</p>
-                        <p class="pOI-price">LKR 50</p>
-
-                    </div>
-                </div>
-                <div class=" ui-block-b" onclick="selectItem(2)">
-                    <div class="ui-body ui-body-a ui-corner-all"
-                        style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
-                        <a href="ViewItem.html" class="ui-link"><img src="../images/ring.jpg" width="100px"
-                                height="100px"></a>
-
-                        <div class="pOI-name"> Plastic Ring</div>
-                        <p class="pOI-des">"2.5" outside diameter, 1.75" inside diameter</p>
-                        <p class="pOI-price">LKR 100</p>
-
-                    </div>
-
-                </div>
-            </fieldset>
-            <br>
-            <fieldset class=" ui-grid-a">
-                <div class="ui-block-a" onclick="selectItem(3)">
-                    <div class="ui-body ui-body-a ui-corner-all"
-                        style=" background-color: white; width:75%; height:min-content; border-color:white;">
-                        <a href="ViewItem.html" class="ui-link"><img src="../images/Bic-White-Glue.jpg" width="100px"
-                                height="100px"></a>
-
-                        <div class="pOI-name">Bic Glue</div>
-                        <p class="pOI-des">Non-toxic Bic white glue 225 ml</p>
-                        <p class="pOI-price">LKR 150</p>
-
-                    </div>
-                </div>
-                <div class=" ui-block-b" onclick="selectItem(4)">
-                    <div class="ui-body ui-body-a ui-corner-all"
-                        style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
-                        <a href="ViewItem.html" class="ui-link"><img src="../images/plastic.jpg" width="100px"
-                                height="100px"></a>
-
-                        <div class="pOI-name"> Mix Beads </div>
-                        <p class="pOI-des"> Plastic,
-                            500-600 bead fun pack </p>
-                        <p class="pOI-price">LKR 450</p>
-
-                    </div>
-
-                </div>
-            </fieldset>
-
-        </div>
-        <br>
-        <hr>
-        <fieldset class="ui-grid-a">
-            <p style="text-align:justify; font-size: 20px;"> <B>Beauty - Cate Type Nail Paint</B></p>
-            <iframe style="width: 99%; height:196px;" src="../videos/nailpaint.mp4" frameborder="0"
-                allowfullscreen></iframe>
-        </fieldset>
-        <br>
-        <div class="ui-body ui-body-a ui-corner-all" style="align-content: center;">
-            <fieldset class=" ui-grid-a">
-                <div class="ui-block-a" onclick="selectItem(5)">
-                    <div class="ui-body ui-body-a ui-corner-all"
-                        style=" background-color: white; width:75%; height:min-content; border-color:white;">
-                        <a href="ViewItem.html" class="ui-link"><img src="../images/pink.jpg" width="100px"
-                                height="100px"></a>
-
-                        <div class="pOI-name">Nail Polish</div>
-                        <p class="pOI-des">OPI Pink (NL H38) 15ml</p>
-                        <p class="pOI-price">LKR 250</p>
-
-                    </div>
-                </div>
-                <div class=" ui-block-b" onclick="selectItem(6)">
-                    <div class="ui-body ui-body-a ui-corner-all"
-                        style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
-                        <a href="ViewItem.html" class="ui-link"><img src="../images/gliter.png" width="100px"
-                                height="100px"></a>
-
-                        <div class="pOI-name">Glitter Polish </div>
-                        <p class="pOI-des"> Deborah Lippmann Glitter Nail Polish </p>
-                        <p class="pOI-price">LKR 500</p>
-
-                    </div>
-
-                </div>
-            </fieldset>
-            <br>
-            <fieldset class=" ui-grid-a">
-                <div class="ui-block-a" onclick="selectItem(3)">
-                    <div class="ui-body ui-body-a ui-corner-all"
-                        style=" background-color: white; width:75%; height:min-content; border-color:white;">
-                        <a href="ViewItem.html" class="ui-link"><img src="../images/sticker.jpeg" width="100px"
-                                height="100px"></a>
-
-                        <div class="pOI-name">Nails Stickers</div>
-                        <p class="pOI-des"> Gold 3D Nail Sticker Curve Stripe Lines Nails </p>
-                        <p class="pOI-price">LKR 300</p>
-
-                    </div>
-                </div>
-                <div class=" ui-block-b" onclick="selectItem(7)">
-                    <div class="ui-body ui-body-a ui-corner-all"
-                        style=" background-color: white; width:75%; float: right; height:min-content; border-color:white; ">
-                        <a href="ViewItem.html" class="ui-link"><img src="../images/goldsticker.jpg" width="100px"
-                                height="100px"></a>
-
-                        <div class="pOI-name">Gold Tape </div>
-                        <p class="pOI-des">Neworldline Rolls Striping Tape Line </p>
-                        <p class="pOI-price">LKR. 100</p>
-
-                    </div>
-
-                </div>
-            </fieldset>
-
-        </div>
-    </div>
-    <br>
-    <!-- Navigation -->
-    <div data-role="footer" data-position="fixed">
-        <nav data-role="navbar">
-            <ul class="ui-grid-d">
-
-                <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home" data-theme="a"
-                        data-transition="slide">Home</a></li>
-                <li class="ui-block-b"><a target="_self" href="Categories.html" data-icon="icons-category"
-                        data-theme="a" data-transition="slide" class="ui-btn-active">Category</a>
-                </li>
-                <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart" data-theme="a"
-                        data-transition="slide">Cart</a></li>
-                <li class="ui-block-d"><a target="_self" href="Game.html" data-icon="icons-game" data-theme="a"
-                        data-transition="slide">Game</a></li>
-                <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html" data-icon="icons-profile"
-                        data-theme="a" data-transition="slide">Profile</a></li>
-
-            </ul>
-        </nav>
-    </div>
+</div>
+   
 </body>
 
 <script>
+    var element = document.getElementById('video-mute');
+    element.muted = "muted";
 
     function selectItem(itemId) {
         var products = JSON.parse(localStorage.getItem('products'));
