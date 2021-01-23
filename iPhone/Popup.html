@@ -3,35 +3,59 @@
 
 <head>
 	<title>Page Title</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="themes/Craftzy.min.css" />
-	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../themes/Craftzy.min.css">
+	<link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+	<link rel="stylesheet" href="../CSS.css">
 </head>
 
 <body>
-	<a href="#popupLogin" data-rel="popup" data-position-to="window"
-		class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a"
-		data-transition="pop">Sign in</a>
-	<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
-		    <form method="post" action="http://localhost/uiux/gfg.php">
-			        <div style="padding:10px 20px;">
-				            <h3>Please sign in</h3>
-				            <label for="name" class="ui-hidden-accessible">Name:</label>
-				            <input type="text" name="name" id="name" placeholder="username" data-theme="a">
-
-				            <label for="comment" class="ui-hidden-accessible">Comment:</label>
-				            <input type="text" name="comment" id="comment" placeholder="comment" data-theme="a">
-
-				            <button type="submit"
-					class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check"
-					onclick="on_submit()">Submit</button>
-				        </div>
-			    </form>
+	<!--Favourite icon without color-->
+	<a href="#popupFavouritAdd" data-rel="popup" data-transition="pop" title="Learn more"><img onclick="addToFvas()"
+			src="../icons/favIcon-Color.png"></a>
+	<div data-role="popup" id="popupFavouritAdd" class="ui-content" data-theme="a" style="padding-top: inherit;
+    background-color: #ab821e6b;">
+		  <p>Add to the Favourite List</p>
 	</div>
+
+	<!--Favourite icon with color-->
+	<a href="#popupFavouritRemove" data-rel="popup" data-transition="pop" title="Learn more"><img onclick="addToFvas()"
+			src="../icons/favouritesIcon.png"></a>
+	<div data-role="popup" id="popupFavouritRemove" class="ui-content" data-theme="a" style="padding-top: inherit;
+    background-color: #ab821e6b;">
+		  <p>Remove from the Favourite List
+		</p>
+	</div>
+
+	<!--Cart icon-->
+	<a href="#popupCart" data-rel="popup" data-transition="pop" title="Learn more"><img onclick="addToFvas()"
+			src="../icons/icon-cart.png"></a>
+	<div data-role="popup" id="popupCart" class="ui-content" data-theme="a" style="padding-top: inherit;
+    background-color: #ab821e6b;">
+		  <p>Add to the Cart</p>
+	</div>
+
+	<!--Pay Now-->
+	<a href="#popupCloseRight" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Pay Now</a>
+	<div data-role="popup" id="popupCloseRight" class="ui-content" style="max-width: 290px;
+    background-color: #0a0a0a;
+    color: #ab821e;
+    font-size: 20px;
+    padding-top: inherit;
+    text-align: center">
+		   <a target="_self" href="Categories.html"
+			class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" style="
+		    background-color: rgb(10, 10, 10);
+		    width: 51px !important;
+		">Close</a>
+		<p>Your order has been confirmed.
+			Delivery will happen within 5 working days.</p>
+	</div>
+
+
 </body>
 
 </html>

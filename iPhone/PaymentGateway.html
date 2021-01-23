@@ -17,26 +17,7 @@
 
 
     <!-- Header -->
-    <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
 
-        <div class="ui-grid-b">
-            <div class="ui-block-a" style="width: 15%;">
-                <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
-            </div>
-
-            <div class="ui-block-b" style="width:73%; margin: auto; color:red;">
-                <div class="ui-bar ui-bar-a" style="color:red;">
-
-                    <form class="ui-filterable" style="color:red;">
-                        <input type="search" name="search" id="search-basic" value="" />
-                </div>
-            </div>
-
-            <div class="ui-block-c" style="width: 10%;  position: relative;"><a target="_self" href="Offers.html"
-                    class="ui-link"> <img src="../icons/icon-QRAR.png" width="42" height="42" style="padding-top:20%;">
-                </a></div>
-        </div>
-    </div>
     <div style="margin-left: 5%; margin-right: 5%">
         <form id="frmBooking" name="bookingForm" action="_self">
             <table data-role="table" id="movie-table" data-mode="reflow" class="ui-responsive">
@@ -47,8 +28,9 @@
                               <th data-priority="3">Street Name</th>
                               <th data-priority="4">House Number</th>
                               <th data-priority="5">Postal Code</th>
-                              <th data-priority="6">Total (LKR)</th>
-                            </tr>
+                        <th data-priority="6">Total (LKR)</th>
+                            
+                    </tr>
                       </thead>
                   <tbody style="color: black">
                         <tr>
@@ -94,9 +76,10 @@
                             <input type="text" name="postalCode" id="postalCode" value="">
                         </td>
                         <td>
-                                <input type="text" name="totalVal" id="totalVal" value="">
-                            </td>
-                            </tr>
+                            <input type="text" name="totalVal" id="totalVal" value="">
+                        </td>
+                            
+                    </tr>
                         
                       </tbody>
             </table>
@@ -138,33 +121,16 @@
         });
     </script>
 
-    <!-- Navigation -->
-    <div data-role="footer" data-position="fixed">
-        <nav data-role="navbar">
-            <ul class="ui-grid-d">
-                <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home" data-theme="a"
-                        data-transition="slide" class="ui-btn-active">Home</a></li>
-                <li class="ui-block-b"><a target="_self" href="Categories.html" data-icon="icons-category"
-                        data-theme="a" data-transition="slide">Category</a>
-                </li>
-                <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart" data-theme="a"
-                        data-transition="slide">Cart</a></li>
-                <li class="ui-block-d"><a target="_self" href="Game.html" data-icon="icons-game" data-theme="a"
-                        data-transition="slide">Game</a></li>
-                <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html" data-icon="icons-profile"
-                        data-theme="a" data-transition="slide">Profile</a></li>
-            </ul>
-        </nav>
-    </div>
+
 </body>
 
 <script>
-var total = 0;
+    var total = 0;
     var shoppedItems = JSON.parse(localStorage.getItem('shoppedItems'));
-        $.each(shoppedItems, function (i, item) {
-            total = total + (item.price * item.quantity);
-        });
-        document.getElementById("totalVal").value = total;
+    $.each(shoppedItems, function (i, item) {
+        total = total + (item.price * item.quantity);
+    });
+    document.getElementById("totalVal").value = total;
 </script>
 
 </html>
