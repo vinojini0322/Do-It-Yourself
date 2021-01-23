@@ -34,6 +34,7 @@
         "User": {
           "email": email, "password": password
         }
+
       };
 
       let xhttp = new XMLHttpRequest();
@@ -54,6 +55,7 @@
       xhttp.open("POST", "http://localhost:9002/KLANmart/login", true);
       xhttp.setRequestHeader("Content-type", "application/json");
       xhttp.send(JSON.stringify(jsonData));
+      window.location = "./MyProfile_Customer.html";
     }
   }
   function validationFailed() {
@@ -92,8 +94,8 @@
 
           <p class="forgot-pw-txt">Forgot password?</p>
 
-          <button class="login-btn" data-shadow="false" onclick="loginBtn()">SIGN
-            IN</button>
+          <button class="login-btn" data-shadow="false" onclick="loginBtn()">Log
+            In</button>
         </div>
         <div id="sucesslogin" data-role="popup" data-dialog="true" data-transition="pop"
           style="width: 300px; border: none;">
@@ -151,7 +153,7 @@
         </div>
         <div style="text-align: center;">
           <p class="sign-in-with-text">Don't have an account?
-            <strong class="main-content" onclick="goToSignUp()">Sign in</strong>
+            <strong class="main-content" onclick="goToSignUp()">Log in</strong>
           </p>
         </div>
       </div>

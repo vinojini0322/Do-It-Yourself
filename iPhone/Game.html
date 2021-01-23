@@ -217,7 +217,7 @@
                     //     $('#question h1').fadeOut('fast');
                     // }, 1000);
                     oldrotation = rotation;
-
+                    localStorage.setItem('points', data[picked].question.toString())
                     // update products
                     let priceTags = document.getElementsByClassName("price");
                     priceTags.forEach(element => {
@@ -281,20 +281,36 @@
         }
     </script>
 
-    <div id="faillogin" data-role="popup" data-dialog="true" data-transition="pop" style="width: 300px; border: none; text-align: right;">
-
+    <div id="faillogin" data-role="popup" data-dialog="true" data-transition="pop"
+        style="width: 300px; border: none; text-align: right;">
         <div data-role="header" data-theme="b"
             style="border: none; background-color: #551122; color: beige !important;">
-            <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px; font-size: 10px;">Saved!</h1>
+            <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px; font-size: 10px;">
+                Saved!</h1>
         </div>
 
     </div>
     <button type="button" onclick="savePoints()">Save points</button>
     <button type="button" onclick="window.location='./GameCategory.html'">Purchase</button>
+    <div data-role="footer" data-position="fixed">
+        <nav data-role="navbar">
+            <ul class="ui-grid-d">
+                <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home" data-theme="a"
+                        data-transition="slide" class="ui-btn-active">Home</a></li>
+                <li class="ui-block-b"><a target="_self" href="Categories.html" data-icon="icons-category"
+                        data-theme="a" data-transition="slide">Category</a>
+                </li>
+                <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart" data-theme="a"
+                        data-transition="slide">Cart</a></li>
+                <li class="ui-block-d"><a target="_self" href="./Game.html" data-icon="icons-game" data-theme="a"
+                        data-transition="slide">Game</a></li>
+                <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html" data-icon="icons-profile"
+                        data-theme="a" data-transition="slide">Profile</a></li>
 
+            </ul>
+        </nav>
+    </div>
 
 </body>
-
-
 
 </html>
