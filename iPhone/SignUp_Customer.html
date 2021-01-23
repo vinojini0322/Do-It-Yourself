@@ -84,9 +84,10 @@
                     }
                 }
             };
-            xhttp.open("POST", "http://localhost:9002/KLANmart/user", true);
-            xhttp.setRequestHeader("Content-type", "application/json");
-            xhttp.send(JSON.stringify(jsonData));
+            // xhttp.open("POST", "http://localhost:9002/KLANmart/user", true);
+            // xhttp.setRequestHeader("Content-type", "application/json");
+            // xhttp.send(JSON.stringify(jsonData));
+            window.location = "./Login.html";
         }
     }
 
@@ -189,7 +190,7 @@
                 </div>
                 <div style="text-align: center;">
                     <p class="sign-in-with-text">Already have an account?
-                        <strong class="main-content" onclick="goToSignIn()">Sign in</strong>
+                        <strong class="main-content" onclick="goToSignIn()">Login in</strong>
                     </p>
                 </div>
             </div>

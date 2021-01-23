@@ -92,13 +92,15 @@
                                 <div class="totalText" for="textinput">Total</label>
                             </td>
                             <td>
-                                    <div class="totalValue"><input type="text" name="textinput" id="textinput" style="background-color: white" ></div>
+                                    <div class="totalValue"><input type="text" name="textinput" id="textinput"
+                                        style="background-color: white"></div>
                             </td>
                         </tr>
                     </table>
 
                     <button class="checkout" onclick="window.location='./ConfirmOrder.html'">Checkout Cart</button>
-                    <button class="continueShopping" onclick="window.location='./Categories.html'">Continue Shopping</button>
+                    <button class="continueShopping" onclick="window.location='./Categories.html'">Continue
+                        Shopping</button>
                 </div>
 
             </div>
@@ -140,13 +142,17 @@
 
 <script>
     function addElement(item) {
+        let price = item.price;
+        if (item.discountPrice) {
+            price = item.discountPrice;
+        }
         return '<tr>' +
             '<td class="itemPic" rowspan="3"><img src=' + item.picUrl + '>' +
             '</td>' +
             '<td class="itemName" colspan="4">' + item.name + '</td>' +
             '</tr>' +
             '<tr>' +
-            '<td class="itemPrice" colspan="4"> LKR ' + item.price + '</td>' +
+            '<td class="itemPrice" colspan="4"> LKR ' + price + '</td>' +
             '</tr>' +
             '<tr>' +
             '<td class="plus">' +

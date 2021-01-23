@@ -2,11 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-
-    <link rel="stylesheet" href="../lib/jquery.mobile-1.4.5.min.css" />
-    <script src="https://kit.fontawesome.com/2d990cff29.js" crossorigin="anonymous"></script>
-    <script defer src="https://friconix.com/cdn/friconix.js"></script>
     <title>Craftzy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="../themes/Craftzy.min.css">
@@ -42,17 +37,64 @@
     </script>
 </head>
 
-<body>
-    <div data-role="page" data-role="page" data-position="fixed" data-url="page1" tabindex="0"
+<body class="ui-mobile-viewport ui-overlay-a">
+    <div id="page1" data-role="page" data-position="fixed" data-url="page1" tabindex="0"
         class="ui-page ui-page-theme-a ui-page-footer-fixed ui-page-active"
         style="padding-bottom: 58px; background-color: #551122">
 
-        <div id="itemContainer" class="ui-body ui-body-a ui-corner-all" style="  width:75%; height:min-content;"
-            onclick="savePoints()">
+        <!-- Header -->
+        <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+
+            <div class="ui-grid-b">
+                <div class="ui-block-a" style="width: 15%;">
+
+                    <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
+
+                </div>
+
+                <div class="ui-block-b" style="width:73%; margin: auto; color:red;">
+                    <div class="ui-bar ui-bar-a" style="color:red;">
+
+                        <form class="ui-filterable" style="color:red;">
+                            <input name="search" id="filterBasic-input" data-type="search" />
+                    </div>
+                </div>
+
+                <div class="ui-block-c" style="width: 10%; margin-top: 6px;  position: relative;">
+                    <div class="QRStyle">
+                        <a target="_self" href="Offers.html" class="ui-link"> <img class="QRStyle"
+                                src="../icons/icon-QRAR.png"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-role="page" data-position="fixed" data-url="page1" tabindex="0"
+            class="ui-page ui-page-theme-a ui-page-footer-fixed ui-page-active"
+            style="padding-bottom: 58px; background-color: #551122">
+
+            <div id="itemContainer" class="ui-body ui-body-a ui-corner-all" style="  width:75%; height:min-content;"
+                onclick="savePoints()">
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <nav data-role="navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a"><a target="_self" href="Home.html" data-icon="icons-home" data-theme="a"
+                            data-transition="slide" class="ui-btn-active">Home</a></li>
+                    <li class="ui-block-b"><a target="_self" href="Categories.html" data-icon="icons-category"
+                            data-theme="a" data-transition="slide">Category</a>
+                    </li>
+                    <li class="ui-block-c"><a target="_self" href="MyCart.html" data-icon="icons-cart" data-theme="a"
+                            data-transition="slide">Cart</a></li>
+                    <li class="ui-block-d"><a target="_self" href="Game.html" data-icon="icons-game" data-theme="a"
+                            data-transition="slide">Game</a></li>
+                    <li class="ui-block-e"><a target="_self" href="MyProfile_Customer.html" data-icon="icons-profile"
+                            data-theme="a" data-transition="slide">Profile</a></li>
+
+                </ul>
+            </nav>
         </div>
     </div>
-    
-    
     <script>
         function goToHome() {
             document.location.href = "./home.html";
@@ -60,48 +102,67 @@
         function savePoints() {
             $("#faillogin").popup("open");
         }
-        let resultArray = [
-            {
-                image: "../images/pot-11.png", price: 400.00, rating: 4.3,
-                description: "Mini garden hard clay pot"
-            },
-            {
-                image: "../images/pots.jpg", price: 2000.00, rating: 3.8,
-                description: "Handmade soft clay pot set"
-            },
-            {
-                image: "../images/sglue.jpg", price: 300.00, rating: 4.6,
-                description: "200ml A22 paper glue bottle"
-            },
-            {
-                image: "../images/poi4.png", price: 1000.00, rating: 4.2,
-                description: "hight quality 12A paint brush"
-            },
-            {
-                image: "../images/baloon.jpg", price: 10.00, rating: 3.7,
-                description: "Soft baloon"
-            },
-            {
-                image: "../images/string.jpg", price: 200.00, rating: 3.7,
-                description: "B4 soft string ball"
-            },
-            {
-                image: "../images/DUCT-TAPE.jpg", price: 100.00, rating: 3.7,
-                description: "Sticky grey duct tape"
-            },
+        // let resultArray = [
+        //     {
+        //         image: "../images/pot-11.png", price: 400.00, rating: 4.3,
+        //         description: "Mini garden hard clay pot"
+        //     },
+        //     {
+        //         image: "../images/pots.jpg", price: 2000.00, rating: 3.8,
+        //         description: "Handmade soft clay pot set"
+        //     },
+        //     {
+        //         image: "../images/sglue.jpg", price: 300.00, rating: 4.6,
+        //         description: "200ml A22 paper glue bottle"
+        //     },
+        //     {
+        //         image: "../images/poi4.png", price: 1000.00, rating: 4.2,
+        //         description: "hight quality 12A paint brush"
+        //     },
+        //     {
+        //         image: "../images/baloon.jpg", price: 10.00, rating: 3.7,
+        //         description: "Soft baloon"
+        //     },
+        //     {
+        //         image: "../images/string.jpg", price: 200.00, rating: 3.7,
+        //         description: "B4 soft string ball"
+        //     },
+        //     {
+        //         image: "../images/DUCT-TAPE.jpg", price: 100.00, rating: 3.7,
+        //         description: "Sticky grey duct tape"
+        //     },
 
-        ];
+        // ];
+
+        function selectItem(itemId) {
+            console.log(itemId);
+            var products = JSON.parse(localStorage.getItem('products'));
+            $.each(products, function (i, item) {
+                if (item.id == itemId) {
+                    console.log('here2');
+                    item.isSelected = true;
+                }
+            });
+            localStorage.setItem('products', JSON.stringify(products));
+            window.location = './ViewItem.html'
+        }
 
         function displayResults() {
+            let resultArray = localStorage.getItem('products');
+            resultArray = JSON.parse(resultArray);
+            let discount = parseInt(localStorage.getItem('points'))
             document.getElementById("itemContainer").innerHTML = "";
             for (let i = 0; i < resultArray.length; i++) {
+                let price = parseInt(resultArray[i].price);
+                price = price - (price * discount / 100);
+                resultArray[i]['discountPrice'] = price;
                 var content = `
-                    <div class="item">
-                    <img src="${resultArray[i].image}" width="50%" height="90%" class="item-image">
+                    <div class="item" onclick="selectItem(${resultArray[i].id})">
+                    <img src="${resultArray[i].picUrl}" width="50%" height="90%" class="item-image">
                     <div class="item-description">
-                        <p class="product-name">${resultArray[i].description}</p>
+                        <p class="product-name">${resultArray[i].short_discription}</p>
                         <i class="fas fa-tags"></i>
-                        <p class="price-tag">LKR ${resultArray[i].price}.00</p> <br>
+                        <p class="price-tag">LKR ${price}.00</p> <br>
                         <p class="shiping-details">Free Shipping</p>
                         <div class="rating">${resultArray[i].rating}</div>
                         <i class="fas fa-star"></i>
@@ -114,9 +175,12 @@
 
                 document.getElementById("itemContainer").innerHTML += content;
             }
+            console.log('here', resultArray);
+            localStorage.setItem('products', JSON.stringify(resultArray));
         }
         displayResults();
     </script>
+
 </body>
 
 </html>
