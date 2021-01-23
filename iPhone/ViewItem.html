@@ -309,11 +309,16 @@
     $.each(products, function (i, item) {
         if (item.isSelected) {
             selectedItem = item;
+
         }
     });
+    let price = selectedItem.price;
+    if (selectedItem.discountPrice){ 
+        price = selectedItem.discountPrice;
+    }
     $('#selectedItemImage').append(addSelectedItemImage(selectedItem.picUrl));
     $('#selectedItemDesc').append(addSelectedItemDesc(selectedItem.name, selectedItem.long_discription));
-    $('#selectedItemPrice').append(addSelectedItemPrice(selectedItem.price));
+    $('#selectedItemPrice').append(addSelectedItemPrice(price));
     $('#selectedItemQty').append(addSelectedItemQty(selectedItem.quantity));
     $('#favIconSection').append(addFavIcon(selectedItem.id));
 </script>
