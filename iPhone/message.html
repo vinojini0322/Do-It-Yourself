@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Craftzy - Messages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../themes/Craftzy.min.css" />
+    <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+    <script src="https://kit.fontawesome.com/2d990cff29.js" crossorigin="anonymous"></script>
+    <script src="../js/common.js"></script>
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <script>
+        function goToMessages() {
+            document.location.href = "./CustomerMessage.html";
+        }
+    </script>
+    <style>
+        .header-bar {
+            background-color: #ab821e !important;
+            margin-top: -7px;
+            width: 670px;
+            align-content: center;
+            padding-bottom: 3px;
+            margin-left: -7px;
+        }
+
+        .header-bar .back-icon {
+            float: left;
+            margin-top: 22px;
+            margin-left: 15px;
+            color: white;
+        }
+
+        /*.header-bar .share-icon {
+            float: right;
+            !*margin-top: 22px;
+            margin-left: 15px;
+            color: white;*!
+        }*/
+
+        .header-bar .page-detail {
+            color: white;
+            letter-spacing: 2px;
+            font-weight: 100;
+            font-size: 17px;
+            margin-top: 8px;
+            text-shadow: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #textareaQA {
+            height: 36px !important;
+        }
+
+        #askBtn {
+            border-radius: 20px;
+            margin-top: 8px;
+            background-color: rgb(85, 17, 34);
+            color: white;
+            text-shadow: none;
+        }
+
+        .ui-grid-a>.ui-block-a {
+            width: 59px;
+            margin-left: 69px;
+        }
+
+        .ui-grid-a>.ui-block-b {
+            width: 15%;
+        }
+
+        /* Chat containers */
+        .container {
+            border: 2px solid #dedede;
+            background-color: rgb(85, 17, 34);
+            color: white;
+            text-shadow: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .light {
+            margin-left: 15%;
+        }
+
+        /* Darker chat container */
+        .darker {
+            border-color: #ccc;
+            background-color: lightgray;
+            color: black;
+            text-shadow: none;
+            margin-right: 15%;
+        }
+
+        /* Clear floats */
+        .container::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* Style images */
+        .container img {
+            float: left;
+            max-width: 60px;
+            width: 100%;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+
+        /* Style the right image */
+        .container img.right {
+            float: right;
+            margin-left: 20px;
+            margin-right: 0;
+        }
+
+        /* Style time text */
+        .time-right {
+            float: right;
+            color: #aaa;
+        }
+
+        /* Style time text */
+        .time-left {
+            float: left;
+            color: #999;
+        }
+
+        @media all and (min-width: 40em) {
+            .ui-grid-a {
+                width: 90%;
+                font-size: larger;
+                margin: auto;
+            }
+
+            #askBtn {
+                width: 100px;
+                font-size: large;
+                border-radius: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div data-role="header" data-position="fixed" class="header-bar">
+        <i class="fas fa-chevron-left back-icon" onclick="goToMessages()"></i>
+        <h1 style="    padding-top: 20px;
+    padding-left: 78px;" class="page-detail">Harris & Company</h1>
+    </div>
+    <div data-role="content" data-theme="a">
+        <div class="container light">
+            <p>Hello. Have you sent my product?</p>
+            <span class="time-right">9:00</span>
+        </div>
+
+        <div class="container darker">
+
+            <p>Not yet sir, we are processing your order. Soon we will send it.</p>
+            <span class="time-left">9:01</span>
+        </div>
+
+        <div class="container light">
+
+            <p>Oh. Please send it as soon as possibble.</p>
+            <span class="time-right">9:02</span>
+        </div>
+
+        <div class="container darker">
+
+            <p>Sure sir, We will do our best.</p>
+            <span class="time-left">9:05</span>
+        </div>
+    </div>
+    <br /><br /><br />
+    <div data-role="footer" data-position="fixed">
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <input type="text" id="url" name="url" placeholder="Tell us about what you think ..." />
+            </div>
+            <div class="ui-block-b" style="margin-top: -33px; float: right;">
+                <button id="askBtn" data-inline="true" class="ui-btn">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
