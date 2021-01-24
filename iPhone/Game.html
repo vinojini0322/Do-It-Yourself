@@ -79,15 +79,16 @@
             top: 50%;
             left: 50%;
             font-size: 700px;
+            margin-top: -73px;
         }
 
 
         #question h1 {
-            font-size: 70px;
+            font-size: 41px;
+            padding-top: 216px;
             animation: color-change 1s infinite;
             font-weight: bold;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            padding: 0;
             margin: 0;
             -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
@@ -110,9 +111,39 @@
 </head>
 
 <body>
-    <div id="chart" style="padding-left: 20px;
-    padding-top: 50px;
-    padding-bottom: 100px;"></div>
+
+    <!-- Header -->
+    <div data-role="header" role="banner" class="ui-header ui-bar-inherit" data-position="fixed">
+
+        <div class="ui-grid-b">
+            <div class="ui-block-a" style="width: 15%;">
+
+                <div class="ui-bar ui-bar-a"><img src="../images/logo1.png"></div>
+
+            </div>
+
+            <div class="ui-block-b" style="width:73%; margin: auto;">
+                <div class="ui-bar ui-bar-a">
+
+                    <form class="ui-filterable" style="background-color:#dddddd8f;border-radius: 12px;">
+                        <input name="search" id="filterBasic-input" data-type="search" />
+                </div>
+            </div>
+
+            <div class="ui-block-c" style="width: 10%; margin-top: 6px;  position: relative;">
+                <div class="QRStyle">
+                    <a target="_self" href="Offers.html" class="ui-link"> <img class="QRStyle"
+                            src="../icons/icon-QRAR.png">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chart" style="margin-top: 33px !important;
+    padding-left: 20px;
+    margin-top: 113px;
+    margin-left: 117px;"></div>
     <div id="question">
         <h1 style="text-align: center;"></h1>
     </div>
@@ -282,16 +313,33 @@
     </script>
 
     <div id="faillogin" data-role="popup" data-dialog="true" data-transition="pop"
-        style="width: 300px; border: none; text-align: right;">
-        <div data-role="header" data-theme="b"
-            style="border: none; background-color: #551122; color: beige !important;">
-            <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px; font-size: 10px;">
+        style="width: 300px; border: none; text-align: right;    margin-top: 500px;">
+        <div data-role="header" data-theme="b" style=" 
+    border: none;
+    background-color: #121212;
+    color: #ce9c23 !important;">
+            <h1 style="font-size: 31px !important;
+    text-shadow: none;
+    font-weight: 600;
+    letter-spacing: 1px">
                 Saved!</h1>
         </div>
 
     </div>
-    <button type="button" onclick="savePoints()">Save points</button>
-    <button type="button" onclick="window.location='./GameCategory.html'">Purchase</button>
+    <table style="
+    /** margin-top: 212px; **/
+    padding-left: 132px;position: fixed;">
+        <tr>
+            <td><button type="button" onclick="savePoints()" style="font-size: 26px;width: 131% !important;">Save
+                    points</button></td>
+            <td style="width:100px;"></td>
+            <td><button type="button" onclick="window.location='./GameCategory.html'"
+                    style="font-size: 26px;width: 131% !important;">Purchase</button></td>
+
+        </tr>
+    </table>
+
+
     <div data-role="footer" data-position="fixed">
         <nav data-role="navbar">
             <ul class="ui-grid-d">

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <link rel="stylesheet" href="../CSS.css">
+    <link rel="stylesheet" href="../test-css.css">
     <script>
         $(document).ready(function () {
             $("#select-choice-mini2").change(function () {
@@ -154,14 +154,36 @@
                     price = price - (price * discount / 100);
                     resultArray[i]['discountPrice'] = price;
                     var content = `
-                    <div class="item" onclick="selectItem(${resultArray[i].id})">
-                    <img src="${resultArray[i].picUrl}" width="50%" height="90%" class="item-image">
+                    <div class="item" style="background-color: white;
+    width: inherit;
+    margin-left: 59px;
+    border-radius: 54px;
+    height: -webkit-fill-available;" onclick="selectItem(${resultArray[i].id})">
+                    <img src="${resultArray[i].picUrl}" width="120px" height="100px" class="item-image" style="padding-top: 20px;">
                     <div class="item-description">
-                        <p class="product-name">${resultArray[i].short_discription}</p>
-                        <i class="fas fa-tags"></i>
-                        <p class="price-tag">LKR ${price}.00</p> <br>
-                        <p class="shiping-details">Free Shipping</p>
-                        <div class="rating">${resultArray[i].rating}</div>
+                        <p class="product-name" style="text-align: center;font-family: serif !important; 
+    font-size:26px;
+    font-weight: bold;
+    color: #000;
+    padding-left: 20px;">${resultArray[i].short_discription}</p>
+                 <i class="fas fa-tags"></i>
+                        <p class="price-tag" style="text-align: center;font-family: serif !important;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(53, 53, 53);
+    padding-left: 20px;">LKR ${price}.00</p> <br>
+                        <p class="shiping-details" style="text-align: center;font-family: serif !important;
+    font-size: 20px;
+    font-weight: normal;
+    color: rgb(102, 100, 100);
+    padding-left: 20px;
+    margin-top: -27px;">Free Shipping</p>
+                        <div class="rating" style="text-align: center;font-family: serif !important;
+    font-size: 20px;
+    font-weight: normal;
+    color: rgb(102, 100, 100);
+    padding-left: 20px;
+    ">${resultArray[i].rating}</div>
                         <i class="fas fa-star"></i>
                         
                     </div>
@@ -176,6 +198,44 @@
                 localStorage.setItem('products', JSON.stringify(resultArray));
             }
             displayResults();
+
+
+
+
+
+
+            // function displayResults() {
+            //         let resultArray = localStorage.getItem('products');
+            //         resultArray = JSON.parse(resultArray);
+            //         let discount = parseInt(localStorage.getItem('points'))
+            //         document.getElementById("itemContainer").innerHTML = "";
+            //         for (let i = 0; i < resultArray.length; i++) {
+            //             let price = parseInt(resultArray[i].price);
+            //             price = price - (price * discount / 100);
+            //             resultArray[i]['discountPrice'] = price;
+            //             var content = `
+            //         <div class="item" onclick="selectItem(${resultArray[i].id})">
+            //         <img src="${resultArray[i].picUrl}" width="50%" height="90%" class="item-image">
+            //         <div class="item-description">
+            //             <p class="product-name">${resultArray[i].short_discription}</p>
+            //             <i class="fas fa-tags"></i>
+            //             <p class="price-tag">LKR ${price}.00</p> <br>
+            //             <p class="shiping-details">Free Shipping</p>
+            //             <div class="rating">${resultArray[i].rating}</div>
+            //             <i class="fas fa-star"></i>
+
+            //         </div>
+
+            //     </div>
+            //     <br>
+            //             <br>`;
+
+            //             document.getElementById("itemContainer").innerHTML += content;
+            //         }
+            //         console.log('here', resultArray);
+            //         localStorage.setItem('products', JSON.stringify(resultArray));
+            //     }
+            //     displayResults();
         </script>
 
 </body>
