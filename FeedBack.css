@@ -127,10 +127,10 @@ body {
 ::-ms-input-placeholder { /* Microsoft Edge */
   color: rgb(187, 187, 187);
 }
-
+/* 
 input {
   background: rgb(255, 255, 255) !important;
-}
+} */
 
   /* Rating Star Widgets Style */
   .rating-stars ul {
