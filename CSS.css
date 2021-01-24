@@ -360,7 +360,7 @@ h2{
     font-family: roboto slab;
 }
 .back{
-    margin-left: -6px;
+    margin-left: 9px;
 }
 .row{
     margin-left: 10px;
@@ -377,7 +377,7 @@ h2{
 }
 
  .box-rating {
-    width: 100% !important;
+    width: 96% !important;
     background-color: white;
     height: max-content;
     border-color: white;
@@ -385,7 +385,7 @@ h2{
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-left: 0px;
+    margin-left: 17px !important;
 }
 
 .text-rating{
@@ -491,18 +491,7 @@ h2{
     text-align: center;
     font-size: 27px;
 }
-.box-rating{
-    width: 86% !important;
-    background-color: white;
-    width: 99%;
-    height: max-content;
-    border-color: white;
-    padding-bottom: 20px;
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 98px;
-    margin-left: 76px;
-}
+
 .fa.fa-star{
     font-size: 20px;
 }
@@ -541,9 +530,7 @@ h2{
     padding-right: 15px;
     color: black;
 }   
- .back{
-    margin-left: 66px;
-}
+
 .text-profile{
     font-size: 40px;
     margin-top: 31px;
@@ -704,6 +691,11 @@ h2{
     padding-bottom: 20px;
     font-size: larger;
 }
+.Fav-icon{
+    width: 47px;
+    margin-left: 138%;
+    margin-top: 62px;
+}
 
 
 
@@ -716,6 +708,11 @@ h2{
         margin-right: auto;
         margin-left: auto;
         float: none !important;
+    }
+    .Fav-icon{
+        width: 39px !important; 
+        margin-left: 83% !important;
+        margin-top: -10px !important;
     }
     .POI-image{
         width: 100px;
@@ -889,7 +886,7 @@ h2{
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-left: 0px;
+    margin-left: 0px !important;
 }
 .feeadbackCommentStyle{
         width: 360px;
