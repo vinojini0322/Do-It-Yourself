@@ -67,7 +67,7 @@
                 <div class="ui-block-b" style="width:73%; margin: auto;">
                     <div class="ui-bar ui-bar-a">
 
-                        <form class="ui-filterable">
+                        <form class="ui-filterable" style="background-color:#dddddd8f;border-radius: 12px;">
                             <input type="search" name="search" id="search-basic" value="" />
                     </div>
                 </div>
@@ -311,11 +311,16 @@
     $.each(products, function (i, item) {
         if (item.isSelected) {
             selectedItem = item;
+
         }
     });
+    let price = selectedItem.price;
+    if (selectedItem.discountPrice) {
+        price = selectedItem.discountPrice;
+    }
     $('#selectedItemImage').append(addSelectedItemImage(selectedItem.picUrl));
     $('#selectedItemDesc').append(addSelectedItemDesc(selectedItem.name, selectedItem.long_discription));
-    $('#selectedItemPrice').append(addSelectedItemPrice(selectedItem.price));
+    $('#selectedItemPrice').append(addSelectedItemPrice(price));
     $('#selectedItemQty').append(addSelectedItemQty(selectedItem.quantity));
     $('#favIconSection').append(addFavIcon(selectedItem.id));
 </script>

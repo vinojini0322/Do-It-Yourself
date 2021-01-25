@@ -5,6 +5,54 @@
 
 /* category */
 
+.ui-icon-icons-game:after {
+    background-image: url("icons/icon-game.png");
+    background-size: 20px 20px;
+}
+
+.ui-nosvg .ui-icon-icons-game:after {
+    background: url("icons/icon-game.png");
+}
+
+
+/* home */
+
+.ui-icon-icons-home:after {
+    background-image: url("icons/icon-home.png");
+    background-size: 20px 20px;
+}
+
+.ui-nosvg .ui-icon-icons-home:after {
+    background: url("icons/icon-home.png");
+}
+
+
+/* cart */
+
+.ui-icon-icons-cart:after {
+    background-image: url("icons/icon-cart.png");
+    background-size: 20px 20px;
+}
+
+.ui-nosvg .ui-icon-icons-cart:after {
+    background: url("icons/icon-cart.png");
+}
+
+
+/* profile */
+
+.ui-icon-icons-profile:after {
+    background-image: url("icons/icon-profile.png");
+    background-size: 20px 20px;
+}
+
+.ui-nosvg .ui-icon-icons-profile:after {
+    background: url("icons/icon-profile.png");
+}
+
+
+/* category */
+
 .ui-icon-icons-category:after {
     background-image: url("icons/icon-category.png");
     background-size: 20px 20px;
@@ -13,6 +61,7 @@
 .ui-nosvg .ui-icon-icons-category:after {
     background: url("icons/icon-category.png");
 }
+
 
 .ui-body-a .ui-block-a {
     height: auto;
@@ -285,7 +334,7 @@ h2{
 
 .pOI-name {
     text-align: left;
-    font-family:inter; 
+    font-family: serif !important; 
     font-size:26px;
     font-weight: bold;
     color: #000;
@@ -294,7 +343,7 @@ h2{
 }
 .pOI-des {
     text-align: left;
-    font-family: inter;
+    font-family: serif !important;
     font-size: 20px;
     font-weight: normal;
     color: rgb(102, 100, 100);
@@ -302,7 +351,7 @@ h2{
 }
 .pOI-price {
     text-align: left;
-    font-family: inter;
+    font-family: serif !important;
     font-size: 24px;
     font-weight: bold;
     color: rgb(53, 53, 53);
@@ -310,14 +359,14 @@ h2{
 }
 .pOI-name-promo {
     text-align: center;
-    font-family:inter; 
+    font-family: serif;
     font-size:24px;
     font-weight: bold;
     color: #000;
 }
 .pOI-price-promo {
     text-align: center;
-    font-family:inter; 
+    font-family: serif !important;
     font-size:22px;
     font-weight: bold;
     color: rgb(53, 53, 53);
@@ -504,7 +553,7 @@ h2{
     .pOI-name {
         font-size:16px !important;
         padding-left: 0px !important;
-        
+        font-family: serif !important;
         }
    .pOI-des {
         font-size: 12px !important;
@@ -516,6 +565,7 @@ h2{
         }
         .pOI-name-promo {
         font-size:18px;
+        font-family: serif;
         }
         .pOI-price-promo {
         font-size:18px;
@@ -552,6 +602,7 @@ h2{
 .pOI-name {
     font-size:16px !important;
     padding-left: 0px !important;
+    font-family: serif !important;
     
     }
     .pOI-des {
@@ -563,10 +614,11 @@ h2{
     padding-left: 0px !important;
     }
     .pOI-name-promo {
-    font-size:18px;
+    font-size:16px;
+    font-family: serif;
     }
     .pOI-price-promo {
-    font-size:18px;
+    font-size:16px;
     }
     .video-size{
         height: 170px !important;
@@ -831,13 +883,9 @@ h2{
 }
 
 
-    /* .my-breakpoint .ui-block-a,
-	.my-breakpoint .ui-block-b,
-	.my-breakpoint .ui-block-c,
-	.my-breakpoint .ui-block-d{
-		width: 50%;
-		float: none;
-	} */
+    ui-input-search.ui-body-inherit.ui-corner-all.ui-shadow-inset.ui-input-has-clear{
+        background-color: #fff;
+    }
 }
 
 

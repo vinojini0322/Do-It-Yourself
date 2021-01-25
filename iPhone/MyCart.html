@@ -58,7 +58,7 @@
                 <div class="ui-block-b" style="width:73%; margin: auto; color:red;">
                     <div class="ui-bar ui-bar-a" style="color:red;">
 
-                        <form class="ui-filterable" style="color:red;">
+                        <form class="ui-filterable" style="background-color:#dddddd8f;border-radius: 12px;">
                             <input type="search" name="search" id="search-basic" value="" />
                     </div>
                 </div>
@@ -131,6 +131,9 @@
                                     Shopping</button>
                             </td>
                         </tr>
+                    <button class="checkout" onclick="window.location='./ConfirmOrder.html'">Checkout Cart</button>
+                    <button class="continueShopping" onclick="window.location='./Categories.html'">Continue
+                        Shopping</button>
                 </div>
                 </table> -->
             </div>
@@ -172,13 +175,17 @@
 
 <script>
     function addElement(item) {
+        let price = item.price;
+        if (item.discountPrice) {
+            price = item.discountPrice;
+        }
         return '<tr>' +
             '<td class="itemPic" rowspan="3"><img src=' + item.picUrl + '>' +
             '</td>' +
             '<td class="itemName" colspan="4">' + item.name + '</td>' +
             '</tr>' +
             '<tr>' +
-            '<td class="itemPrice" colspan="4"> LKR ' + item.price + '</td>' +
+            '<td class="itemPrice" colspan="4"> LKR ' + price + '</td>' +
             '</tr>' +
             '<tr>' +
             '<td class="plus">' +

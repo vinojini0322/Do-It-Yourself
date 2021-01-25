@@ -46,16 +46,6 @@
     <div data-role="page" data-role="page" data-position="fixed" data-url="page1" tabindex="0"
         class="ui-page ui-page-theme-a ui-page-footer-fixed ui-page-active"
         style="padding-bottom: 58px; background-color: #551122">
-        <div data-role="header" data-postion="fixed" class="header-bar">
-            <div>
-                <i class="fas fa-chevron-left back-icon" onclick="goToHome()"></i>
-                <div class="search-container">
-                    <input type="search" name="password" id="search" value="" placeholder=" Search"
-                        data-wrapper-class="serachInputWrapper" style="padding-top: 9px !important; padding-bottom: 8px;
-                        padding-right: 15px;padding-left: 25px;">
-                </div>
-            </div>
-        </div>
         <div data-role="content" data-theme="a" style="padding-top: 0px; padding-left: 0px; padding-right: 0px;">
             <div class="top-header" st>
                 <table>
@@ -103,46 +93,48 @@
             document.location.href = "./home.html";
         }
 
-        let resultArray = [
-            {
-                image: "../images/pot-11.png", price: 400.00, rating: 4.3,
-                description: "Mini garden hard clay pot"
-            },
-            {
-                image: "../images/pots.jpg", price: 2000.00, rating: 3.8,
-                description: "Handmade soft clay pot set"
-            },
-            {
-                image: "../images/sglue.jpg", price: 300.00, rating: 4.6,
-                description: "200ml A22 paper glue bottle"
-            },
-            {
-                image: "../images/poi4.png", price: 1000.00, rating: 4.2,
-                description: "hight quality 12A paint brush"
-            },
-            {
-                image: "../images/baloon.jpg", price: 10.00, rating: 3.7,
-                description: "Soft baloon"
-            },
-            {
-                image: "../images/string.jpg", price: 200.00, rating: 3.7,
-                description: "B4 soft string ball"
-            },
-            {
-                image: "../images/DUCT-TAPE.jpg", price: 100.00, rating: 3.7,
-                description: "Sticky grey duct tape"
-            },
+        // let resultArray = [
+        //     {
+        //         image: "../images/pot-11.png", price: 400.00, rating: 4.3,
+        //         description: "Mini garden hard clay pot"
+        //     },
+        //     {
+        //         image: "../images/pots.jpg", price: 2000.00, rating: 3.8,
+        //         description: "Handmade soft clay pot set"
+        //     },
+        //     {
+        //         image: "../images/sglue.jpg", price: 300.00, rating: 4.6,
+        //         description: "200ml A22 paper glue bottle"
+        //     },
+        //     {
+        //         image: "../images/poi4.png", price: 1000.00, rating: 4.2,
+        //         description: "hight quality 12A paint brush"
+        //     },
+        //     {
+        //         image: "../images/baloon.jpg", price: 10.00, rating: 3.7,
+        //         description: "Soft baloon"
+        //     },
+        //     {
+        //         image: "../images/string.jpg", price: 200.00, rating: 3.7,
+        //         description: "B4 soft string ball"
+        //     },
+        //     {
+        //         image: "../images/DUCT-TAPE.jpg", price: 100.00, rating: 3.7,
+        //         description: "Sticky grey duct tape"
+        //     },
 
-        ];
-
+        // ];
+        let resultArray = localStorage.getItem('products');
+        resultArray = JSON.parse(resultArray);
         function displayResults() {
+
             document.getElementById("itemContainer").innerHTML = "";
             for (let i = 0; i < resultArray.length; i++) {
                 var content = `
                     <div class="item">
-                    <img src="${resultArray[i].image}" width="50%" height="90%" class="item-image">
+                    <img src="${resultArray[i].picUrl}" width="50%" height="90%" class="item-image">
                     <div class="item-description">
-                        <p class="product-name">${resultArray[i].description}</p>
+                        <p class="product-name">${resultArray[i].short_description}</p>
                         <i class="fas fa-tags"></i>
                         <p class="price-tag">LKR ${resultArray[i].price}.00</p> <br>
                         <p class="shiping-details">Free Shipping</p>

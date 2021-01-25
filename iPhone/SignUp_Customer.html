@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../themes/Craftzy.min.css" />
     <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-    <link rel="stylesheet" href="../CSS.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
@@ -17,7 +16,7 @@
 
 <script>
     function goToSignIn() {
-        document.location.href = "iPhone/Login.html";
+        document.location.href = "./Login.html";
     }
 
     function registerUser() {
@@ -84,9 +83,10 @@
                     }
                 }
             };
-            xhttp.open("POST", "http://localhost:9002/KLANmart/user", true);
-            xhttp.setRequestHeader("Content-type", "application/json");
-            xhttp.send(JSON.stringify(jsonData));
+            // xhttp.open("POST", "http://localhost:9002/KLANmart/user", true);
+            // xhttp.setRequestHeader("Content-type", "application/json");
+            // xhttp.send(JSON.stringify(jsonData));
+            window.location = "./Login.html";
         }
     }
 
@@ -112,9 +112,10 @@
 
             <div data-role="content" data-theme="a">
                 <div>
-                    <img src="../images/logo1.png" class="logo-image" style="align-content: center;">
+                    <img src="../images/logo1.png" class="logo-image"
+                        style="align-content: center;padding-left: 135px;">
                 </div>
-                <p class="signup-welcome" style="text-align: center;">Sign up with CraftZy</p>
+                <p class="signup-welcome" style="text-align: center;    font-size: 20px;">Sign up with CraftZy</p>
                 <!-- <hr> -->
                 <div class="grid-a-ui">
                     <div class="ui-field-contain" style="margin-top: -8px;">
@@ -140,35 +141,29 @@
 
 
                         <button class="reg-btn" data-shadow="false" onclick="registerUser();">
-                            AGREE & CREATE ACCOUNT
+                            CREATE ACCOUNT
                         </button>
                     </div>
-                    <div>
-                        <P class="aggrement-text">By registering for an CraftZy account, you agree that you have read
-                            and
-                            accepted out<strong class="main-content"> CraftZy Free Membership Agreement</strong> and
-                            <strong class="main-content">Privacy Policy</strong>.
-                        </P>
-                    </div>
+
                 </div>
 
                 <div id="sucessregister" data-role="popup" data-dialog="true" data-transition="pop"
                     style="width: 320px; border: none;">
 
-                    <div data-role="header" data-theme="b"
-                        style="border: none; background-color: rgb(34, 109, 179) !important;">
-                        <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">
+                    <div data-role="header" data-theme="b" style="border: none; background-color: #ab821e !important;">
+                        <h1 style="font-size: 16px;
+    width: 151px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">
                             Registration
                             Successful</h1>
                     </div>
                 </div>
 
                 <div id="faillregister" data-role="popup" data-dialog="true" data-transition="pop"
-                    style="width: 320px; border: none;">
+                    style="width: 320px; border: none; background-color: #ab821e !important;">
 
-                    <div data-role="header" data-theme="b"
-                        style="border: none; background-color: rgb(223, 72, 52) !important;">
-                        <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">
+                    <div data-role="header" data-theme="b" style="border: none; background-color: #ab821e !important;">
+                        <h1 style="font-size: 16px;
+    width: 151px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">
                             Registration
                             Failed</h1>
                     </div>
@@ -177,7 +172,7 @@
                         <p style="text-align: center; font-size: 13px; letter-spacing: 1px;">Please fill all the
                             fields and </br>Try Again !</p>
                         <a href="" class="ui-btn ui-shadow ui-btn-b" onclick="wronginputhide()"
-                            style="background-color: rgb(236, 97, 72) !important; font-size: 13px;border: none; text-shadow: none; font-weight: 100;">OK</a>
+                            style="background-color: #0a0a0a !important; font-size: 13px;border: none; text-shadow: none; font-weight: 100;color:white;">OK</a>
                     </div>
                 </div>
 
@@ -189,7 +184,7 @@
                 </div>
                 <div style="text-align: center;">
                     <p class="sign-in-with-text">Already have an account?
-                        <strong class="main-content" onclick="goToSignIn()">Sign in</strong>
+                        <strong class="main-content" onclick="goToSignIn()">Login in</strong>
                     </p>
                 </div>
             </div>

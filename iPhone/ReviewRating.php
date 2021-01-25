@@ -135,7 +135,7 @@ $users = json_decode($data);
         <div class="ui-block-b" style="width:73%; margin: auto;">
           <div class="ui-bar ui-bar-a">
 
-            <form class="ui-filterable">
+            <form class="ui-filterable" style="background-color:#dddddd8f;border-radius: 12px;">
               <input type="search" name="search" id="search-basic" value="" />
           </div>
         </div>
@@ -148,7 +148,7 @@ $users = json_decode($data);
 
 
 
-    <div style="padding-left:8px; padding-right:8px; padding-bottom: 58px; background-color: #551122; padding-top: 10px; margin-top:0;">
+    <div style="padding-left:8px; padding-right:8px; padding-bottom: 100px; background-color: #551122; padding-top: 10px; margin-top:0;">
     <div class="ui-grid-b">
   <div class="ui-block-a" >
     <!-- <a target="_self" href="ViewItem.html" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-l"></a> 
@@ -167,7 +167,7 @@ $users = json_decode($data);
   </div>
      
     
-      <div style="height:10px">
+      <div style="margin-top: -10px;">
       </div>
       <!-- <p style="text-align:justify; font-size:20px;"> <B>User Rating</B></p> -->
       <div class="division">
@@ -187,7 +187,7 @@ $users = json_decode($data);
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star"></span>
   </center>
-      <div class="text-rating" ><b>4.1 average based on 254 reviews.</b></div>
+      <div class="text-rating" ><b>4 average based on 12 reviews.</b></div>
       <hr style="border:3px solid #f1f1f1">
 
       <div class="row">
@@ -361,8 +361,6 @@ $users = json_decode($data);
   </div>
 
   </div>
-
-
 
 </body>
 

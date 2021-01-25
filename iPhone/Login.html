@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="../themes/Craftzy.min.css" />
   <link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
   <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
-  <link rel="stylesheet" href="../CSS.css">
+  <!-- <link rel="stylesheet" href="../CSS.css"> -->
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
@@ -54,6 +54,7 @@
       xhttp.open("POST", "http://localhost:9002/KLANmart/login", true);
       xhttp.setRequestHeader("Content-type", "application/json");
       xhttp.send(JSON.stringify(jsonData));
+      window.location = "./Home.html";
     }
   }
   function validationFailed() {
@@ -73,14 +74,18 @@
 </script>
 
 <body>
-  <div data-role="content" data-theme="a" class="content-body" style="text-align: center; align-content: center;">
+  <div data-role="content" data-theme="a" class="content-body"
+    style="text-align: center; align-content: center; background-image: url('../images/backgroundImage.png');background-repeat: no-repeat, repeat;    height: 634px;">
 
-    <div class="login-container">
-      <div class="ui-a-grid">
-        <h1 class="welcome-txt" style="font-weight: 100;">Welcome</h1>
-        <p class="login-txt">Sign In to your CraftZy account</p>
+    <div class=" login-container" style="background-color: #ffffff;opacity: 0.8;border-radius: 10px;padding-top: 48px;">
+
+      <div class=" ui-a-grid">
+        <h1 class="welcome-txt" style="font-weight: bold;color: black;font-weight: 100px;">Welcome</h1>
+        <p class="login-txt" style="font-weight: bold;color: black;font-weight: 100px;">Login to your CraftZy account
+        </p>
       </div>
-      <div class="ui-field-contain">
+      <div class="ui-field-contain" style="padding-left: 10px;
+    padding-right: 10px;height: 441px;">
         <div class="ui-b-grid">
 
           <input type="email" name="textEmail" id="txtEmailId" placeholder="Email Id*" value="" data-corners="false"
@@ -92,8 +97,7 @@
 
           <p class="forgot-pw-txt">Forgot password?</p>
 
-          <button class="login-btn" data-shadow="false" onclick="loginBtn()">SIGN
-            IN</button>
+          <button class="login-btn" data-shadow="false" onclick="loginBtn()">Login</button>
         </div>
         <div id="sucesslogin" data-role="popup" data-dialog="true" data-transition="pop"
           style="width: 300px; border: none;">
@@ -114,8 +118,10 @@
         <div id="faillogin" data-role="popup" data-dialog="true" data-transition="pop"
           style="width: 300px; border: none;">
 
-          <div data-role="header" data-theme="b" style="border: none; background-color: rgb(223, 72, 52) !important;">
-            <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">Login
+          <div data-role="header" data-theme="b" style="border: none;
+    background: #ab821e;
+    color: white;">
+            <h1 style="font-size: 19px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">Login
               Failed</h1>
           </div>
 
@@ -123,26 +129,27 @@
             <p style="text-align: center; font-size: 13px; letter-spacing: 1px;">please enter correct
               credentials and </br>Try Again !</p>
             <a href="" class="ui-btn ui-shadow ui-btn-b" onclick="wronginputhide()"
-              style="background-color: rgb(236, 97, 72) !important; font-size: 13px;border: none; text-shadow: none; font-weight: 100;">OK</a>
+              style="background-color: rgb(5, 5, 5) !important; font-size: 13px;border: none; text-shadow: none; font-weight: 100;color:white">OK</a>
           </div>
         </div>
 
-        <div id="validationfaillogin" data-role="popup" data-dialog="true" data-transition="pop"
-          style="width: 300px; border: none;">
+        <div id="validationfaillogin" data-role="popup" data-dialog="true" data-transition="pop" style="width: 300px; border: none;width: 300px;
+    border: none;
+    background-color: #ab821e;">
 
-          <div data-role="header" data-theme="b" style="border: none; background-color: rgb(223, 72, 52) !important;">
-            <h1 style="font-size: 12px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">Login
+          <div data-role="header" data-theme="b" style="border: none; background-color: #ab821e !important;">
+            <h1 style="font-size: 19px; text-shadow: none; font-weight: 600; letter-spacing: 1px;">Login
               Failed</h1>
           </div>
 
           <div role="main" class="ui-content">
-            <p style="text-align: center; font-size: 13px; letter-spacing: 1px;">please fill all fields and
+            <p style="text-align: center; font-size: 18px; letter-spacing: 1px;">Please fill all fields and
               </br>Try Again !</p>
             <a href="" class="ui-btn ui-shadow ui-btn-b" onclick="validationFailed()"
-              style="background-color: rgb(236, 97, 72) !important; font-size: 13px;border: none; text-shadow: none; font-weight: 100;">OK</a>
+              style="background-color: black !important; font-size: 13px;border: none; text-shadow: none; font-weight: 100;color:white;">OK</a>
           </div>
         </div>
-        <p class="sign-in-with-txt">You can also</p>
+
         <div style="text-align: center;">
           <br><label for="uname"><b>Or Connect with</b></label><br>
           <span><img src="../icons/smi1.png" alt="Apple Id"></span>
