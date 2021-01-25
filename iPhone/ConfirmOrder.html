@@ -69,7 +69,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <div class="totalText" for="textinput">Total</label>
+                                <div class="confirmTotalText" for="textinput">Total</label>
                             </td>
                             <td>
                                     <input type="text" name="textinput" id="textinput"
@@ -112,15 +112,12 @@
     function addElement(item) {
         return '<tr>' +
             '<td class="itemPic" rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;"></td>' +
-            '<td> </td>' +
             '<td class="itemName" colspan="4">' + item.name + '</td>' +
             '</tr>' +
             '<tr>' +
-            '<td colspan="3" style="padding-left:60px"></td>' +
             '<td class="itemPrice" colspan="4">LKR ' + item.price + '</td>' +
             '</tr>' +
             '<tr>' +
-            '<td colspan="3"></td>' +
             '<td class="itemQty">Qty ' + item.quantity + '</td>' +
             '</tr>'
         '<tr>' +
