@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Craftzy</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="../themes/Craftzy.min.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" href="../CSS.css">
+
+	<style>
+		body {
+			background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+			background-size: 400% 400%;
+			animation: gradient 15s ease infinite;
+		}
+
+		@keyframes gradient {
+			0% {
+				background-position: 0% 50%;
+			}
+
+			50% {
+				background-position: 100% 50%;
+			}
+
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+		.ui-overlay-a,
+		.ui-page-theme-a,
+		.ui-page-theme-a .ui-panel-wrapper {
+			background-color: transparent;
+		}
+	</style>
+
+</head>
+<script>
+	function GamePage() {
+		location.href = "./Game.html";
+	}
+</script>
+
+<body>
+	<div data-role="page" data-dialog="true" data-transition="pop">
+		<div data-role="header" data-theme="b" style="text-align: center;">
+			<h1>Introduction</h1>
+			<p>This game involves purchasing the product which has the availability of price discount with the points
+				earned by playing the game.
+				based on the points that you have earned from the spin, the discount will be redeemed. One point will be
+				equal to 1%</p>
+			<table style="padding-left: 132px;position: fixed;">
+				<tr>
+					<td><button type="button" onclick="GamePage()"
+							style="font-size: 26px;width: 131% !important;">Play!</button></td>
+					<td style="width:100px;"></td>
+					<td><button type="button" onclick="window.location='./Home.html'"
+							style="font-size: 26px;width: 131% !important;">Exit</button></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

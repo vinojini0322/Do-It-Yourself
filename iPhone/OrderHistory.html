@@ -17,11 +17,13 @@
     <!-- <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script> -->
 </head>
 
+
 <body  >
     <div data-role="page" id="orderhistory"  style="background-color: #551122; min-height: 900px !important;">
         <!-- <div id="page" data-role="page" data-position="fixed" data-url="page" tabindex="0"
         
         style=" background-color: #551122; height: 900px;"> -->
+
         <!-- Header -->
         <div data-role="header" role="banner" class="ui-header ui-bar-inherit" data-position="fixed">
 
@@ -58,15 +60,14 @@
                 <form class="ui-filterable">
                     <input id="filterBasic-input" data-type="search" placeholder="search favourites">
                 </form>
-                <table id="favList" data-filter="true" data-input="#filterBasic-input">
+                <table id="favList" data-filter="true" data-input="#filterBasic-input"
+                    style="background-color: white; width: 100%;">
+                    <div class="space"></div>
                 </table>
             </div>
 
         </div>
 
-        <a href="#popupLogin" data-rel="popup" data-position-to="window"
-            class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a"
-            data-transition="pop" style="margin-left:38px;">Give Feedback</a>
         <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all"
             style="left: 50%; transform: translateX(-50%);">
 
@@ -209,18 +210,21 @@
 <script>
     function addElement(item) {
         return '<tr>' +
-            '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;">' +
+            '<td rowspan="4"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px; height: 136px; width: 105px;">' +
             '</td>' +
-            '<td colspan="3"> </td>' +
-            '<td>' + item.name + '</td>' +
+            '<td colspan="5" style="padding-left: 60px; adding-right: 35px; padding-top: 36px;">' + item.name + '</td>' +
             '</tr>' +
             '<tr>' +
-            '<td colspan="3" style="padding-left:60px"></td>' +
-            '<td>LKR ' + item.price + '</td>' +
+            '<td style="text-align:center; padding-right: 41px;">LKR ' + item.price + '</td>' +
             '</tr>' +
             '<tr>' +
-            '<td colspan="3"></td>' +
-            '<td>Qty ' + item.quantity + '</td>' +
+            '<td style="padding-right: 63px; text-align: center">Qty ' + item.quantity + '</td>' +
+            '</tr>' +
+            '<tr>' +
+            '<td>' + '<a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop" style="margin-left:38px;">Give Feedback</a>' +
+            '</td>' +
+            '</tr>' +
+            '<tr>' +
             '</tr>'
     }
 </script>

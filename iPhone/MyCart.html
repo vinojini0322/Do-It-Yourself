@@ -98,46 +98,19 @@
                 <div class="space"></div>
 
                 <fieldset class="ui-grid-a">
-                        <div class="ui-block-a"  style="width: 25%; margin-left: 25%;">
+                        <div class="ui-block-a"  style="width: 60%; margin-left: 25%">
                         <button class="checkout" onclick="window.location='./ConfirmOrder.html'">
-                            <p ></p>Checkout
-                            Cart
+                            Checkout Cart
                         </button>
                     </div>
-                        <div class="ui-block-b" style="width: 25%; margin-right: 25%">
+                        <div class="ui-block-b" style="width: 62%; margin-right: 25%">
                         <button class="continueShopping" onclick="window.location='./Categories.html'">Continue
                             Shopping</button>
                 </fieldset>
-                <!-- <div class="ui-grid-a" style="text-align: -webkit-center">
-                    <table>
-
-                        <tr>
-                            <td>
-                                <div class="totalText" for="textinput">Total</label>
-                            </td>
-                            <td>
-                                    <div class="totalValue"><input type="text" name="textinput" id="textinput"
-                                        style="background-color: white"></div>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <button class="checkout" onclick="window.location='./ConfirmOrder.html'"><p class="Checkout"></p>Checkout
-                                    Cart</button>
-                            </td>
-                            <td>
-                                <button class="continueShopping" onclick="window.location='./Categories.html'">Continue
-                                    Shopping</button>
-                            </td>
-                        </tr>
-                    <button class="checkout" onclick="window.location='./ConfirmOrder.html'">Checkout Cart</button>
-                    <button class="continueShopping" onclick="window.location='./Categories.html'">Continue
-                        Shopping</button>
-                </div>
-                </table> -->
             </div>
         </div>
+        <div class="space"></div>
+        <div class="space"></div>
 
 
         <!-- Navigation -->
@@ -180,7 +153,7 @@
             price = item.discountPrice;
         }
         return '<tr>' +
-            '<td class="itemPic" rowspan="3"><img src=' + item.picUrl + '>' +
+            '<td class="itemPic" rowspan="3"><img src=' + item.picUrl + ' style="height: 136px; width: 105px">' +
             '</td>' +
             '<td class="itemName" colspan="4">' + item.name + '</td>' +
             '</tr>' +
