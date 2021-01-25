@@ -707,7 +707,10 @@ h2{
     font-size: larger;
 }
 
-
+.feedback-popup{
+    width: 450px !important;
+    margin-left: -1px;
+}
 
 /* iphone  portrait */
 
