@@ -711,6 +711,10 @@ h2{
 
 @media screen and (max-width: 680px ) and (min-width: 370px) {
 
+    .feedback-popup{
+        width: 340px !important;
+        margin-left: -1px;
+    }
     .ui-body.ui-body-a.ui-corner-all{
         width: 70% !important;     
         margin-right: auto;
@@ -722,6 +726,7 @@ h2{
         margin-left: 83% !important;
         margin-top: -10px !important;
     }
+
     .POI-image{
         width: 100px;
         height: 100px;
