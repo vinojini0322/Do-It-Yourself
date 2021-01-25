@@ -187,7 +187,7 @@ $users = json_decode($data);
       <span class="fa fa-star checked"></span>
       <span class="fa fa-star"></span>
   </center>
-      <div class="text-rating" ><b>4 average based on 12 reviews.</b></div>
+      <div class="text-rating" ><b>4 average based on 5 reviews.</b></div>
       <hr style="border:3px solid #f1f1f1">
 
       <div class="row">
