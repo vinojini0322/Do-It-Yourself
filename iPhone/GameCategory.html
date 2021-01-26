@@ -99,37 +99,6 @@
             function savePoints() {
                 $("#faillogin").popup("open");
             }
-            // let resultArray = [
-            //     {
-            //         image: "../images/pot-11.png", price: 400.00, rating: 4.3,
-            //         description: "Mini garden hard clay pot"
-            //     },
-            //     {
-            //         image: "../images/pots.jpg", price: 2000.00, rating: 3.8,
-            //         description: "Handmade soft clay pot set"
-            //     },
-            //     {
-            //         image: "../images/sglue.jpg", price: 300.00, rating: 4.6,
-            //         description: "200ml A22 paper glue bottle"
-            //     },
-            //     {
-            //         image: "../images/poi4.png", price: 1000.00, rating: 4.2,
-            //         description: "hight quality 12A paint brush"
-            //     },
-            //     {
-            //         image: "../images/baloon.jpg", price: 10.00, rating: 3.7,
-            //         description: "Soft baloon"
-            //     },
-            //     {
-            //         image: "../images/string.jpg", price: 200.00, rating: 3.7,
-            //         description: "B4 soft string ball"
-            //     },
-            //     {
-            //         image: "../images/DUCT-TAPE.jpg", price: 100.00, rating: 3.7,
-            //         description: "Sticky grey duct tape"
-            //     },
-
-            // ];
 
             function selectItem(itemId) {
                 console.log(itemId);
@@ -199,43 +168,6 @@
             }
             displayResults();
 
-
-
-
-
-
-            // function displayResults() {
-            //         let resultArray = localStorage.getItem('products');
-            //         resultArray = JSON.parse(resultArray);
-            //         let discount = parseInt(localStorage.getItem('points'))
-            //         document.getElementById("itemContainer").innerHTML = "";
-            //         for (let i = 0; i < resultArray.length; i++) {
-            //             let price = parseInt(resultArray[i].price);
-            //             price = price - (price * discount / 100);
-            //             resultArray[i]['discountPrice'] = price;
-            //             var content = `
-            //         <div class="item" onclick="selectItem(${resultArray[i].id})">
-            //         <img src="${resultArray[i].picUrl}" width="50%" height="90%" class="item-image">
-            //         <div class="item-description">
-            //             <p class="product-name">${resultArray[i].short_discription}</p>
-            //             <i class="fas fa-tags"></i>
-            //             <p class="price-tag">LKR ${price}.00</p> <br>
-            //             <p class="shiping-details">Free Shipping</p>
-            //             <div class="rating">${resultArray[i].rating}</div>
-            //             <i class="fas fa-star"></i>
-
-            //         </div>
-
-            //     </div>
-            //     <br>
-            //             <br>`;
-
-            //             document.getElementById("itemContainer").innerHTML += content;
-            //         }
-            //         console.log('here', resultArray);
-            //         localStorage.setItem('products', JSON.stringify(resultArray));
-            //     }
-            //     displayResults();
         </script>
 
 </body>
