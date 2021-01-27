@@ -107,6 +107,36 @@
                 color: rgb(16, 13, 19);
             }
         }
+
+        .ui-btn.play-game {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 10%;
+            left: 1%;
+
+        }
+
+        .ui-btn.play-game:hover {
+            color: white !important;
+            filter: blur(5px);
+        }
+
+        .ui-corner-all.game-popup {
+            height: 250px;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        .blur {
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+        }
     </style>
 </head>
 
@@ -163,13 +193,13 @@
         var data = [
             { "label": "10", "value": 1, "question": "10" },
             { "label": "20", "value": 2, "question": "20" },
-            { "label": "30", "value": 3, "question": "30" },
-            { "label": "40", "value": 4, "question": "40" },
-            { "label": "50", "value": 5, "question": "50" },
-            { "label": "60", "value": 6, "question": "60" },
-            { "label": "70", "value": 7, "question": "70" },
-            { "label": "80", "value": 8, "question": "80" },
-            { "label": "90", "value": 9, "question": "90" },
+            { "label": "0", "value": 3, "question": "0" },//hhh
+            { "label": "30", "value": 4, "question": "30" },
+            { "label": "5", "value": 5, "question": "5" },
+            { "label": "2.5", "value": 6, "question": "2.5" },
+            { "label": "25", "value": 7, "question": "25" },
+            { "label": "3", "value": 8, "question": "3" },
+            { "label": "15", "value": 9, "question": "15" },
             { "label": "0", "value": 10, "question": "0" }
         ];
         var svg = d3.select('#chart')
@@ -305,8 +335,28 @@
 
         function savePoints() {
             $("#faillogin").popup("open");
+            document.location.href = "./Home.html";
 
         }
+
+
+        // function blurBackground() {
+        //     containerElement.setAttribute('class', 'blur');
+        // }
+
+        var myBlurFunction = function (state) {
+            /* state can be 1 or 0 */
+            var containerElement = document.getElementById('main_container');
+            var overlayEle = document.getElementById('overlay');
+
+            if (state) {
+                overlayEle.style.display = 'block';
+                containerElement.setAttribute('class', 'blur');
+            } else {
+                overlayEle.style.display = 'none';
+                containerElement.setAttribute('class', null);
+            }
+        };
     </script>
 
     <div id="faillogin" data-role="popup" data-dialog="true" data-transition="pop"
@@ -354,6 +404,28 @@
 
             </ul>
         </nav>
+    </div>
+
+    <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn play-game"
+        data-transition="pop"><br>How to <br>play!</a>
+    <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all game-popup">
+            <form>
+                    <h1 style="text-align: center !important;">Introduction</h1>
+            <p>This game involves purchasing the product which has the availability of price discount with the points
+                earned by playing the game.
+                based on the points that you have earned from the spin, the discount will be redeemed. One point will be
+                equal to 1%
+            <table style="padding-left: 132px;position: fixed;">
+                <tr>
+                    <td><button type="button" onclick="GamePage()"
+                            style="font-size: 26px;width: 131% !important;">Play!</button></td>
+                    <td style="width:100px;"></td>
+                    <td><button type="button" onclick="window.location='./Home.html'"
+                            style="font-size: 26px;width: 131% !important;">Exit</button></td>
+                </tr>
+            </table>
+              </p>  
+        </form>
     </div>
 
 </body>
