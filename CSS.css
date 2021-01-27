@@ -698,6 +698,7 @@ h2{
 .voucherCodeValue{
     background-color: white !important;
     font-size: large;
+    text-align: center;
 }
 .ConfirmOrder.ui-btn.ui-shadow.ui-corner-all{
     width: 42% !important;

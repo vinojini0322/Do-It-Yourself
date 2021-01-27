@@ -60,11 +60,22 @@
                     <table class="orderSummary">
                         <tr>
                             <td>
-                                   <label class="voucherCode" for="voucherInput">Voucher code</label>
+                                   <label class="voucherCode" for="discount">Voucher code</label>
                             </td>
-                               <td> <input class="voucherCodeValue" type="text" name="voucherInput" id="voucherInput">
+                           
+                               <td> <input class="voucherCodeValue" type="number" name="discount" id="discount" maxlength="3"> 
 
                             </td>
+                            
+                        </tr>
+                        <td>
+                            <div style =" width: 80% !important; margin-left: 26px">
+                                <input type="button" value="submit code" onclick="calculate()" style="background-color: #f4f5f7;">
+                            </div>
+                            </td>
+                       
+                               
+                          
                         </tr>
                         <tr>
                             <td>
@@ -140,21 +151,6 @@
             '</tr>' +
             '<tr>' +
             '</tr>';
-
-        // '<tr>' +
-        // '<td rowspan="3"><img src=' + item.picUrl + ' style="padding-left: 25px; padding-top: 10px;"></td>' +
-        // '<td colspan="3"> </td>' +
-        // '<td>' + item.name + '</td>' +
-        // '</tr>' +
-        // '<tr>' +
-        // '<td colspan="3" style="padding-left:60px"></td>' +
-        // '<td>LKR ' + item.price + '</td>' +
-        // '</tr>' +
-        // '<tr>' +
-        // '<td colspan="3"></td>' +
-        // '<td>Qty ' + item.quantity + '</td>' +
-        // '</tr>'
-
     }
 </script>
 
@@ -175,6 +171,30 @@
         $('#itemsList').append(addElement(item));
     });
     calculateTotal()
+</script>
+
+<script>
+    function calculate() {
+   var price= 17620;
+
+   var textinput= 0;
+   
+   var x = document.forms["discountCalculator"]["discount"].value;
+  if (x == "") {
+    alert("Please enter voucher code");
+	
+    return false;
+  }else if (x == "156") {
+    textinput= price - ( price*10/100 );
+   document.discountCalculator.textinput.value=textinput.toFixed(2);	
+    return true;
+  }
+  else{
+  alert("Voucher code invalid");
+  return false;
+  }
+
+}
 </script>
 
 </html>
